@@ -17,3 +17,11 @@ struct ExplainationView: View{
         }
     }
 }
+
+
+
+struct ExplainationView_previews: PreviewProvider {
+    static var previews: some View {
+        ExplainationView()
+    }
+}

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct CityChooser: View{
+    var body: some View{
+        Text("eyy bkl")
+    }
+}

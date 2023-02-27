@@ -17,7 +17,7 @@ struct CityChooser: View{
             HStack {
                 Image("Delhi")
                     .resizableImage()
-                Image("Delhi")
+                Image("Jaipur")
                     .resizableImage()
             }
             HStack {

@@ -11,65 +11,29 @@ import SwiftUI
 
 struct CityChooser: View{
     
+    @State var rotation = 0.0
+    @State var scaleXY = 1.0
+    @State var positionY = 0
+    
     var body: some View{
         NavigationView{
             VStack {
-                
-                Text("Choose the city for the Pollution Prediction ")
-                
                 HStack {
-                    NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
-                        Text("uh?")
+                    NavigationLink(destination: PollutionPrediction(), label: {
+                        Image("jaipur")
+                            .renderingMode(.original)
+                            .resizableImage()
+                            .rotationEffect(.degrees(rotation))
+                            .scaleEffect(CGFloat(scaleXY))
+                            .offset(y: CGFloat(positionY))
+                            .animation(Animation.easeInOut(duration: 3))
+                            .onAppear() {
+                                scaleXY = 1.35
+                                positionY -= 250
+                            }
                     })
-                    
-                    
-                    Button{
-                        //
-                    } label: {
-                        VStack{
-                            NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
-                                VStack {
-                                    Image("jaipur")
-                                    Text("hi?")
-                                }.padding()
-                                
-                            })
-                        }
                     }
                 }
-                
-                
-                HStack {
-                    Button{
-                        //
-                    } label: {
-                        VStack{
-                            NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
-                                VStack {
-                                    Image("jaipur")
-                                    Text("hi?")
-                                }.padding()
-                                
-                            })
-                        }
-                    }
-                    
-                    Button{
-                        //
-                    } label: {
-                        VStack{
-                            NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
-                                VStack {
-                                    Image("jaipur")
-                                    Text("hi?")
-                                }.padding()
-                                
-                            })
-                        }
-                    }
-                }
-            }
-            
         }.onAppear(perform: {
             
         })

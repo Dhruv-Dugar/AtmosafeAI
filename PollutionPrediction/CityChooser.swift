@@ -13,27 +13,33 @@ struct CityChooser: View{
     
     @State var rotation = 0.0
     @State var scaleXY = 1.0
-    @State var positionY = 0
+    @State private var isShowingDetails = false
     
     var body: some View{
         NavigationView{
             VStack {
                 HStack {
-                    NavigationLink(destination: PollutionPrediction(), label: {
-                        Image("jaipur")
-                            .renderingMode(.original)
-                            .resizableImage()
-                            .rotationEffect(.degrees(rotation))
-                            .scaleEffect(CGFloat(scaleXY))
-                            .offset(y: CGFloat(positionY))
-                            .animation(Animation.easeInOut(duration: 3))
-                            .onAppear() {
-                                scaleXY = 1.35
-                                positionY -= 250
-                            }
-                    })
+                    Button{
+                        withAnimation{
+                            isShowingDetails.toggle()
+                        }
+                    } label: {
+                        withAnimation{
+                            Image("jaipur")
+                                .renderingMode(.original)
+                                .resizableImage()
+                                .scaleEffect(CGFloat(scaleXY))
+                                .onAppear(){
+                                    scaleXY = 1.45
+                                }
+                        }
                     }
+                    
+                    }
+                    if isShowingDetails{
+                        Text("animation?")
                 }
+            }
         }.onAppear(perform: {
             
         })

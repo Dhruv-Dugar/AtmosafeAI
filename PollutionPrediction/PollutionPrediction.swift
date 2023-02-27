@@ -10,11 +10,11 @@ import SwiftUI
 
 struct PollutionPrediction: View{
     
-    @State private var nameOfCity = userChoiceCity.cityNameChoosen
+    
     
     var body: some View{
         NavigationView{
-            Text(nameOfCity)
+            Text("yay")
         }.onAppear(perform: {
             
         })

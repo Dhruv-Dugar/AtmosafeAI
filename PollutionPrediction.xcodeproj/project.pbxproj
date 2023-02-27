@@ -25,7 +25,7 @@
 		EDB09D4D29AA613A00A89ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDB09D5029AA613A00A89ECC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionPrediction.swift; sourceTree = "<group>"; };
-		EDF14B9B29ABED23007FC8F9 /* CityChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChooser.swift; sourceTree = "<group>"; };
+		EDF14B9B29ABED23007FC8F9 /* CityChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChooser.swift; sourceTree = "<group>"; usesTabs = 0; };
 		EDF14B9F29AC00DD007FC8F9 /* jaipur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jaipur.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

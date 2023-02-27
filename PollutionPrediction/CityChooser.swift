@@ -8,12 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct cityName{
-    var cityNameChoosen = ""
-}
-
-var userChoiceCity = cityName()
-
 
 struct CityChooser: View{
     
@@ -24,26 +18,16 @@ struct CityChooser: View{
                 Text("Choose the city for the Pollution Prediction ")
                 
                 HStack {
+                    NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                        Text("uh?")
+                    })
+                    
+                    
                     Button{
-                        userChoiceCity.cityNameChoosen = "Delhi"
-                        print(userChoiceCity.cityNameChoosen)
+                        //
                     } label: {
                         VStack{
                             NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
-                                VStack {
-                                    Image("jaipur")
-                                    Text("hi?")
-                                }.padding()
-                                
-                            })
-                        }
-                    }
-                    
-                    Button{
-                        userChoiceCity.cityNameChoosen = "jaipur"
-                    } label: {
-                        VStack{
-                            NavigationLink(destination: PollutionPrediction(), label: {
                                 VStack {
                                     Image("jaipur")
                                     Text("hi?")
@@ -57,10 +41,10 @@ struct CityChooser: View{
                 
                 HStack {
                     Button{
-                        userChoiceCity.cityNameChoosen = "blore"
+                        //
                     } label: {
                         VStack{
-                            NavigationLink(destination: PollutionPrediction(), label: {
+                            NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
                                 VStack {
                                     Image("jaipur")
                                     Text("hi?")
@@ -71,10 +55,10 @@ struct CityChooser: View{
                     }
                     
                     Button{
-                        userChoiceCity.cityNameChoosen = "hyd"
+                        //
                     } label: {
                         VStack{
-                            NavigationLink(destination: PollutionPrediction(), label: {
+                            NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
                                 VStack {
                                     Image("jaipur")
                                     Text("hi?")

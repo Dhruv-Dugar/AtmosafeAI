@@ -15,10 +15,13 @@ struct CityChooser: View{
             Text("Choose the city for the Pollution Prediction ")
             
             HStack {
-                Image("Delhi")
-                    .resizableImage()
-                Image("Jaipur")
-                    .resizableImage()
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(.green)
+                    .frame(width: 100, height: 100)
+                
+                
+                
+                Text("Jaipur")
             }
             HStack {
                 Image("Delhi")
@@ -40,6 +43,7 @@ extension Image{
             .frame(width: 350)
     }
 }
+
 struct CityChooser_Preview: PreviewProvider{
     static var previews: some View{
         CityChooser()

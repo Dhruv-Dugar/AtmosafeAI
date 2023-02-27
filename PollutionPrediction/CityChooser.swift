@@ -8,30 +8,89 @@
 import Foundation
 import SwiftUI
 
+struct cityName{
+    var cityNameChoosen = ""
+}
+
+var userChoiceCity = cityName()
+
+
 struct CityChooser: View{
+    
     var body: some View{
-        VStack {
-            
-            Text("Choose the city for the Pollution Prediction ")
-            
-            HStack {
-                RoundedRectangle(cornerRadius: 25)
-                    .fill(.green)
-                    .frame(width: 100, height: 100)
+        NavigationView{
+            VStack {
+                
+                Text("Choose the city for the Pollution Prediction ")
+                
+                HStack {
+                    Button{
+                        userChoiceCity.cityNameChoosen = "Delhi"
+                        print(userChoiceCity.cityNameChoosen)
+                    } label: {
+                        VStack{
+                            NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                                VStack {
+                                    Image("jaipur")
+                                    Text("hi?")
+                                }.padding()
+                                
+                            })
+                        }
+                    }
+                    
+                    Button{
+                        userChoiceCity.cityNameChoosen = "jaipur"
+                    } label: {
+                        VStack{
+                            NavigationLink(destination: PollutionPrediction(), label: {
+                                VStack {
+                                    Image("jaipur")
+                                    Text("hi?")
+                                }.padding()
+                                
+                            })
+                        }
+                    }
+                }
                 
                 
-                
-                Text("Jaipur")
+                HStack {
+                    Button{
+                        userChoiceCity.cityNameChoosen = "blore"
+                    } label: {
+                        VStack{
+                            NavigationLink(destination: PollutionPrediction(), label: {
+                                VStack {
+                                    Image("jaipur")
+                                    Text("hi?")
+                                }.padding()
+                                
+                            })
+                        }
+                    }
+                    
+                    Button{
+                        userChoiceCity.cityNameChoosen = "hyd"
+                    } label: {
+                        VStack{
+                            NavigationLink(destination: PollutionPrediction(), label: {
+                                VStack {
+                                    Image("jaipur")
+                                    Text("hi?")
+                                }.padding()
+                                
+                            })
+                        }
+                    }
+                }
             }
-            HStack {
-                Image("Delhi")
-                    .resizableImage()
-                Image("Delhi")
-                    .resizableImage()
-            }
-        }
             
-        
+        }.onAppear(perform: {
+            
+        })
+        .navigationBarHidden(true)
+        .navigationViewStyle(.stack)
     }
 }
 

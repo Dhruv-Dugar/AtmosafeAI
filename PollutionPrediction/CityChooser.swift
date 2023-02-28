@@ -53,31 +53,31 @@ struct CityChooser: View{
                     
                         Form{
                             VStack(alignment: .leading){
-                                Group {
+                                Section {
                                     Text("Concentration of Carbon Monoxide")
                                     
                                     TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
                                 }
                                 
-                                Group {
+                                Section {
                                     Text("Concentration of Nitrous Dioxide")
                                     
                                     TextField("Concentration of NO2", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
                                 }
                                 
-                                Group {
+                                Section {
                                     Text("Concentration of Sulfur Dioxide")
                                     
                                     TextField("Concentration of SO2", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
                                 }
                                 
-                                Group {
+                                Section {
                                     Text("Concentration of Ozone")
                                     
                                     TextField("Concentration of O3", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
                                 }
                                 
-                                Group {
+                                Section {
                                     Text("Concentration of PM10")
                                     
                                     TextField("Concentration of PM10", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)

@@ -14,7 +14,6 @@
 		EDB09D5129AA613A00A89ECC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB09D5029AA613A00A89ECC /* Preview Assets.xcassets */; };
 		EDDDC13D29ACAE4D009A2EE5 /* PollutionPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */; };
 		EDF14B9C29ABED23007FC8F9 /* CityChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF14B9B29ABED23007FC8F9 /* CityChooser.swift */; };
-		EDF14BA029AC00DD007FC8F9 /* jaipur.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF14B9F29AC00DD007FC8F9 /* jaipur.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		EDB09D5029AA613A00A89ECC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionPrediction.swift; sourceTree = "<group>"; };
 		EDF14B9B29ABED23007FC8F9 /* CityChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChooser.swift; sourceTree = "<group>"; usesTabs = 0; };
-		EDF14B9F29AC00DD007FC8F9 /* jaipur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jaipur.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +63,6 @@
 				EDF14B9B29ABED23007FC8F9 /* CityChooser.swift */,
 				EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */,
 				EDB09D4D29AA613A00A89ECC /* Assets.xcassets */,
-				EDF14B9F29AC00DD007FC8F9 /* jaipur.png */,
 				EDB09D4F29AA613A00A89ECC /* Preview Content */,
 			);
 			path = PollutionPrediction;
@@ -138,7 +135,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB09D5129AA613A00A89ECC /* Preview Assets.xcassets in Resources */,
-				EDF14BA029AC00DD007FC8F9 /* jaipur.png in Resources */,
 				EDB09D4E29AA613A00A89ECC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

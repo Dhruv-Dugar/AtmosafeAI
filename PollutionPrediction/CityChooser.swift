@@ -9,6 +9,28 @@ import Foundation
 import SwiftUI
 
 
+extension Color {
+    static let darkPink = Color(red: 208/255, green: 45/255, blue: 208/255)
+}
+
+struct OutlinedTextFieldStyle: TextFieldStyle {
+    @State var icon: Image?
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        HStack {
+            if icon != nil {
+                icon
+                    .foregroundColor(Color(UIColor.systemGray4))
+            }
+            configuration
+        }
+        .padding()
+        .overlay {
+            RoundedRectangle(cornerRadius: 8, style: .continuous)
+                .stroke(Color(UIColor.systemGray4), lineWidth: 2)
+        }
+    }
+}
+
 struct CityChooser: View{
     
     @State var rotation = 0.0
@@ -49,7 +71,7 @@ struct CityChooser: View{
                     
                     
                     if isShowingDetails{
-                    Spacer()
+//                    Spacer()
                     
                         Form{
                             VStack(alignment: .leading){
@@ -57,30 +79,35 @@ struct CityChooser: View{
                                     Text("Concentration of Carbon Monoxide")
                                     
                                     TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
+                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
                                 }
                                 
                                 Section {
                                     Text("Concentration of Nitrous Dioxide")
                                     
                                     TextField("Concentration of NO2", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
+                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
                                 }
                                 
                                 Section {
                                     Text("Concentration of Sulfur Dioxide")
                                     
                                     TextField("Concentration of SO2", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
+                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
                                 }
                                 
                                 Section {
                                     Text("Concentration of Ozone")
                                     
                                     TextField("Concentration of O3", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
+                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
                                 }
                                 
                                 Section {
                                     Text("Concentration of PM10")
                                     
                                     TextField("Concentration of PM10", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
+                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
                                 }
                                 
                                 

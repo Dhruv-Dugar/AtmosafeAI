@@ -71,22 +71,29 @@ struct CityChooser: View{
                     
                     
                     if isShowingDetails{
-//                    Spacer()
-                    
+                    Spacer()
                         Form{
                             VStack(alignment: .leading){
                                 Section {
                                     Text("Concentration of Carbon Monoxide")
                                     
                                     TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
-                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                        .textFieldStyle(OutlinedTextFieldStyle())
                                 }
                                 
                                 Section {
-                                    Text("Concentration of Nitrous Dioxide")
                                     
-                                    TextField("Concentration of NO2", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
-                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    
+                                    HStack {
+                                        Image("CO2")
+                                            .resizable()
+                                            .frame(width: 150, height: 150)
+                                        VStack {
+                                            Text("Concentration of Nitrous Dioxide")
+                                            TextField("Concentration of NO2", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
+                                                .textFieldStyle(OutlinedTextFieldStyle())
+                                        }.padding()
+                                    }.padding()
                                 }
                                 
                                 Section {
@@ -119,7 +126,7 @@ struct CityChooser: View{
                 }
             }
         }.onAppear(perform: {
-            
+            scaleXY = 0.9
         })
         .navigationBarHidden(true)
         .navigationViewStyle(.stack)

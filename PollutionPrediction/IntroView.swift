@@ -18,6 +18,7 @@ struct IntroView: View {
                     Image("logo")
                         .resizable()
                         .frame(width: 350, height: 350)
+                        .padding()
                         .padding(.top, 20)
 //                    Spacer()
                     (

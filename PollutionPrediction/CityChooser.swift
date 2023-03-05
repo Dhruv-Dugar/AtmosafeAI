@@ -8,11 +8,6 @@
 import Foundation
 import SwiftUI
 
-
-extension Color {
-    static let darkPink = Color(red: 208/255, green: 45/255, blue: 208/255)
-}
-
 struct OutlinedTextFieldStyle: TextFieldStyle {
     @State var icon: Image?
     func _body(configuration: TextField<Self._Label>) -> some View {
@@ -28,6 +23,22 @@ struct OutlinedTextFieldStyle: TextFieldStyle {
             RoundedRectangle(cornerRadius: 8, style: .continuous)
                 .stroke(Color(UIColor.systemGray4), lineWidth: 2)
         }
+    }
+}
+
+
+struct ImageOverlay: View{
+    var body: some View{
+        ZStack{
+            Text("Testing...")
+                .font(.callout)
+                .padding(6)
+                .foregroundColor(.white)
+        }
+        .background(Color.gray)
+        .opacity(0.7)
+        .cornerRadius(10.0)
+        .padding(6)
     }
 }
 
@@ -85,9 +96,11 @@ struct CityChooser: View{
                                     
                                     
                                     HStack {
-                                        Image("CO2")
-                                            .resizable()
-                                            .frame(width: 150, height: 150)
+                                        VStack {
+                                            Image("CO2")
+                                                .resizable()
+                                                .frame(width: 150, height: 150).overlay(ImageOverlay(), alignment: .bottomTrailing)
+                                        }
                                         VStack {
                                             Text("Concentration of Nitrous Dioxide")
                                             TextField("Concentration of NO2", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
@@ -132,6 +145,7 @@ struct CityChooser: View{
         .navigationViewStyle(.stack)
     }
 }
+
 
 extension Image{
     func resizableImage() -> some View{

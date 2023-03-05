@@ -17,39 +17,22 @@ struct ExplainationView: View{
     //            Spacer()
                 HStack{
                     Spacer()
-                    
                     Image(systemName: "ipad")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 75)
-                    
                     Spacer()
-                    
-                    Image(systemName: "iphone")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 75)
-                    
-                    Spacer()
-                    
                     Image(systemName: "ipad.homebutton")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 75)
-                    
-                    Spacer()
-                    
-                    Image(systemName: "iphone.homebutton")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 75)
-                    
                     Spacer()
                 }
                 .padding(.top, 35)
                 .padding(.bottom, 30)
+                .padding()
 
-                Text("PollutionPredictor has been optimised to work for all iPad and iPhone models.")
+                Text("PollutionPredictor has been optimised to work for all iPad  models.")
                     .titleStyle()
                                 
                 Spacer()

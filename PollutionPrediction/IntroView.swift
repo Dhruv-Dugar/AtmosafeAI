@@ -17,7 +17,8 @@ struct IntroView: View {
                 Section{
                     Image("logo")
                         .resizable()
-                        .frame(width: 350, height: 350)
+                        .frame(width: UIScreen.main.bounds.width * 0.9))
+                        .padding()
                         .padding(.top, 20)
 //                    Spacer()
                     (

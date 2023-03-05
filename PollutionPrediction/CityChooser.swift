@@ -36,7 +36,7 @@ struct ImageOverlay: View{
                 .foregroundColor(.white)
         }
         .background(Color.gray)
-        .opacity(0.8)
+        .opacity(0.7)
         .cornerRadius(10.0)
         .padding(6)
     }
@@ -145,6 +145,7 @@ struct CityChooser: View{
         .navigationViewStyle(.stack)
     }
 }
+
 
 extension Image{
     func resizableImage() -> some View{

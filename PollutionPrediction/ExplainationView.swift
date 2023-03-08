@@ -62,7 +62,7 @@ struct ExplainationView: View{
                 
                 Spacer()
                 
-                NavigationLink(destination: CityChooser().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                NavigationLink(destination: LogoView().toolbar(.hidden).navigationViewStyle(.stack), label: {
                     Image(systemName: "arrow.right.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)

@@ -13,7 +13,7 @@
 		EDB09D4E29AA613A00A89ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB09D4D29AA613A00A89ECC /* Assets.xcassets */; };
 		EDB09D5129AA613A00A89ECC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB09D5029AA613A00A89ECC /* Preview Assets.xcassets */; };
 		EDDDC13D29ACAE4D009A2EE5 /* PollutionPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */; };
-		EDF14B9C29ABED23007FC8F9 /* CityChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF14B9B29ABED23007FC8F9 /* CityChooser.swift */; };
+		EDF14B9C29ABED23007FC8F9 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF14B9B29ABED23007FC8F9 /* LogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,7 @@
 		EDB09D4D29AA613A00A89ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDB09D5029AA613A00A89ECC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionPrediction.swift; sourceTree = "<group>"; };
-		EDF14B9B29ABED23007FC8F9 /* CityChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChooser.swift; sourceTree = "<group>"; usesTabs = 0; };
+		EDF14B9B29ABED23007FC8F9 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
 				EDB09D4B29AA613A00A89ECC /* IntroView.swift */,
 				ED201F3429ABA5F900AD1427 /* ExplainationView.swift */,
-				EDF14B9B29ABED23007FC8F9 /* CityChooser.swift */,
+				EDF14B9B29ABED23007FC8F9 /* LogoView.swift */,
 				EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */,
 				EDB09D4D29AA613A00A89ECC /* Assets.xcassets */,
 				EDB09D4F29AA613A00A89ECC /* Preview Content */,
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDDDC13D29ACAE4D009A2EE5 /* PollutionPrediction.swift in Sources */,
-				EDF14B9C29ABED23007FC8F9 /* CityChooser.swift in Sources */,
+				EDF14B9C29ABED23007FC8F9 /* LogoView.swift in Sources */,
 				ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */,
 				EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */,
 				EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */,

@@ -38,7 +38,6 @@ struct PolluutionPrediction: View{
     @State private var showingAlert = false
     
     var body: some View{
-        Spacer()
         Form{
             VStack(alignment: .leading){
                 Section {
@@ -121,8 +120,8 @@ struct PolluutionPrediction: View{
     }
 }
 
-struct Previews_PollutionPrediction_Previews: PreviewProvider {
-    static var previews: some View {
+struct PollutionPrediction_Preview: PreviewProvider{
+    static var previews: some View{
         PolluutionPrediction()
     }
 }

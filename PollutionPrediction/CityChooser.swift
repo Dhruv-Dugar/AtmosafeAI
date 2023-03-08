@@ -86,21 +86,26 @@ struct CityChooser: View{
                         Form{
                             VStack(alignment: .leading){
                                 Section {
-                                    Text("Concentration of Carbon Monoxide")
-                                    
-                                    TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
-                                        .textFieldStyle(OutlinedTextFieldStyle())
+                                    HStack{
+                                        VStack{
+                                            Image("CO")
+                                                .resizable()
+                                        }
+                                        
+                                        VStack{
+                                            Text("Concentration of Carbon Monoxide")
+                                            
+                                            TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
+                                                .textFieldStyle(OutlinedTextFieldStyle())
+                                        }
+                                    }
                                 }
                                 
                                 Section {
-                                    
-                                    
                                     HStack {
                                         VStack {
-                                            Image("CO2")
+                                            Image("CO")
                                                 .resizable()
-                                                .frame(width: 150, height: 150)
-                                            Text("Carbon Dioxide").font(.callout).background(.secondary)
                                         }
                                         VStack {
                                             Text("Concentration of Nitrous Dioxide")
@@ -111,30 +116,50 @@ struct CityChooser: View{
                                 }
                                 
                                 Section {
-                                    Text("Concentration of Sulfur Dioxide")
+                                    HStack {
+                                        VStack{
+                                            Image("CO")
+                                                .resizable()
+                                        }
+                                        VStack{
+                                            Text("Concentration of Sulfur Dioxide")
+                                            TextField("Concentration of SO2", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
+                                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                        }
+                                    }
                                     
-                                    TextField("Concentration of SO2", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
-                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    
                                 }
                                 
                                 Section {
-                                    Text("Concentration of Ozone")
-                                    
-                                    TextField("Concentration of O3", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
-                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    HStack{
+                                        VStack{
+                                            Image("CO")
+                                                .resizable()
+                                        }
+                                        VStack{
+                                            Text("Concentration of Ozone")
+                                            
+                                            TextField("Concentration of O3", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
+                                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                        }
+                                    }
                                 }
                                 
                                 Section {
-                                    Text("Concentration of PM10")
-                                    
-                                    TextField("Concentration of PM10", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
-                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    HStack{
+                                        VStack{
+                                            Image("CO")
+                                                .resizable()
+                                        }
+                                        VStack{
+                                            Text("Concentration of PM10")
+                                            
+                                            TextField("Concentration of PM10", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
+                                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                        }
+                                    }
                                 }
-                                
-                                
-                                
-                                
-                                
                             }.padding()
                         }
                 }

@@ -32,7 +32,7 @@ struct ExplainationView: View{
                 .padding(.bottom, 30)
                 .padding()
 
-                Text("PollutionPredictor has been optimised to work for all iPad  models.")
+                Text("PollutionPredictor has been optimised to work for all iPad models.")
                     .titleStyle()
                                 
                 Spacer()
@@ -62,7 +62,7 @@ struct ExplainationView: View{
                 
                 Spacer()
                 
-                NavigationLink(destination: CityChooser().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                NavigationLink(destination: LogoView().toolbar(.hidden).navigationViewStyle(.stack), label: {
                     Image(systemName: "arrow.right.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)

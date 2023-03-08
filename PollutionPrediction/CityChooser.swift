@@ -75,14 +75,14 @@ struct CityChooser: View{
                                 .resizableImage()
                                 .scaleEffect(CGFloat(scaleXY))
                                 .onAppear(){
-                                    scaleXY = 1.45
+                                    scaleXY = 1.25
                                 }
                         }
                     }
                     
                     
                     if isShowingDetails{
-                    Spacer()
+                   Spacer()
                         Form{
                             VStack(alignment: .leading){
                                 Section {
@@ -99,7 +99,8 @@ struct CityChooser: View{
                                         VStack {
                                             Image("CO2")
                                                 .resizable()
-                                                .frame(width: 150, height: 150).overlay(ImageOverlay(), alignment: .bottomTrailing)
+                                                .frame(width: 150, height: 150)
+                                            Text("Carbon Dioxide").font(.callout).background(.secondary)
                                         }
                                         VStack {
                                             Text("Concentration of Nitrous Dioxide")

@@ -32,7 +32,7 @@ struct ExplainationView: View{
                 .padding(.bottom, 30)
                 .padding()
 
-                Text("PollutionPredictor has been optimised to work for all iPad  models.")
+                Text("PollutionPredictor has been optimised to work for all iPad models.")
                     .titleStyle()
                                 
                 Spacer()

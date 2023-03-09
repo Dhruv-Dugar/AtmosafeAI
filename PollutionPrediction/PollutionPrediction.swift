@@ -59,7 +59,7 @@ struct PolluutionPrediction: View{
                 Section {
                     HStack {
                         VStack {
-                            Image("CO")
+                            Image("NO2")
                                 .resizable()
                         }
                         VStack {
@@ -73,7 +73,7 @@ struct PolluutionPrediction: View{
                 Section {
                     HStack {
                         VStack{
-                            Image("CO")
+                            Image("SO2")
                                 .resizable()
                         }
                         VStack{
@@ -89,7 +89,7 @@ struct PolluutionPrediction: View{
                 Section {
                     HStack{
                         VStack{
-                            Image("CO")
+                            Image("O3")
                                 .resizable()
                         }
                         VStack{
@@ -104,7 +104,7 @@ struct PolluutionPrediction: View{
                 Section {
                     HStack{
                         VStack{
-                            Image("CO")
+                            Image("PM10")
                                 .resizable()
                         }
                         VStack{

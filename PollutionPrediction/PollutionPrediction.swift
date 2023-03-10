@@ -38,7 +38,6 @@ struct PolluutionPrediction: View{
     @State private var showingAlert = false
     
     var body: some View{
-        Spacer()
         Form{
             VStack(alignment: .leading){
                 Section {
@@ -60,7 +59,7 @@ struct PolluutionPrediction: View{
                 Section {
                     HStack {
                         VStack {
-                            Image("CO")
+                            Image("NO2")
                                 .resizable()
                         }
                         VStack {
@@ -74,7 +73,7 @@ struct PolluutionPrediction: View{
                 Section {
                     HStack {
                         VStack{
-                            Image("CO")
+                            Image("SO2")
                                 .resizable()
                         }
                         VStack{
@@ -90,7 +89,7 @@ struct PolluutionPrediction: View{
                 Section {
                     HStack{
                         VStack{
-                            Image("CO")
+                            Image("O3")
                                 .resizable()
                         }
                         VStack{
@@ -105,7 +104,7 @@ struct PolluutionPrediction: View{
                 Section {
                     HStack{
                         VStack{
-                            Image("CO")
+                            Image("PM10")
                                 .resizable()
                         }
                         VStack{
@@ -121,8 +120,8 @@ struct PolluutionPrediction: View{
     }
 }
 
-struct Previews_PollutionPrediction_Previews: PreviewProvider {
-    static var previews: some View {
+struct PollutionPrediction_Preview: PreviewProvider{
+    static var previews: some View{
         PolluutionPrediction()
     }
 }

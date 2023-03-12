@@ -37,6 +37,8 @@ struct PolluutionPrediction: View{
     @State private var alertMessage = ""
     @State private var showingAlert = false
     
+    @FocusState var isActive: Bool
+    
     var body: some View{
         NavigationView{
             Form{
@@ -53,6 +55,16 @@ struct PolluutionPrediction: View{
                                 
                                 TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
                                     .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    .focused($isActive)
+                                    .toolbar{
+                                        ToolbarItemGroup(placement: .keyboard){
+                                            Spacer()
+                                            
+                                            Button("Done"){
+                                                isActive = false
+                                            }
+                                        }
+                                    }
                             }
                         }
                     }
@@ -67,6 +79,16 @@ struct PolluutionPrediction: View{
                                 Text("Concentration of Nitrous Dioxide")
                                 TextField("Concentration of NO2", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
                                     .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    .focused($isActive)
+                                    .toolbar{
+                                        ToolbarItemGroup(placement: .keyboard){
+                                            Spacer()
+                                            
+                                            Button("Done"){
+                                                isActive = false
+                                            }
+                                        }
+                                    }
                             }.padding()
                         }.padding()
                     }
@@ -81,6 +103,16 @@ struct PolluutionPrediction: View{
                                 Text("Concentration of Sulfur Dioxide")
                                 TextField("Concentration of SO2", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
                                     .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    .focused($isActive)
+                                    .toolbar{
+                                        ToolbarItemGroup(placement: .keyboard){
+                                            Spacer()
+                                            
+                                            Button("Done"){
+                                                isActive = false
+                                            }
+                                        }
+                                    }
                             }
                         }
                         
@@ -98,6 +130,16 @@ struct PolluutionPrediction: View{
                                 
                                 TextField("Concentration of O3", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
                                     .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    .focused($isActive)
+                                    .toolbar{
+                                        ToolbarItemGroup(placement: .keyboard){
+                                            Spacer()
+                                            
+                                            Button("Done"){
+                                                isActive = false
+                                            }
+                                        }
+                                    }
                             }
                         }
                     }
@@ -113,6 +155,16 @@ struct PolluutionPrediction: View{
                                 
                                 TextField("Concentration of PM10", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
                                     .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    .focused($isActive)
+                                    .toolbar{
+                                        ToolbarItemGroup(placement: .keyboard){
+                                            Spacer()
+                                            
+                                            Button("Done"){
+                                                isActive = false
+                                            }
+                                        }
+                                    }
                             }
                         }
                     }

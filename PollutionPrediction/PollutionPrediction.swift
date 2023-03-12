@@ -38,85 +38,88 @@ struct PolluutionPrediction: View{
     @State private var showingAlert = false
     
     var body: some View{
-        Form{
-            VStack(alignment: .leading){
-                Section {
-                    HStack{
-                        VStack{
-                            Image("CO")
-                                .resizable()
+        NavigationView{
+            Form{
+                VStack(alignment: .leading){
+                    Section {
+                        HStack{
+                            VStack{
+                                Image("CO")
+                                    .resizable()
+                            }
+                            
+                            VStack{
+                                Text("Concentration of Carbon Monoxide")
+                                
+                                TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
+                                    .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                            }
+                        }
+                    }
+                    
+                    Section {
+                        HStack {
+                            VStack {
+                                Image("NO2")
+                                    .resizable()
+                            }
+                            VStack {
+                                Text("Concentration of Nitrous Dioxide")
+                                TextField("Concentration of NO2", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
+                                    .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                            }.padding()
+                        }.padding()
+                    }
+                    
+                    Section {
+                        HStack {
+                            VStack{
+                                Image("SO2")
+                                    .resizable()
+                            }
+                            VStack{
+                                Text("Concentration of Sulfur Dioxide")
+                                TextField("Concentration of SO2", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
+                                    .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                            }
                         }
                         
-                        VStack{
-                            Text("Concentration of Carbon Monoxide")
-                            
-                            TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle())
-                        }
+                        
                     }
-                }
-                
-                Section {
-                    HStack {
-                        VStack {
-                            Image("NO2")
-                                .resizable()
-                        }
-                        VStack {
-                            Text("Concentration of Nitrous Dioxide")
-                            TextField("Concentration of NO2", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle())
-                        }.padding()
-                    }.padding()
-                }
-                
-                Section {
-                    HStack {
-                        VStack{
-                            Image("SO2")
-                                .resizable()
-                        }
-                        VStack{
-                            Text("Concentration of Sulfur Dioxide")
-                            TextField("Concentration of SO2", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                    
+                    Section {
+                        HStack{
+                            VStack{
+                                Image("O3")
+                                    .resizable()
+                            }
+                            VStack{
+                                Text("Concentration of Ozone")
+                                
+                                TextField("Concentration of O3", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
+                                    .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                            }
                         }
                     }
                     
-                    
-                }
-                
-                Section {
-                    HStack{
-                        VStack{
-                            Image("O3")
-                                .resizable()
-                        }
-                        VStack{
-                            Text("Concentration of Ozone")
-                            
-                            TextField("Concentration of O3", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                    Section {
+                        HStack{
+                            VStack{
+                                Image("PM10")
+                                    .resizable()
+                            }
+                            VStack{
+                                Text("Concentration of PM10")
+                                
+                                TextField("Concentration of PM10", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
+                                    .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                            }
                         }
                     }
-                }
-                
-                Section {
-                    HStack{
-                        VStack{
-                            Image("PM10")
-                                .resizable()
-                        }
-                        VStack{
-                            Text("Concentration of PM10")
-                            
-                            TextField("Concentration of PM10", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
-                        }
-                    }
-                }
-            }.padding()
-        }
+                }.padding()
+            }
+        }.navigationBarHidden(true)
+            .navigationViewStyle(.stack)
     }
 }
 

@@ -36,24 +36,15 @@ struct LogoView: View{
         NavigationView{
             VStack {
                 
-                Button{
-                    withAnimation{
-                        isShowingDetails.toggle()
-                    }
-                } label: {
-                    withAnimation{
-                        Image("jaipur")
-                            .renderingMode(.original)
-                            .resizableImage()
-                            .scaleEffect(CGFloat(scaleXY))
-                            .onAppear(){
-                                scaleXY = 1.25
-                                
-                            }
-                    }
-                }
+                NavigationLink(destination: PolluutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                    Image("jaipur")
+                        .resizable()
+                        .frame(width: 350, height: 350)
+                        .aspectRatio(contentMode: .fit)
+                })
             }
-        }
+        }.navigationBarHidden(true)
+            .navigationViewStyle(.stack)
     }
 }
 

@@ -14,7 +14,7 @@ struct ExplainationView: View{
     var body: some View{
         NavigationView{
             VStack{
-    //            Spacer()
+          Spacer()
                 HStack{
                     Spacer()
                     Image(systemName: "ipad")

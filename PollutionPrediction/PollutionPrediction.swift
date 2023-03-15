@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import ImageViewer
 
 struct OutlinedTextFieldStyle: TextFieldStyle {
     @State var icon: Image?
@@ -42,6 +43,9 @@ struct PollutionPrediction: View{
     @State private var concentrationO3 = 0.0
     @State private var concentrationPM10 = 0.0
     
+    @State var image = Image("CO")
+    @State var showImageViewer: Bool = false
+    
     @Namespace var namespace
     @State var showCO = true
     @State var showNO2 = true
@@ -54,9 +58,16 @@ struct PollutionPrediction: View{
     var body: some View{
         NavigationView{
             Form{
-                VStack{
                     HStack{
-                        Image("CO")
+                        
+                        Button{
+                            withAnimation(.linear) {
+                                
+                                showImageViewer.toggle()
+                            }
+                        } label: {
+                            Image("CO")
+                        }
                         
                         VStack{
                             Text("Concnetration of CO")
@@ -75,8 +86,27 @@ struct PollutionPrediction: View{
                                 }
                         }
                     }
+                
+                HStack{
+                    
+                    Button{
+                        withAnimation(.linear) {
+                            
+                            showImageViewer.toggle()
+                        }
+                    } label: {
+                        Image("CO")
+                    }
+                    
+                    VStack{
+                        Text("Concnetration of CO")
+                        
+                        TextField("CO concentration", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
+                            .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                            .focused($isActive)
+                    }
                 }
-            }
+            }.overlay(ImageViewer(image: self.$image, viewerShown: self.$showImageViewer))
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)
     }

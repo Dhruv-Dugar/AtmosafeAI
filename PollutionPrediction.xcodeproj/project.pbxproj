@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED201F3429ABA5F900AD1427 /* ExplainationView.swift */; };
-		ED5E197029BDC0C300B777AD /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = ED5E196F29BDC0C300B777AD /* ImageViewer */; };
 		EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */; };
 		EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4B29AA613A00A89ECC /* IntroView.swift */; };
 		EDB09D4E29AA613A00A89ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB09D4D29AA613A00A89ECC /* Assets.xcassets */; };
@@ -33,7 +32,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED5E197029BDC0C300B777AD /* ImageViewer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +93,6 @@
 			);
 			name = PollutionPrediction;
 			packageProductDependencies = (
-				ED5E196F29BDC0C300B777AD /* ImageViewer */,
 			);
 			productName = PollutionPrediction;
 			productReference = EDB09D4629AA613A00A89ECC /* PollutionPrediction.app */;
@@ -126,7 +123,6 @@
 			);
 			mainGroup = EDB09D3D29AA613A00A89ECC;
 			packageReferences = (
-				ED5E196E29BDC0C300B777AD /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
 			);
 			productRefGroup = EDB09D4729AA613A00A89ECC /* Products */;
 			projectDirPath = "";
@@ -371,25 +367,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		ED5E196E29BDC0C300B777AD /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Jake-Short/swiftui-image-viewer.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		ED5E196F29BDC0C300B777AD /* ImageViewer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ED5E196E29BDC0C300B777AD /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
-			productName = ImageViewer;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDB09D3E29AA613A00A89ECC /* Project object */;
 }

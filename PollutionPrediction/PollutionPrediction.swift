@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import ImageViewer
 
 struct OutlinedTextFieldStyle: TextFieldStyle {
     @State var icon: Image?
@@ -42,6 +43,9 @@ struct PollutionPrediction: View{
     @State private var concentrationO3 = 0.0
     @State private var concentrationPM10 = 0.0
     
+    @State var image = Image("CO")
+    @State var showImageViewer: Bool = false
+    
     @Namespace var namespace
     @State var showCO = true
     @State var showNO2 = true
@@ -54,29 +58,124 @@ struct PollutionPrediction: View{
     var body: some View{
         NavigationView{
             Form{
-                VStack{
+                VStack {
                     HStack{
-                        Image("CO")
-                        
-                        VStack{
-                            Text("Concnetration of CO")
+                            Button{
+                                withAnimation(.linear) {
+                                    self.image = Image("CO")
+                                    showImageViewer.toggle()
+                                }
+                            } label: {
+                                VStack{
+                                    Image("CO")
+                                }
+                            }.buttonStyle(.borderless)
                             
-                            TextField("CO concentration", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
-                                .focused($isActive)
-                                .toolbar{
-                                    ToolbarItemGroup(placement: .keyboard) {
-                                        Spacer()
-                                        
-                                        Button("Done") {
-                                            isActive = false
+                            VStack{
+                                Text("Concnetration of CO")
+                                
+                                TextField("CO concentration", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
+                                    .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                    .focused($isActive)
+                                    .toolbar{
+                                        ToolbarItemGroup(placement: .keyboard) {
+                                            Spacer()
+                                            
+                                            Button("Done") {
+                                                isActive = false
+                                            }
                                         }
                                     }
-                                }
+                            }
+                    }
+                }
+                
+                VStack {
+                    HStack{
+                        
+                        Button{
+                            withAnimation(.linear) {
+                                self.image = Image("NO2")
+                                showImageViewer.toggle()
+                            }
+                        } label: {
+                            Image("NO2")
+                        }.buttonStyle(.borderless)
+                        
+                        VStack{
+                            Text("Concnetration of NO2")
+                            
+                            TextField("NO2 concentration", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
+                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                .focused($isActive)
                         }
                     }
                 }
-            }
+                
+                VStack {
+                    HStack{
+                        Button{
+                            withAnimation(.linear) {
+                                self.image = Image("SO2")
+                                showImageViewer.toggle()
+                            }
+                        } label: {
+                            Image("SO2")
+                        }.buttonStyle(.borderless)
+                        
+                        VStack{
+                            Text("Concnetration of SO2")
+                            
+                            TextField("SO2 concentration", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
+                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                .focused($isActive)
+                        }
+                    }
+                }
+                
+                
+                VStack{
+                    HStack{
+                        Button{
+                            withAnimation(.linear){
+                                self.image = Image("O3")
+                                showImageViewer.toggle()
+                            }
+                        } label: {
+                            Image("O3")
+                        }.buttonStyle(.borderless)
+                        
+                        VStack{
+                            Text("Concentration of O3")
+                            
+                            TextField("O3 concentration", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
+                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                .focused($isActive)
+                        }
+                    }
+                }
+                
+                VStack{
+                    HStack{
+                        Button{
+                            withAnimation(.linear){
+                                self.image = Image("PM10")
+                                showImageViewer.toggle()
+                            }
+                        } label: {
+                            Image("PM10")
+                        }.buttonStyle(.borderless)
+                        
+                        VStack{
+                            Text("Concentration of PM10")
+                            
+                            TextField("PM10 concentration", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
+                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                .focused($isActive)
+                        }
+                    }
+                }
+            }.overlay(ImageViewer(image: self.$image, viewerShown: self.$showImageViewer))
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)
     }

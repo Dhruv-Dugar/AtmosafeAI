@@ -144,9 +144,37 @@ struct PollutionPrediction: View{
                         } label: {
                             Image("O3")
                         }.buttonStyle(.borderless)
+                        
+                        VStack{
+                            Text("Concentration of O3")
+                            
+                            TextField("O3 concentration", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
+                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                .focused($isActive)
+                        }
                     }
                 }
                 
+                VStack{
+                    HStack{
+                        Button{
+                            withAnimation(.linear){
+                                self.image = Image("PM10")
+                                showImageViewer.toggle()
+                            }
+                        } label: {
+                            Image("PM10")
+                        }.buttonStyle(.borderless)
+                        
+                        VStack{
+                            Text("Concentration of PM10")
+                            
+                            TextField("PM10 concentration", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
+                                .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                .focused($isActive)
+                        }
+                    }
+                }
             }.overlay(ImageViewer(image: self.$image, viewerShown: self.$showImageViewer))
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)

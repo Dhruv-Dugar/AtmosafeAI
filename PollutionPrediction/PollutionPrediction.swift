@@ -37,6 +37,10 @@ struct PolluutionPrediction: View{
     @State private var alertMessage = ""
     @State private var showingAlert = false
     
+    @Namespace var namespace
+    
+    @State var show = false
+    
     @FocusState var isActive: Bool
     
     var body: some View{
@@ -86,9 +90,21 @@ struct PolluutionPrediction: View{
                     
                     Section {
                         HStack {
-                            VStack{
-                                Image("SO2")
-                                    .resizable()
+                            ZStack{
+                                if !show{
+                                    Image("SO2")
+                                        .resizable()
+                                        .matchedGeometryEffect(id: "so2", in: namespace)
+                                } else {
+                                    Image("SO2")
+                                        .resizable()
+                                        .matchedGeometryEffect(id: "shape", in: namespace)
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                }
+                            }.onTapGesture {
+                                withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                                    show.toggle()
+                                }
                             }
                             VStack{
                                 Text("Concentration of Sulfur Dioxide")

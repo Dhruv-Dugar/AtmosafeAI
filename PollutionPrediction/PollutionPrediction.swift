@@ -38,7 +38,7 @@ struct PolluutionPrediction: View{
     @State private var showingAlert = false
     
     @Namespace var namespace
-    @State var showCO = false
+    @State var showCO = true
     @State var showNO2 = false
     @State var showSO2 = false
     @State var showO3 = false
@@ -52,26 +52,42 @@ struct PolluutionPrediction: View{
                 VStack(alignment: .leading){
                     Section {
                         HStack{
-                            VStack{
-                                Image("CO")
-                                    .resizable()
-                            }
-                            
-                            VStack{
-                                Text("Concentration of Carbon Monoxide")
+                            if showCO{
+                                VStack{
+                                    Button{
+                                        showCO.toggle()
+                                    } label: {
+                                        Image("CO")
+                                            .resizable()
+                                    }
+                                }
                                 
-                                TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
-                                    .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
-                                    .focused($isActive)
-                                    .toolbar{
-                                        ToolbarItemGroup(placement: .keyboard){
-                                            Spacer()
-                                            
-                                            Button("Done"){
-                                                isActive = false
+                                VStack{
+                                    Text("Concentration of Carbon Monoxide")
+                                    
+                                    TextField("Concentration of CO", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
+                                        .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
+                                        .focused($isActive)
+                                        .toolbar{
+                                            ToolbarItemGroup(placement: .keyboard){
+                                                Spacer()
+                                                
+                                                Button("Done"){
+                                                    isActive = false
+                                                }
                                             }
                                         }
-                                    }
+                                }
+                            } else{
+                                Button{
+                                    showCO.toggle()
+                                } label: {
+                                    Spacer()
+                                    Image("CO")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                    Spacer()
+                                }
                             }
                         }
                     }

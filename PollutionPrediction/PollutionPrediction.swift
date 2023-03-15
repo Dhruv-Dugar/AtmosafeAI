@@ -175,10 +175,20 @@ struct PollutionPrediction: View{
                         }
                     }
                 }
+                
+                
+                Button{
+                    // function call
+                } label: {
+                    Text("Calculate")
+                }
             }.overlay(ImageViewer(image: self.$image, viewerShown: self.$showImageViewer))
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)
     }
+    
+    
+    
 }
 
 struct PollutionPrediction_Preview: PreviewProvider{

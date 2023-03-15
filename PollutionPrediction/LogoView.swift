@@ -36,7 +36,7 @@ struct LogoView: View{
         NavigationView{
             VStack {
                 
-                NavigationLink(destination: PolluutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
                     Image("jaipur")
                         .resizable()
                         .frame(width: 350, height: 350)

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED201F3429ABA5F900AD1427 /* ExplainationView.swift */; };
 		ED2D808A29C2763F0003C1CF /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = ED2D808929C2763F0003C1CF /* ImageViewer */; };
+		ED2D808C29C28C880003C1CF /* Delhi Pollution Model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */; };
 		EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */; };
 		EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4B29AA613A00A89ECC /* IntroView.swift */; };
 		EDB09D4E29AA613A00A89ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB09D4D29AA613A00A89ECC /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		ED201F3429ABA5F900AD1427 /* ExplainationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainationView.swift; sourceTree = "<group>"; };
+		ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Delhi Pollution Model.mlmodel"; sourceTree = "<group>"; };
 		EDB09D4629AA613A00A89ECC /* PollutionPrediction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PollutionPrediction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionPredictionApp.swift; sourceTree = "<group>"; };
 		EDB09D4B29AA613A00A89ECC /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		EDB09D4829AA613A00A89ECC /* PollutionPrediction */ = {
 			isa = PBXGroup;
 			children = (
+				ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */,
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
 				EDB09D4B29AA613A00A89ECC /* IntroView.swift */,
 				ED201F3429ABA5F900AD1427 /* ExplainationView.swift */,
@@ -156,6 +159,7 @@
 			files = (
 				EDDDC13D29ACAE4D009A2EE5 /* PollutionPrediction.swift in Sources */,
 				EDF14B9C29ABED23007FC8F9 /* LogoView.swift in Sources */,
+				ED2D808C29C28C880003C1CF /* Delhi Pollution Model.mlmodel in Sources */,
 				ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */,
 				EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */,
 				EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */,

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import ImageViewer
+import CoreML
 
 struct OutlinedTextFieldStyle: TextFieldStyle {
     @State var icon: Image?
@@ -27,12 +28,9 @@ struct OutlinedTextFieldStyle: TextFieldStyle {
     }
 }
 
-
-struct COView: View{
-    var body: some View{
-        Image("CO")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
+extension Double {
+    func truncate(places : Int)-> Double {
+        return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
     }
 }
 
@@ -52,6 +50,10 @@ struct PollutionPrediction: View{
     @State var showSO2 = true
     @State var showO3 = true
     @State var showPM10 = true
+    
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    @State private var showingAlert = false
     
     @FocusState var isActive: Bool
     
@@ -177,17 +179,38 @@ struct PollutionPrediction: View{
                 }
                 
                 
-                Button{
-                    // function call
-                } label: {
-                    Text("Calculate")
-                }
+                Button("Calculate", action: predictPM25)
+                    .alert(alertTitle, isPresented: $showingAlert){
+                        Button("OK"){ }
+                    } message: {
+                        Text(alertMessage)
+                    }
             }.overlay(ImageViewer(image: self.$image, viewerShown: self.$showImageViewer))
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)
     }
     
-    
+    func predictPM25(){
+        do{
+            let config = MLModelConfiguration()
+            let model = try Delhi_Pollution_Model(configuration: config)
+            
+            let prediction = try model.prediction(NO2: concentrationNO2, CO: concentrationCO, SO2: concentrationSO2, O3: concentrationO3, PM10: concentrationPM10)
+            
+            let predictedPM25 = prediction.PM2_5.truncate(places: 2)
+            
+            alertTitle = "Predicted value of PM2.5 is \(predictedPM25)"
+            alertMessage = "you should wear a mask i guess?"
+            
+            
+        } catch{
+            print("fatal error, idk how to handle")
+            alertTitle = "error"
+            alertMessage = "Sorry there was a problem in predicting PM 2.5 values"
+        }
+        
+        showingAlert = true
+    }
     
 }
 

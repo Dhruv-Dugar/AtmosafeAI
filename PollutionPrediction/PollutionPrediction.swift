@@ -170,7 +170,8 @@ struct PollutionPrediction: View{
                     case .pm10:
                         print("done ig")
                     case .none:
-                        print("idk why")                    }
+                        print("idk why")
+                    }
                 }
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)
@@ -202,8 +203,8 @@ struct PollutionPrediction: View{
             
             
         } catch{
-            print("fatal error, idk how to handle")
-            alertTitle = "error"
+            print("Fatal Error")
+            alertTitle = "Fatal Error"
             alertMessage = "Sorry there was a problem in predicting PM 2.5 values"
         }
         

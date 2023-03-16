@@ -11,20 +11,7 @@ import SwiftUI
 
 
 
-struct ImageOverlay: View{
-    var body: some View{
-        ZStack{
-            Text("Testing...")
-                .font(.callout)
-                .padding(6)
-                .foregroundColor(.white)
-        }
-        .background(Color.gray)
-        .opacity(0.7)
-        .cornerRadius(10.0)
-        .padding(6)
-    }
-}
+
 
 struct LogoView: View{
     
@@ -49,14 +36,6 @@ struct LogoView: View{
 }
 
 
-extension Image{
-    func resizableImage() -> some View{
-        self
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 350)
-    }
-}
 
 struct LogoView_Preview: PreviewProvider{
     static var previews: some View{

@@ -76,7 +76,9 @@ struct PollutionPrediction: View{
                         }.buttonStyle(.borderless)
                         
                         VStack{
-                            Text("Concnetration of NO2")
+//                            Text("Concnetration of NO2")
+                            
+                            SubSuperScriptText(inputString: "Concentration of NO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
                             
                             TextField("NO2 concentration", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
@@ -97,8 +99,8 @@ struct PollutionPrediction: View{
                         }.buttonStyle(.borderless)
                         
                         VStack{
-                            Text("Concnetration of SO2")
-                            
+//                            Text("Concnetration of SO2")
+                            SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
                             TextField("SO2 concentration", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
                                 .focused($isActive, equals: .so2)
@@ -119,8 +121,8 @@ struct PollutionPrediction: View{
                         }.buttonStyle(.borderless)
                         
                         VStack{
-                            Text("Concentration of O3")
-                            
+//                            Text("Concentration of O3")
+                            SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
                             TextField("O3 concentration", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
                                 .focused($isActive, equals: .o3)

@@ -183,10 +183,22 @@ struct PollutionPrediction: View{
             
             let prediction = try model.prediction(NO2: concentrationNO2, CO: concentrationCO, SO2: concentrationSO2, O3: concentrationO3, PM10: concentrationPM10)
             
-            let predictedPM25 = prediction.PM2_5.truncate(places: 2)
+            let concentrationPM25 = prediction.PM2_5.truncate(places: 2)
             
-            alertTitle = "Predicted value of PM2.5 is \(predictedPM25)"
-            alertMessage = "you should wear a mask i guess?"
+            alertTitle = "Predicted value of PM2.5 is \(concentrationPM25)"
+            
+            if concentrationPM25 < 50{
+                alertMessage = "Expected PM 2.5 concentration is good. No need to wear a mask"
+            } else if concentrationPM25 < 100{
+                alertMessage = "PM 2.5 concentration is moderate. Wear a mask if you have respiratory conditions"
+            }else if concentrationPM25 < 150{
+                alertMessage = "PM 2.5 concentration is unhealthy for sensetive groups. Wear a mask in the case of having respiratory issues"
+            }else{
+                alertMessage = "Severely high PM 2.5 values, wearing a mask is recommenede for everyone"
+            }
+                       
+            
+            
             
             
         } catch{

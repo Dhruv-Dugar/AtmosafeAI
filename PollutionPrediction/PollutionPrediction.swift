@@ -8,35 +8,18 @@
 import Foundation
 import SwiftUI
 import ImageViewer
+import CoreML
 
-struct OutlinedTextFieldStyle: TextFieldStyle {
-    @State var icon: Image?
-    func _body(configuration: TextField<Self._Label>) -> some View {
-        HStack {
-            if icon != nil {
-                icon
-                    .foregroundColor(Color(UIColor.systemGray4))
-            }
-            configuration
-        }
-        .padding()
-        .overlay {
-            RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .stroke(Color(UIColor.systemGray4), lineWidth: 2)
-        }
-    }
-}
-
-
-struct COView: View{
-    var body: some View{
-        Image("CO")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-    }
-}
 
 struct PollutionPrediction: View{
+    
+    enum Fields{
+        case co
+        case no2
+        case so2
+        case o3
+        case pm10
+    }
     @State private var concentrationNO2 = 0.0
     @State private var concentrationCO = 0.0
     @State private var concentrationSO2 = 0.0
@@ -47,13 +30,11 @@ struct PollutionPrediction: View{
     @State var showImageViewer: Bool = false
     
     @Namespace var namespace
-    @State var showCO = true
-    @State var showNO2 = true
-    @State var showSO2 = true
-    @State var showO3 = true
-    @State var showPM10 = true
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    @State private var showingAlert = false
     
-    @FocusState var isActive: Bool
+    @FocusState private var isActive: Fields?
     
     var body: some View{
         NavigationView{
@@ -64,6 +45,7 @@ struct PollutionPrediction: View{
                                 withAnimation(.linear) {
                                     self.image = Image("CO")
                                     showImageViewer.toggle()
+                                    isActive = .pm10
                                 }
                             } label: {
                                 VStack{
@@ -76,16 +58,7 @@ struct PollutionPrediction: View{
                                 
                                 TextField("CO concentration", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
                                     .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
-                                    .focused($isActive)
-                                    .toolbar{
-                                        ToolbarItemGroup(placement: .keyboard) {
-                                            Spacer()
-                                            
-                                            Button("Done") {
-                                                isActive = false
-                                            }
-                                        }
-                                    }
+                                    .focused($isActive, equals: .co)
                             }
                     }
                 }
@@ -107,7 +80,7 @@ struct PollutionPrediction: View{
                             
                             TextField("NO2 concentration", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
-                                .focused($isActive)
+                                .focused($isActive, equals: .no2)
                         }
                     }
                 }
@@ -128,7 +101,7 @@ struct PollutionPrediction: View{
                             
                             TextField("SO2 concentration", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
-                                .focused($isActive)
+                                .focused($isActive, equals: .so2)
                         }
                     }
                 }
@@ -150,7 +123,7 @@ struct PollutionPrediction: View{
                             
                             TextField("O3 concentration", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
-                                .focused($isActive)
+                                .focused($isActive, equals: .o3)
                         }
                     }
                 }
@@ -171,23 +144,59 @@ struct PollutionPrediction: View{
                             
                             TextField("PM10 concentration", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle(icon: Image(systemName: "lock")))
-                                .focused($isActive)
+                                .focused($isActive, equals: .pm10)
                         }
                     }
                 }
                 
                 
-                Button{
-                    // function call
-                } label: {
-                    Text("Calculate")
-                }
+                Button("Calculate", action: predictPM25)
+                    .alert(alertTitle, isPresented: $showingAlert){
+                        Button("OK"){ }
+                    } message: {
+                        Text(alertMessage)
+                    }
             }.overlay(ImageViewer(image: self.$image, viewerShown: self.$showImageViewer))
+                .onSubmit {
+                    switch isActive{
+                    case .co:
+                        isActive = .none
+                    case .no2:
+                        isActive = .none
+                    case .so2:
+                        isActive = .none
+                    case .o3:
+                        isActive = .none
+                    case .pm10:
+                        print("done ig")
+                    case .none:
+                        print("idk why")                    }
+                }
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)
     }
     
-    
+    func predictPM25(){
+        do{
+            let config = MLModelConfiguration()
+            let model = try Delhi_Pollution_Model(configuration: config)
+            
+            let prediction = try model.prediction(NO2: concentrationNO2, CO: concentrationCO, SO2: concentrationSO2, O3: concentrationO3, PM10: concentrationPM10)
+            
+            let predictedPM25 = prediction.PM2_5.truncate(places: 2)
+            
+            alertTitle = "Predicted value of PM2.5 is \(predictedPM25)"
+            alertMessage = "you should wear a mask i guess?"
+            
+            
+        } catch{
+            print("fatal error, idk how to handle")
+            alertTitle = "error"
+            alertMessage = "Sorry there was a problem in predicting PM 2.5 values"
+        }
+        
+        showingAlert = true
+    }
     
 }
 

@@ -150,31 +150,27 @@ struct PollutionPrediction: View{
                 }
                 
                 
-                HStack{
-                    Spacer()
-                    Button("Calculate", action: predictPM25)
-                        .alert(alertTitle, isPresented: $showingAlert){
-                            Button("OK"){ }
-                        } message: {
-                            Text(alertMessage)
-                        }
-                }.overlay(ImageViewer(image: self.$image, viewerShown: self.$showImageViewer))
-                    .onSubmit {
-                        switch isActive{
-                        case .co:
-                            isActive = .none
-                        case .no2:
-                            isActive = .none
-                        case .so2:
-                            isActive = .none
-                        case .o3:
-                            isActive = .none
-                        case .pm10:
-                            print("done ig")
-                        case .none:
-                            print("idk why")                    }
+                Button("Calculate", action: predictPM25)
+                    .alert(alertTitle, isPresented: $showingAlert){
+                        Button("OK"){ }
+                    } message: {
+                        Text(alertMessage)
                     }
-                Spacer()
+            }.overlay(ImageViewer(image: self.$image, viewerShown: self.$showImageViewer))
+                .onSubmit {
+                    switch isActive{
+                    case .co:
+                        isActive = .none
+                    case .no2:
+                        isActive = .none
+                    case .so2:
+                        isActive = .none
+                    case .o3:
+                        isActive = .none
+                    case .pm10:
+                        print("done ig")
+                    case .none:
+                        print("idk why")                    }
                 }
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)

@@ -20,11 +20,11 @@ struct PollutionPrediction: View{
         case o3
         case pm10
     }
-    @State private var concentrationNO2 = 0.0
-    @State private var concentrationCO = 0.0
-    @State private var concentrationSO2 = 0.0
-    @State private var concentrationO3 = 0.0
-    @State private var concentrationPM10 = 0.0
+    @State private var concentrationNO2: Double?
+    @State private var concentrationCO: Double?
+    @State private var concentrationSO2: Double?
+    @State private var concentrationO3: Double?
+    @State private var concentrationPM10: Double?
     
     @State var image = Image("CO")
     @State var showImageViewer: Bool = false
@@ -184,7 +184,7 @@ struct PollutionPrediction: View{
             let config = MLModelConfiguration()
             let model = try Delhi_Pollution_Model(configuration: config)
             
-            let prediction = try model.prediction(NO2: concentrationNO2, CO: concentrationCO, SO2: concentrationSO2, O3: concentrationO3, PM10: concentrationPM10)
+            let prediction = try model.prediction(NO2: concentrationNO2 ?? 0, CO: concentrationCO ?? 0, SO2: concentrationSO2 ?? 0, O3: concentrationO3 ?? 0, PM10: concentrationPM10 ?? 0)
             
             let concentrationPM25 = prediction.PM2_5.truncate(places: 2)
             
@@ -199,11 +199,6 @@ struct PollutionPrediction: View{
             }else{
                 alertMessage = "Severely high PM 2.5 values, wearing a mask is recommenede for everyone"
             }
-                       
-            
-            
-            
-            
         } catch{
             print("Fatal Error")
             alertTitle = "Fatal Error"

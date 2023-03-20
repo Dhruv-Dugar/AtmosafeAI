@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED201F3429ABA5F900AD1427 /* ExplainationView.swift */; };
-		ED2D808A29C2763F0003C1CF /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = ED2D808929C2763F0003C1CF /* ImageViewer */; };
 		ED2D808C29C28C880003C1CF /* Delhi Pollution Model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */; };
 		ED2D808E29C295A40003C1CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D808D29C295A40003C1CF /* Extensions.swift */; };
 		ED44299729C755B20062E283 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299629C755B20062E283 /* CSVParser.swift */; };
 		ED44299929C858760062E283 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = ED44299829C858760062E283 /* data.csv */; };
 		ED44299B29C85AEE0062E283 /* GroupBoxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */; };
-		ED79AF7329C86EF800FEA408 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = ED79AF7229C86EF800FEA408 /* data.json */; };
 		EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */; };
 		EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4B29AA613A00A89ECC /* IntroView.swift */; };
 		EDB09D4E29AA613A00A89ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB09D4D29AA613A00A89ECC /* Assets.xcassets */; };
@@ -31,7 +29,6 @@
 		ED44299629C755B20062E283 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
 		ED44299829C858760062E283 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBoxConfiguration.swift; sourceTree = "<group>"; };
-		ED79AF7229C86EF800FEA408 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		EDB09D4629AA613A00A89ECC /* PollutionPrediction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PollutionPrediction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionPredictionApp.swift; sourceTree = "<group>"; };
 		EDB09D4B29AA613A00A89ECC /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
@@ -47,7 +44,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED2D808A29C2763F0003C1CF /* ImageViewer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +71,6 @@
 			children = (
 				ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */,
 				ED44299829C858760062E283 /* data.csv */,
-				ED79AF7229C86EF800FEA408 /* data.json */,
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
 				ED2D808D29C295A40003C1CF /* Extensions.swift */,
 				ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */,
@@ -116,7 +111,6 @@
 			);
 			name = PollutionPrediction;
 			packageProductDependencies = (
-				ED2D808929C2763F0003C1CF /* ImageViewer */,
 			);
 			productName = PollutionPrediction;
 			productReference = EDB09D4629AA613A00A89ECC /* PollutionPrediction.app */;
@@ -147,7 +141,6 @@
 			);
 			mainGroup = EDB09D3D29AA613A00A89ECC;
 			packageReferences = (
-				ED2D808829C2763F0003C1CF /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
 			);
 			productRefGroup = EDB09D4729AA613A00A89ECC /* Products */;
 			projectDirPath = "";
@@ -166,7 +159,6 @@
 				EDB09D5129AA613A00A89ECC /* Preview Assets.xcassets in Resources */,
 				EDB09D4E29AA613A00A89ECC /* Assets.xcassets in Resources */,
 				ED44299929C858760062E283 /* data.csv in Resources */,
-				ED79AF7329C86EF800FEA408 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,25 +391,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		ED2D808829C2763F0003C1CF /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Jake-Short/swiftui-image-viewer.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		ED2D808929C2763F0003C1CF /* ImageViewer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ED2D808829C2763F0003C1CF /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
-			productName = ImageViewer;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDB09D3E29AA613A00A89ECC /* Project object */;
 }

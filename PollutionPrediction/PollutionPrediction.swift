@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import ImageViewer
 import CoreML
 import Charts
 
@@ -20,14 +19,12 @@ struct PollutionPrediction: View{
         case o3
         case pm10
     }
+	
     @State private var concentrationNO2: Double?
     @State private var concentrationCO: Double?
     @State private var concentrationSO2: Double?
     @State private var concentrationO3: Double?
     @State private var concentrationPM10: Double?
-    
-    @State var image = Image("CO")
-    @State var showImageViewer: Bool = false
     
     let data = loadCSV(from: "data")
 	
@@ -40,8 +37,6 @@ struct PollutionPrediction: View{
     @State private var alertMessage = ""
     @State private var showingAlert = false
     
-	@Environment(\.colorScheme) var colorScheme
-	
     @FocusState private var isActive: Fields?
     
     var body: some View{
@@ -241,11 +236,6 @@ struct PollutionPrediction: View{
 								"Concentration of PM10"
 							){
 								Chart{
-//									ForEach(dataPM10) { datum in
-//										LineMark(
-//											x: .value("Data 1", ),
-//											y: .value("CO", datum)
-//										)
 									ForEach(Array(zip(dataPM10, serial)), id: \.0){ item in
 										
 										LineMark(
@@ -295,23 +285,10 @@ struct PollutionPrediction: View{
                     } message: {
                         Text(alertMessage)
                     }
-            }.overlay(ImageViewer(image: self.$image, viewerShown: self.$showImageViewer))
-                .onSubmit {
-                    switch isActive{
-                    case .co:
-                        isActive = .none
-                    case .no2:
-                        isActive = .none
-                    case .so2:
-                        isActive = .none
-                    case .o3:
-                        isActive = .none
-                    case .pm10:
-                        print("done ig")
-                    case .none:
-                        print("idk why")
-                    }
-                }
+				
+				
+				
+            }
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)
     }

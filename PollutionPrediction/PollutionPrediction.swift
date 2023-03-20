@@ -30,7 +30,7 @@ struct PollutionPrediction: View{
 	
 	let dataPM10 = [81.05, 114.26, 142.74, 128.97, 105.41, 89.28, 82.04, 83.65, 81, 80.42, 76.69, 69.34, 74.26, 90.04, 117.52, 130.84, 135.96, 136.98,137.14]
 	
-	let serial = Array(1...19)
+	let serial = Array(1...20)
 	
     @Namespace var namespace
     @State private var alertTitle = ""
@@ -79,8 +79,9 @@ struct PollutionPrediction: View{
                         }
                             
                             VStack{
-                                Text("Concnetration of CO")
-                                
+                                Text("Concentration of CO")
+			
+								
                                 TextField("CO concentration", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
                                     .textFieldStyle(OutlinedTextFieldStyle())
                                     .focused($isActive, equals: .co)
@@ -281,7 +282,9 @@ struct PollutionPrediction: View{
                 
                 Button("Calculate", action: predictPM25)
                     .alert(alertTitle, isPresented: $showingAlert){
-                        Button("OK"){ }
+                        Button("OK"){
+							
+						}
                     } message: {
                         Text(alertMessage)
                     }

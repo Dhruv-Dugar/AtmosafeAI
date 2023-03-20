@@ -49,8 +49,7 @@ struct PollutionPrediction: View{
                         VStack {
                             // Chart here
                             GroupBox(
-								label: Label("Concentration of CO", systemImage: "star.fill")
-									.foregroundColor(colorScheme == .dark ? .white: .black)
+								"Concentration of CO"
 							){
                                 Chart{
                                     ForEach(data) { datum in

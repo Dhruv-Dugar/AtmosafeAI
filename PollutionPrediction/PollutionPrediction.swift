@@ -37,6 +37,8 @@ struct PollutionPrediction: View{
     @State private var alertMessage = ""
     @State private var showingAlert = false
     
+	@Environment(\.colorScheme) var colorScheme
+	
     @FocusState private var isActive: Fields?
     
     var body: some View{
@@ -46,7 +48,10 @@ struct PollutionPrediction: View{
                     HStack{
                         VStack {
                             // Chart here
-                            GroupBox("Concentration of CO"){
+                            GroupBox(
+								label: Label("Concentration of CO", systemImage: "star.fill")
+									.foregroundColor(colorScheme == .dark ? .white: .black)
+							){
                                 Chart{
                                     ForEach(data) { datum in
                                         LineMark(

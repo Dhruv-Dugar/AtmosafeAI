@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import ImageViewer
 import CoreML
-
+import Charts
 
 struct PollutionPrediction: View{
     
@@ -29,6 +29,9 @@ struct PollutionPrediction: View{
     @State var image = Image("CO")
     @State var showImageViewer: Bool = false
     
+    let data = loadCSV(from: "data")
+    
+    
     @Namespace var namespace
     @State private var alertTitle = ""
     @State private var alertMessage = ""
@@ -42,17 +45,17 @@ struct PollutionPrediction: View{
                 VStack {
                     HStack{
                         VStack {
-                            Button{
-                                    withAnimation(.linear) {
-                                        self.image = Image("CO")
-                                        showImageViewer.toggle()
-                                        isActive = .pm10
+                            // Chart here
+                            GroupBox("Concentration of CO"){
+                                Chart{
+                                    ForEach(data) { datum in
+                                        LineMark(
+                                            x: .value("Data 1", datum.Serial),
+                                            y: .value("CO", datum.CO)
+                                        ).interpolationMethod(.catmullRom)
                                     }
-                                } label: {
-                                    VStack{
-                                        Image("CO")
-                                    }
-                            }.buttonStyle(.borderless)
+                                }
+                            }
                         }
                             
                             VStack{

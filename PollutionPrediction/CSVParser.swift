@@ -1,14 +1,18 @@
 //
-//  CSVParser.swift
-//  PollutionPrediction
+//  DataFactory.swift
+//  playingwithcharts
 //
 //  Created by Dhurv Dugar on 19/03/23.
 //
 
 import Foundation
 
+
+
 struct PollutionData: Identifiable{
     var Serial: Int
+    var City: String = ""
+    var Datetime: String = ""
     var NO2: Double
     var CO: Double
     var SO2: Double
@@ -18,13 +22,17 @@ struct PollutionData: Identifiable{
     
     init(raw: [String]) {
         Serial = Int(raw[0]) ?? 1
-        NO2 = Double(raw[1]) ?? 0
-        CO = Double(raw[2]) ?? 0
-        SO2 = Double(raw[3]) ?? 0
-        O3 = Double(raw[4]) ?? 0
-        PM10 = Double(raw[5]) ?? 0
+        City = raw[1]
+        Datetime = raw[2]
+        NO2 = Double(raw[3]) ?? 0
+        CO = Double(raw[4]) ?? 0
+        SO2 = Double(raw[5]) ?? 0
+        O3 = Double(raw[6]) ?? 0
+        PM10 = Double(raw[7]) ?? 0
     }
+    
 }
+
 
 func loadCSV(from csvName: String) -> [PollutionData] {
     var csvToStruct = [PollutionData]()
@@ -47,6 +55,7 @@ func loadCSV(from csvName: String) -> [PollutionData] {
     let columnCount = rows.first?.components(separatedBy: ",").count
     rows.removeFirst()
     
+    
     for row in rows{
         let csvColumn = row.components(separatedBy: ",")
         if csvColumn.count == columnCount {
@@ -54,5 +63,7 @@ func loadCSV(from csvName: String) -> [PollutionData] {
             csvToStruct.append(pollutionDataStruct)
         }
     }
+    
+    
     return csvToStruct
 }

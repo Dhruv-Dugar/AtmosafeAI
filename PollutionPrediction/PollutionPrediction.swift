@@ -55,7 +55,7 @@ struct PollutionPrediction: View{
                                         ).interpolationMethod(.catmullRom)
                                     }
                                 }
-                            }
+                            }.padding(20)
                         }
                             
                             VStack{

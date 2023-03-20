@@ -31,7 +31,6 @@ struct PollutionPrediction: View{
     
     let data = loadCSV(from: "data")
     
-    
     @Namespace var namespace
     @State private var alertTitle = ""
     @State private var alertMessage = ""
@@ -75,7 +74,7 @@ struct PollutionPrediction: View{
                                         .background(.orange.opacity(0.1))
                                         .border(.orange, width: 0.3)
                                 }
-                                .frame(width: 400)
+								.frame(width: 400)
                             }.groupBoxStyle(YellowGroupBoxStyle())
                             .padding()
                         }
@@ -92,15 +91,40 @@ struct PollutionPrediction: View{
                 
                 VStack {
                     HStack{
-                        
-                        Button{
-                            withAnimation(.linear) {
-                                self.image = Image("NO2")
-                                showImageViewer.toggle()
-                            }
-                        } label: {
-                            Image("NO2")
-                        }.buttonStyle(.borderless)
+						
+						VStack {
+							// Chart here
+							GroupBox(
+								"Concentration of NO\u{2082}"
+							){
+								Chart{
+									ForEach(data) { datum in
+										LineMark(
+											x: .value("Data 1", datum.Serial),
+											y: .value("CO", datum.NO2)
+										)
+										.interpolationMethod(.catmullRom)
+										
+										PointMark(
+											x: .value("Data 1", datum.Serial),
+											y: .value("CO", datum.NO2)
+										)
+									}
+								}
+								.chartYAxis {
+								   AxisMarks(position: .leading)
+								}
+
+								.chartPlotStyle { plotArea in
+
+									plotArea
+										.background(.orange.opacity(0.1))
+										.border(.orange, width: 0.3)
+								}
+								.frame(width: 400)
+							}.groupBoxStyle(YellowGroupBoxStyle())
+							.padding()
+						}
                         
                         VStack{
 //                            Text("Concnetration of NO2")
@@ -116,15 +140,39 @@ struct PollutionPrediction: View{
                 
                 VStack {
                     HStack{
-                        Button{
-                            withAnimation(.linear) {
-                                self.image = Image("SO2")
-                                showImageViewer.toggle()
-                            }
-                        } label: {
-                            Image("SO2")
-                        }.buttonStyle(.borderless)
-                        
+						VStack {
+							// Chart here
+							GroupBox(
+								"Concentration of SO\u{2082}"
+							){
+								Chart{
+									ForEach(data) { datum in
+										LineMark(
+											x: .value("Data 1", datum.Serial),
+											y: .value("CO", datum.SO2)
+										)
+										.interpolationMethod(.catmullRom)
+										
+										PointMark(
+											x: .value("Data 1", datum.Serial),
+											y: .value("CO", datum.SO2)
+										)
+									}
+								}
+								.chartYAxis {
+								   AxisMarks(position: .leading)
+								}
+
+								.chartPlotStyle { plotArea in
+
+									plotArea
+										.background(.orange.opacity(0.1))
+										.border(.orange, width: 0.3)
+								}
+								.frame(width: 400)
+							}.groupBoxStyle(YellowGroupBoxStyle())
+							.padding()
+						}
                         VStack{
 //                            Text("Concnetration of SO2")
                             SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
@@ -138,15 +186,39 @@ struct PollutionPrediction: View{
                 
                 VStack{
                     HStack{
-                        Button{
-                            withAnimation(.linear){
-                                self.image = Image("O3")
-                                showImageViewer.toggle()
-                            }
-                        } label: {
-                            Image("O3")
-                        }.buttonStyle(.borderless)
-                        
+						VStack {
+							// Chart here
+							GroupBox(
+								"Concentration of O\u{2083}"
+							){
+								Chart{
+									ForEach(data) { datum in
+										LineMark(
+											x: .value("Data 1", datum.Serial),
+											y: .value("CO", datum.O3)
+										)
+										.interpolationMethod(.catmullRom)
+										
+										PointMark(
+											x: .value("Data 1", datum.Serial),
+											y: .value("CO", datum.O3)
+										)
+									}
+								}
+								.chartYAxis {
+								   AxisMarks(position: .leading)
+								}
+
+								.chartPlotStyle { plotArea in
+
+									plotArea
+										.background(.orange.opacity(0.1))
+										.border(.orange, width: 0.3)
+								}
+								.frame(width: 400)
+							}.groupBoxStyle(YellowGroupBoxStyle())
+							.padding()
+						}
                         VStack{
 //                            Text("Concentration of O3")
                             SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
@@ -159,14 +231,33 @@ struct PollutionPrediction: View{
                 
                 VStack{
                     HStack{
-                        Button{
-                            withAnimation(.linear){
-                                self.image = Image("PM10")
-                                showImageViewer.toggle()
-                            }
-                        } label: {
-                            Image("PM10")
-                        }.buttonStyle(.borderless)
+						VStack {
+							// Chart here
+							GroupBox(
+								"Concentration of PM10"
+							){
+								Chart{
+									ForEach(data) { datum in
+										LineMark(
+											x: .value("Data 1", datum.Serial),
+											y: .value("CO", datum.PM10)
+										)
+									}
+								}
+								.chartYAxis {
+								   AxisMarks(position: .leading)
+								}
+
+								.chartPlotStyle { plotArea in
+
+									plotArea
+										.background(.orange.opacity(0.1))
+										.border(.orange, width: 0.3)
+								}
+								.frame(width: 400)
+							}.groupBoxStyle(YellowGroupBoxStyle())
+							.padding()
+						}
                         
                         VStack{
                             Text("Concentration of PM10")

@@ -53,10 +53,18 @@ struct PollutionPrediction: View{
                                             x: .value("Data 1", datum.Serial),
                                             y: .value("CO", datum.CO)
                                         )
-                                        
                                         .interpolationMethod(.catmullRom)
+                                        
+                                        PointMark(
+                                            x: .value("Data 1", datum.Serial),
+                                            y: .value("CO", datum.CO)
+                                        )
                                     }
                                 }
+                                .chartYAxis {
+                                   AxisMarks(position: .leading)
+                                }
+
                                 .chartPlotStyle { plotArea in
 
                                     plotArea

@@ -41,17 +41,19 @@ struct PollutionPrediction: View{
             Form{
                 VStack {
                     HStack{
+                        VStack {
                             Button{
-                                withAnimation(.linear) {
-                                    self.image = Image("CO")
-                                    showImageViewer.toggle()
-                                    isActive = .pm10
-                                }
-                            } label: {
-                                VStack{
-                                    Image("CO")
-                                }
+                                    withAnimation(.linear) {
+                                        self.image = Image("CO")
+                                        showImageViewer.toggle()
+                                        isActive = .pm10
+                                    }
+                                } label: {
+                                    VStack{
+                                        Image("CO")
+                                    }
                             }.buttonStyle(.borderless)
+                        }
                             
                             VStack{
                                 Text("Concnetration of CO")

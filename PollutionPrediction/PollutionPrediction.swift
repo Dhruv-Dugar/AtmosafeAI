@@ -30,7 +30,11 @@ struct PollutionPrediction: View{
     @State var showImageViewer: Bool = false
     
     let data = loadCSV(from: "data")
-    
+	
+	let dataPM10 = [81.05, 114.26, 142.74, 128.97, 105.41, 89.28, 82.04, 83.65, 81, 80.42, 76.69, 69.34, 74.26, 90.04, 117.52, 130.84, 135.96, 136.98,137.14]
+	
+	let serial = Array(1...19)
+	
     @Namespace var namespace
     @State private var alertTitle = ""
     @State private var alertMessage = ""
@@ -237,12 +241,27 @@ struct PollutionPrediction: View{
 								"Concentration of PM10"
 							){
 								Chart{
-									ForEach(data) { datum in
+//									ForEach(dataPM10) { datum in
+//										LineMark(
+//											x: .value("Data 1", ),
+//											y: .value("CO", datum)
+//										)
+									ForEach(Array(zip(dataPM10, serial)), id: \.0){ item in
+										
 										LineMark(
-											x: .value("Data 1", datum.Serial),
-											y: .value("CO", datum.PM10)
+											x: .value("serial", item.1),
+											y: .value("pm10", item.0)
+										).interpolationMethod(.catmullRom)
+										
+										PointMark(
+											x: .value("serial", item.1),
+											y: .value("pm10", item.0)
 										)
+										
 									}
+								
+									
+									
 								}
 								.chartYAxis {
 								   AxisMarks(position: .leading)

@@ -8,7 +8,6 @@
 import Foundation
 
 
-
 struct PollutionData: Identifiable{
     var Serial: Int
     var City: String = ""

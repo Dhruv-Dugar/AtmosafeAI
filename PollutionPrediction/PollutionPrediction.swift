@@ -52,10 +52,20 @@ struct PollutionPrediction: View{
                                         LineMark(
                                             x: .value("Data 1", datum.Serial),
                                             y: .value("CO", datum.CO)
-                                        ).interpolationMethod(.catmullRom)
+                                        )
+                                        
+                                        .interpolationMethod(.catmullRom)
                                     }
                                 }
-                            }.padding(20)
+                                .chartPlotStyle { plotArea in
+
+                                    plotArea
+                                        .background(.orange.opacity(0.1))
+                                        .border(.orange, width: 0.3)
+                                }
+                                .frame(width: 400)
+                            }.groupBoxStyle(YellowGroupBoxStyle())
+                            .padding()
                         }
                             
                             VStack{

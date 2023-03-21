@@ -67,7 +67,7 @@ struct chartCarbonMonoxideView: View{
 
                     plotArea
                         .background(.pink.opacity(0.1))
-                        .border(.orange, width: 0.3)
+                        .border(.pink, width: 0.3)
                 }
                 .frame(width: 400)
             }.groupBoxStyle(DarkGroupBoxStyle())
@@ -131,7 +131,7 @@ struct chartNitrogenDioxideView: View{
                 .chartPlotStyle { plotArea in
                     plotArea
                         .background(.pink.opacity(0.1))
-                        .border(.orange, width: 0.3)
+                        .border(.pink, width: 0.3)
                 }
                 .frame(width: 400)
             }
@@ -199,7 +199,7 @@ struct chartSulfurDioxideView: View{
 
                     plotArea
                         .background(.pink.opacity(0.1))
-                        .border(.orange, width: 0.3)
+                        .border(.pink, width: 0.3)
                 }
                 .frame(width: 400)
             }.groupBoxStyle(YellowGroupBoxStyle())
@@ -263,7 +263,7 @@ struct chartOzoneView: View{
 
                 plotArea
                     .background(.pink.opacity(0.1))
-                    .border(.orange, width: 0.3)
+                    .border(.pink, width: 0.3)
             }
             .frame(width: 400)
         }.groupBoxStyle(YellowGroupBoxStyle())
@@ -307,7 +307,12 @@ struct chartPM10View: View{
                     ).interpolationMethod(.catmullRom)
                         .foregroundStyle(prevColor)
                     
-                    
+                    AreaMark(
+                        x: .value("serial", item.1),
+                        y: .value("pm10", item.0)
+                    ).interpolationMethod(.catmullRom)
+                        .foregroundStyle(curGradient)
+                
                     
                     
                     PointMark(
@@ -327,8 +332,8 @@ struct chartPM10View: View{
             .chartPlotStyle { plotArea in
 
                 plotArea
-                    .background(.orange.opacity(0.1))
-                    .border(.orange, width: 0.3)
+                    .background(.pink.opacity(0.1))
+                    .border(.pink, width: 0.3)
             }
             .frame(width: 400)
         }.groupBoxStyle(YellowGroupBoxStyle())

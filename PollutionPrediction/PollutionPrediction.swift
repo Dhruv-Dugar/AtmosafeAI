@@ -30,7 +30,7 @@ struct PollutionPrediction: View{
 	
 	let dataPM10 = [81.05, 114.26, 142.74, 128.97, 105.41, 89.28, 82.04, 83.65, 81, 80.42, 76.69, 69.34, 74.26, 90.04, 117.52, 130.84, 135.96, 136.98,137.14]
 	
-	let serial = Array(1...20)
+	let serial = Array(1...19)
 	
     @Namespace var namespace
     @State private var alertTitle = ""
@@ -39,45 +39,30 @@ struct PollutionPrediction: View{
     
     @FocusState private var isActive: Fields?
     
+	
+	
     var body: some View{
+		
+		let prevColor = Color(hue: 0.69, saturation: 0.19, brightness: 0.79)
+		let curColor = Color(hue: 0.33, saturation: 0.81, brightness: 0.76)
+		let curGradient = LinearGradient(
+			gradient: Gradient (
+				colors: [
+					curColor.opacity(0.5),
+					curColor.opacity(0.2),
+					curColor.opacity(0.05),
+				]
+			),
+			startPoint: .top,
+			endPoint: .bottom
+		)
+
         NavigationView{
             Form{
                 VStack {
                     HStack{
-                        VStack {
-                            // Chart here
-                            GroupBox(
-								"Concentration of CO"
-							){
-                                Chart{
-                                    ForEach(data) { datum in
-                                        LineMark(
-                                            x: .value("Data 1", datum.Serial),
-                                            y: .value("CO", datum.CO)
-                                        )
-                                        .interpolationMethod(.catmullRom)
-                                        
-                                        PointMark(
-                                            x: .value("Data 1", datum.Serial),
-                                            y: .value("CO", datum.CO)
-                                        )
-                                    }
-                                }
-                                .chartYAxis {
-                                   AxisMarks(position: .leading)
-                                }
-
-                                .chartPlotStyle { plotArea in
-
-                                    plotArea
-                                        .background(.orange.opacity(0.1))
-                                        .border(.orange, width: 0.3)
-                                }
-								.frame(width: 400)
-                            }.groupBoxStyle(YellowGroupBoxStyle())
-                            .padding()
-                        }
-                            
+                        
+						chartCarbonMonoxideView()
 						VStack(alignment: .leading){
                                 Text("Concentration of CO")
 			
@@ -92,39 +77,7 @@ struct PollutionPrediction: View{
                 VStack {
                     HStack{
 						
-						VStack {
-							// Chart here
-							GroupBox(
-								"Concentration of NO\u{2082}"
-							){
-								Chart{
-									ForEach(data) { datum in
-										LineMark(
-											x: .value("Data 1", datum.Serial),
-											y: .value("CO", datum.NO2)
-										)
-										.interpolationMethod(.catmullRom)
-										
-										PointMark(
-											x: .value("Data 1", datum.Serial),
-											y: .value("CO", datum.NO2)
-										)
-									}
-								}
-								.chartYAxis {
-								   AxisMarks(position: .leading)
-								}
-
-								.chartPlotStyle { plotArea in
-
-									plotArea
-										.background(.orange.opacity(0.1))
-										.border(.orange, width: 0.3)
-								}
-								.frame(width: 400)
-							}.groupBoxStyle(YellowGroupBoxStyle())
-							.padding()
-						}
+						chartNitrogenDioxideView()
                         
 						VStack(alignment: .leading){
 //                            Text("Concnetration of NO2")
@@ -140,39 +93,7 @@ struct PollutionPrediction: View{
                 
                 VStack {
                     HStack{
-						VStack {
-							// Chart here
-							GroupBox(
-								"Concentration of SO\u{2082}"
-							){
-								Chart{
-									ForEach(data) { datum in
-										LineMark(
-											x: .value("Data 1", datum.Serial),
-											y: .value("CO", datum.SO2)
-										)
-										.interpolationMethod(.catmullRom)
-										
-										PointMark(
-											x: .value("Data 1", datum.Serial),
-											y: .value("CO", datum.SO2)
-										)
-									}
-								}
-								.chartYAxis {
-								   AxisMarks(position: .leading)
-								}
-
-								.chartPlotStyle { plotArea in
-
-									plotArea
-										.background(.orange.opacity(0.1))
-										.border(.orange, width: 0.3)
-								}
-								.frame(width: 400)
-							}.groupBoxStyle(YellowGroupBoxStyle())
-							.padding()
-						}
+						chartSulfurDioxideView()
 						VStack(alignment: .leading){
 //                            Text("Concnetration of SO2")
                             SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
@@ -186,39 +107,7 @@ struct PollutionPrediction: View{
                 
                 VStack{
                     HStack{
-						VStack {
-							// Chart here
-							GroupBox(
-								"Concentration of O\u{2083}"
-							){
-								Chart{
-									ForEach(data) { datum in
-										LineMark(
-											x: .value("Data 1", datum.Serial),
-											y: .value("CO", datum.O3)
-										)
-										.interpolationMethod(.catmullRom)
-										
-										PointMark(
-											x: .value("Data 1", datum.Serial),
-											y: .value("CO", datum.O3)
-										)
-									}
-								}
-								.chartYAxis {
-								   AxisMarks(position: .leading)
-								}
-
-								.chartPlotStyle { plotArea in
-
-									plotArea
-										.background(.orange.opacity(0.1))
-										.border(.orange, width: 0.3)
-								}
-								.frame(width: 400)
-							}.groupBoxStyle(YellowGroupBoxStyle())
-							.padding()
-						}
+							chartOzoneView()
 						VStack(alignment: .leading){
 //                            Text("Concentration of O3")
                             SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
@@ -231,43 +120,8 @@ struct PollutionPrediction: View{
                 
                 VStack{
                     HStack{
-						VStack {
 							// Chart here
-							GroupBox(
-								"Concentration of PM10"
-							){
-								Chart{
-									ForEach(Array(zip(dataPM10, serial)), id: \.0){ item in
-										
-										LineMark(
-											x: .value("serial", item.1),
-											y: .value("pm10", item.0)
-										).interpolationMethod(.catmullRom)
-										
-										PointMark(
-											x: .value("serial", item.1),
-											y: .value("pm10", item.0)
-										)
-										
-									}
-								
-									
-									
-								}
-								.chartYAxis {
-								   AxisMarks(position: .leading)
-								}
-
-								.chartPlotStyle { plotArea in
-
-									plotArea
-										.background(.orange.opacity(0.1))
-										.border(.orange, width: 0.3)
-								}
-								.frame(width: 400)
-							}.groupBoxStyle(YellowGroupBoxStyle())
-							.padding()
-						}
+							chartPM10View()
                         
 						VStack(alignment: .leading){
                             Text("Concentration of PM10")

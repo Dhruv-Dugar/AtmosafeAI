@@ -10,6 +10,7 @@
 		ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED201F3429ABA5F900AD1427 /* ExplainationView.swift */; };
 		ED2D808C29C28C880003C1CF /* Delhi Pollution Model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */; };
 		ED2D808E29C295A40003C1CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D808D29C295A40003C1CF /* Extensions.swift */; };
+		ED2ED58E29C98AAB00798B14 /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2ED58D29C98AAB00798B14 /* TitleStyle.swift */; };
 		ED44299729C755B20062E283 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299629C755B20062E283 /* CSVParser.swift */; };
 		ED44299929C858760062E283 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = ED44299829C858760062E283 /* data.csv */; };
 		ED44299B29C85AEE0062E283 /* GroupBoxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */; };
@@ -26,6 +27,7 @@
 		ED201F3429ABA5F900AD1427 /* ExplainationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainationView.swift; sourceTree = "<group>"; };
 		ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Delhi Pollution Model.mlmodel"; sourceTree = "<group>"; };
 		ED2D808D29C295A40003C1CF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ED2ED58D29C98AAB00798B14 /* TitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStyle.swift; sourceTree = "<group>"; };
 		ED44299629C755B20062E283 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
 		ED44299829C858760062E283 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBoxConfiguration.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				ED44299829C858760062E283 /* data.csv */,
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
 				ED2D808D29C295A40003C1CF /* Extensions.swift */,
+				ED2ED58D29C98AAB00798B14 /* TitleStyle.swift */,
 				ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */,
 				EDD5E99629C3156100BC1BE6 /* SubSuperScript.swift */,
 				EDB09D4B29AA613A00A89ECC /* IntroView.swift */,
@@ -175,6 +178,7 @@
 				ED2D808C29C28C880003C1CF /* Delhi Pollution Model.mlmodel in Sources */,
 				ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */,
 				EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */,
+				ED2ED58E29C98AAB00798B14 /* TitleStyle.swift in Sources */,
 				EDD5E99729C3156100BC1BE6 /* SubSuperScript.swift in Sources */,
 				EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */,
 				ED2D808E29C295A40003C1CF /* Extensions.swift in Sources */,

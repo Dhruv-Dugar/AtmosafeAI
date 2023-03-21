@@ -78,11 +78,11 @@ struct PollutionPrediction: View{
                             .padding()
                         }
                             
-                            VStack{
+						VStack(alignment: .leading){
                                 Text("Concentration of CO")
 			
 								
-                                TextField("CO concentration", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
+                                TextField("", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
                                     .textFieldStyle(OutlinedTextFieldStyle())
                                     .focused($isActive, equals: .co)
                             }
@@ -126,12 +126,12 @@ struct PollutionPrediction: View{
 							.padding()
 						}
                         
-                        VStack{
+						VStack(alignment: .leading){
 //                            Text("Concnetration of NO2")
                             
                             SubSuperScriptText(inputString: "Concentration of NO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
                             
-                            TextField("NO\u{2082} concentration", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
+                            TextField("", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle())
                                 .focused($isActive, equals: .no2)
                         }
@@ -173,10 +173,10 @@ struct PollutionPrediction: View{
 							}.groupBoxStyle(YellowGroupBoxStyle())
 							.padding()
 						}
-                        VStack{
+						VStack(alignment: .leading){
 //                            Text("Concnetration of SO2")
                             SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
-                            TextField("SO\u{2082} concentration", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
+                            TextField("", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle())
                                 .focused($isActive, equals: .so2)
                         }
@@ -219,10 +219,10 @@ struct PollutionPrediction: View{
 							}.groupBoxStyle(YellowGroupBoxStyle())
 							.padding()
 						}
-                        VStack{
+						VStack(alignment: .leading){
 //                            Text("Concentration of O3")
                             SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
-                            TextField("O\u{2083} concentration", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
+                            TextField("", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle())
                                 .focused($isActive, equals: .o3)
                         }
@@ -269,10 +269,10 @@ struct PollutionPrediction: View{
 							.padding()
 						}
                         
-                        VStack{
+						VStack(alignment: .leading){
                             Text("Concentration of PM10")
                             
-                            TextField("PM10 concentration", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
+                            TextField("", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
                                 .textFieldStyle(OutlinedTextFieldStyle())
                                 .focused($isActive, equals: .pm10)
                         }

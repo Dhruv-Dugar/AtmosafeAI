@@ -112,39 +112,40 @@ struct PollutionPrediction: View{
 								.focused($isActive, equals: .pm10)
 						}
 					}
+					
+					
+					Section{
+							(
+								Text("Predicted Concentration of PM2.5 is \n")
+									+
+								Text(predictedPM25!.formatted())
+									.font(.title.weight(.semibold))
+									.foregroundColor(predictedPM25! > 150 ? .red : .mint)
+								+
+								Text(predictedPM25! > 50 ? predictedPM25! > 100 ? predictedPM25! > 150 ? "\nSeverely high PM 2.5 values, wearing a mask is recommenede for everyone" : "\nPM 2.5 concentration is unhealthy for sensetive groups. Wear a mask in the case of having respiratory issues" : "\nPM 2.5 concentration is moderate. Wear a mask if you have respiratory conditions" : "\nExpected PM 2.5 concentration is good. No need to wear a mask")
+							)
+							.multilineTextAlignment(.center)
+							.font(.system(size: 20))
+							.padding()
+							.fixedSize(horizontal: false, vertical: true)
+									
+						
+						
+									
+					}
+					.listRowSeparator(.visible)
+					
+					NavigationLink(destination: ThankYouView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+						Image(systemName: "arrow.right.circle.fill")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 50)
+							.foregroundColor(.blue)
+					})
 				}
 				.padding(20)
 				
-				Section{
-						(
-							Text("Predicted Concentration of PM2.5 is \n")
-								+
-							Text(predictedPM25!.formatted())
-								.font(.title.weight(.semibold))
-								.foregroundColor(predictedPM25! > 150 ? .red : .mint)
-						)
-						.multilineTextAlignment(.center)
-						.font(.system(size: 20))
-						.padding()
-						.fixedSize(horizontal: false, vertical: true)
-								
-					
-					Text(predictedPM25! > 50 ? predictedPM25! > 100 ? predictedPM25! > 150 ? "Severely high PM 2.5 values, wearing a mask is recommenede for everyone" : "PM 2.5 concentration is unhealthy for sensetive groups. Wear a mask in the case of having respiratory issues" : "PM 2.5 concentration is moderate. Wear a mask if you have respiratory conditions" : "Expected PM 2.5 concentration is good. No need to wear a mask")
-						.multilineTextAlignment(.center)
-						.padding()
-						.fixedSize(horizontal: false, vertical: true)
-								
-								
-				}
-				.listRowSeparator(.hidden)
 				
-				NavigationLink(destination: ThankYouView().toolbar(.hidden).navigationViewStyle(.stack), label: {
-					Image(systemName: "arrow.right.circle.fill")
-						.resizable()
-						.aspectRatio(contentMode: .fit)
-						.frame(width: 50)
-						.foregroundColor(.blue)
-				})
 				
 			}
         }.navigationBarHidden(true)

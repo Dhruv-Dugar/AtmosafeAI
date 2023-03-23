@@ -115,9 +115,9 @@ struct PollutionPrediction: View{
 					
 					
 					Section{
+						
+						Label("Predicted Concentration of PM2.5 is \n", systemImage: predictedPM25! > 50 ? predictedPM25! > 100 ? "aqi.high" : "aqi.medium" : "aqi.low")
 							(
-								Text("Predicted Concentration of PM2.5 is \n")
-									+
 								Text(predictedPM25!.formatted())
 									.font(.title.weight(.semibold))
 									.foregroundColor(predictedPM25! > 150 ? .red : .mint)

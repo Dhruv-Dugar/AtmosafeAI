@@ -119,14 +119,16 @@ struct PollutionPrediction: View{
                 }
                 
                 
-                Button("Calculate", action: predictPM25)
-                    .alert(alertTitle, isPresented: $showingAlert){
-                        Button("OK"){
-							
+				VStack{
+					Button("Calculate", action: predictPM25)
+						.alert(alertTitle, isPresented: $showingAlert){
+							Button("OK"){
+								// try to load next view on click of this button
+							}
+						} message: {
+							Text(alertMessage)
 						}
-                    } message: {
-                        Text(alertMessage)
-                    }
+				}
 				
 				
 				

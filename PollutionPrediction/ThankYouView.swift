@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
+
+
+struct ThankYouView: View{
+    var body: some View{
+        Text("hi")
+    }
+}
+
+
+struct ThankYouView_Preview: PreviewProvider{
+    static var previews: some View{
+        ThankYouView()
+    }
+}

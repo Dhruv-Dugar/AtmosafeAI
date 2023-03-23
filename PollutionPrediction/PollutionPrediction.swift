@@ -39,97 +39,119 @@ struct PollutionPrediction: View{
     
     @FocusState private var isActive: Fields?
     
-	
+	var predictedPM25: Double? {
+			do{
+				let config = MLModelConfiguration()
+				let model = try Delhi_Pollution_Model(configuration: config)
+				
+				let prediction = try model.prediction(NO2: concentrationNO2 ?? 0, CO: concentrationCO ?? 0, SO2: concentrationSO2 ?? 0, O3: concentrationO3 ?? 0, PM10: concentrationPM10 ?? 0)
+				
+				let concentrationPM25 = prediction.PM2_5.truncate(places: 2)
+				
+				alertTitle = "Predicted value of PM2.5 is \(concentrationPM25)"
+				
+				if concentrationPM25 < 50{
+					alertMessage = "Expected PM 2.5 concentration is good. No need to wear a mask"
+				} else if concentrationPM25 < 100{
+					alertMessage = "PM 2.5 concentration is moderate. Wear a mask if you have respiratory conditions"
+				}else if concentrationPM25 < 150{
+					alertMessage = "PM 2.5 concentration is unhealthy for sensetive groups. Wear a mask in the case of having respiratory issues"
+				}else{
+					alertMessage = "Severely high PM 2.5 values, wearing a mask is recommenede for everyone"
+				}
+				
+				return concentrationPM25 ?? 0
+			} catch{
+				print("Fatal Error")
+				alertTitle = "Fatal Error"
+				alertMessage = "Sorry there was a problem in predicting PM 2.5 values"
+			}
+			
+			showingAlert = true
+		
+		return nil
+	}
 	
     var body: some View{
         NavigationView{
             Form{
-                VStack {
-                    HStack{
-                        
-						chartCarbonMonoxideView()
-						VStack(alignment: .leading){
-                                Text("Concentration of CO")
-			
-								
-                                TextField("", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
-                                    .textFieldStyle(OutlinedTextFieldStyle())
-                                    .focused($isActive, equals: .co)
-                            }
-                    }
-                }
-                
-                VStack {
-                    HStack{
-						
-						chartNitrogenDioxideView()
-                        
-						VStack(alignment: .leading){
-//                            Text("Concnetration of NO2")
-                            
-                            SubSuperScriptText(inputString: "Concentration of NO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
-                            
-                            TextField("", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle())
-                                .focused($isActive, equals: .no2)
-                        }
-                    }
-                }
-                
-                VStack {
-                    HStack{
-						chartSulfurDioxideView()
-						VStack(alignment: .leading){
-//                            Text("Concnetration of SO2")
-                            SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
-                            TextField("", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle())
-                                .focused($isActive, equals: .so2)
-                        }
-                    }
-                }
-                
-                
-                VStack{
-                    HStack{
-							chartOzoneView()
-						VStack(alignment: .leading){
-//                            Text("Concentration of O3")
-                            SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
-                            TextField("", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle())
-                                .focused($isActive, equals: .o3)
-                        }
-                    }
-                }
-                
-                VStack{
-                    HStack{
-							// Chart here
-							chartPM10View()
-                        
-						VStack(alignment: .leading){
-                            Text("Concentration of PM10")
-                            
-                            TextField("", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
-                                .textFieldStyle(OutlinedTextFieldStyle())
-                                .focused($isActive, equals: .pm10)
-                        }
-                    }
-                }
-                
-                
 				VStack{
-					Button("Calculate", action: predictPM25)
-						.alert(alertTitle, isPresented: $showingAlert){
-							Button("OK"){
-								// try to load next view on click of this button
-							}
-						} message: {
-							Text(alertMessage)
+					VStack {
+						HStack{
+							
+							chartCarbonMonoxideView()
+							VStack(alignment: .leading){
+									Text("Concentration of CO")
+				
+									
+									TextField("", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
+										.textFieldStyle(OutlinedTextFieldStyle())
+										.focused($isActive, equals: .co)
+								}
 						}
+					}
+					
+					VStack {
+						HStack{
+							
+							chartNitrogenDioxideView()
+							
+							VStack(alignment: .leading){
+	//                            Text("Concnetration of NO2")
+								
+								SubSuperScriptText(inputString: "Concentration of NO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+								
+								TextField("", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
+									.textFieldStyle(OutlinedTextFieldStyle())
+									.focused($isActive, equals: .no2)
+							}
+						}
+					}
+					
+					VStack {
+						HStack{
+							chartSulfurDioxideView()
+							VStack(alignment: .leading){
+	//                            Text("Concnetration of SO2")
+								SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+								TextField("", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
+									.textFieldStyle(OutlinedTextFieldStyle())
+									.focused($isActive, equals: .so2)
+							}
+						}
+					}
+					
+					
+					VStack{
+						HStack{
+								chartOzoneView()
+							VStack(alignment: .leading){
+	//                            Text("Concentration of O3")
+								SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+								TextField("", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
+									.textFieldStyle(OutlinedTextFieldStyle())
+									.focused($isActive, equals: .o3)
+							}
+						}
+					}
+					
+					VStack{
+						HStack{
+								// Chart here
+								chartPM10View()
+							
+							VStack(alignment: .leading){
+								Text("Concentration of PM10")
+								
+								TextField("", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
+									.textFieldStyle(OutlinedTextFieldStyle())
+									.focused($isActive, equals: .pm10)
+							}
+						}
+					}
 				}
 				
+				Text(predictedPM25!.formatted())
 				
 				
             }
@@ -137,34 +159,7 @@ struct PollutionPrediction: View{
             .navigationViewStyle(.stack)
     }
     
-    func predictPM25(){
-        do{
-            let config = MLModelConfiguration()
-            let model = try Delhi_Pollution_Model(configuration: config)
-            
-            let prediction = try model.prediction(NO2: concentrationNO2 ?? 0, CO: concentrationCO ?? 0, SO2: concentrationSO2 ?? 0, O3: concentrationO3 ?? 0, PM10: concentrationPM10 ?? 0)
-            
-            let concentrationPM25 = prediction.PM2_5.truncate(places: 2)
-            
-            alertTitle = "Predicted value of PM2.5 is \(concentrationPM25)"
-            
-            if concentrationPM25 < 50{
-                alertMessage = "Expected PM 2.5 concentration is good. No need to wear a mask"
-            } else if concentrationPM25 < 100{
-                alertMessage = "PM 2.5 concentration is moderate. Wear a mask if you have respiratory conditions"
-            }else if concentrationPM25 < 150{
-                alertMessage = "PM 2.5 concentration is unhealthy for sensetive groups. Wear a mask in the case of having respiratory issues"
-            }else{
-                alertMessage = "Severely high PM 2.5 values, wearing a mask is recommenede for everyone"
-            }
-        } catch{
-            print("Fatal Error")
-            alertTitle = "Fatal Error"
-            alertMessage = "Sorry there was a problem in predicting PM 2.5 values"
-        }
-        
-        showingAlert = true
-    }
+
     
 }
 

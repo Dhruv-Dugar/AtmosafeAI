@@ -28,14 +28,8 @@ struct PollutionPrediction: View{
 	
 	let data = loadCSV(from: "data")
 	
-	let dataPM10 = [81.05, 114.26, 142.74, 128.97, 105.41, 89.28, 82.04, 83.65, 81, 80.42, 76.69, 69.34, 74.26, 90.04, 117.52, 130.84, 135.96, 136.98,137.14]
-	
-	let serial = Array(1...19)
 	
 	@Namespace var namespace
-	//    @State private var alertMessage = ""
-	//	@State private var alertTitle = ""
-	//
 	@FocusState private var isActive: Fields?
 	
 	var predictedPM25: Double? {
@@ -123,21 +117,34 @@ struct PollutionPrediction: View{
 				
 				Section{
 						(
-							Text("Predicted Concentration of PM2.5 is ")
+							Text("Predicted Concentration of PM2.5 is \n")
 								+
 							Text(predictedPM25!.formatted())
 								.font(.title.weight(.semibold))
-								.foregroundColor(.red)
+								.foregroundColor(predictedPM25! > 150 ? .red : .mint)
 						)
 						.multilineTextAlignment(.center)
 						.font(.system(size: 20))
 						.padding()
 						.fixedSize(horizontal: false, vertical: true)
 								
+					
+					Text(predictedPM25! > 50 ? predictedPM25! > 100 ? predictedPM25! > 150 ? "Severely high PM 2.5 values, wearing a mask is recommenede for everyone" : "PM 2.5 concentration is unhealthy for sensetive groups. Wear a mask in the case of having respiratory issues" : "PM 2.5 concentration is moderate. Wear a mask if you have respiratory conditions" : "Expected PM 2.5 concentration is good. No need to wear a mask")
+						.multilineTextAlignment(.center)
+						.padding()
+						.fixedSize(horizontal: false, vertical: true)
 								
 								
 				}
 				.listRowSeparator(.hidden)
+				
+				NavigationLink(destination: ThankYouView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+					Image(systemName: "arrow.right.circle.fill")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.frame(width: 50)
+						.foregroundColor(.blue)
+				})
 				
 			}
         }.navigationBarHidden(true)

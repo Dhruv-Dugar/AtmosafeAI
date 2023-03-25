@@ -33,7 +33,6 @@ struct chartCarbonMonoxideView: View{
         VStack {
             // Chart here
             VStack(alignment: .leading){
-                Text("Concentration of CO")
                 Chart{
                     ForEach(data) { datum in
                         LineMark(
@@ -56,6 +55,7 @@ struct chartCarbonMonoxideView: View{
                             y: .value("CO", datum.CO)
                         )
                         .interpolationMethod(.catmullRom)
+                        .interpolationMethod(.catmullRom)
                         .foregroundStyle(Color.indigo)
                     }
                 }
@@ -69,6 +69,7 @@ struct chartCarbonMonoxideView: View{
                         .background(.pink.opacity(0.1))
                         .border(.mint, width: 0.7)
                 }
+                .chartYAxisLabel("Concentration of CO", position: .leading)
                 .frame(width: 400)
             }.groupBoxStyle(DarkGroupBoxStyle())
             .padding()
@@ -99,7 +100,7 @@ struct chartNitrogenDioxideView: View{
             )
             // Chart here
             VStack(alignment: .leading){
-                SubSuperScriptText(inputString: "Concentration of NO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+//                SubSuperScriptText(inputString: "Concentration of NO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
                 
                 Chart{
                     ForEach(data) { datum in
@@ -133,6 +134,7 @@ struct chartNitrogenDioxideView: View{
                         .background(.pink.opacity(0.1))
                         .border(.mint, width: 0.7)
                 }
+                .chartYAxisLabel("Concentration of NO\u{2082}", position: .leading)
                 .frame(width: 400)
             }
             .padding()
@@ -166,7 +168,7 @@ struct chartSulfurDioxideView: View{
                 )
                 
                 
-                SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+//                SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
                 Chart{
                     ForEach(data) { datum in
                         LineMark(
@@ -201,6 +203,7 @@ struct chartSulfurDioxideView: View{
                         .background(.pink.opacity(0.1))
                         .border(.mint, width: 0.7)
                 }
+                .chartYAxisLabel("Concentration of SO\u{2082}", position: .leading)
                 .frame(width: 400)
             }.groupBoxStyle(YellowGroupBoxStyle())
             .padding()
@@ -231,7 +234,7 @@ struct chartOzoneView: View{
         
         
         VStack(alignment: .leading){
-            SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+//            SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
             Chart{
                 ForEach(data) { datum in
                     LineMark(
@@ -265,6 +268,7 @@ struct chartOzoneView: View{
                     .background(.pink.opacity(0.1))
                     .border(.mint, width: 0.7)
             }
+            .chartYAxisLabel("Concentration of O\u{2083}", position: .leading)
             .frame(width: 400)
         }.groupBoxStyle(YellowGroupBoxStyle())
         .padding()
@@ -297,7 +301,7 @@ struct chartPM10View: View{
         
         
         VStack(alignment: .leading){
-            Text("Concentration of PM10")
+//            Text("Concentration of PM10")
             Chart{
                 ForEach(Array(zip(dataPM10, serial)), id: \.0){ item in
                     
@@ -336,6 +340,7 @@ struct chartPM10View: View{
                     .background(.pink.opacity(0.1))
                     .border(.mint, width: 0.7)
             }
+            .chartYAxisLabel("Concentration of PM10", position: .leading)
             .frame(width: 400)
         }.groupBoxStyle(YellowGroupBoxStyle())
         .padding()

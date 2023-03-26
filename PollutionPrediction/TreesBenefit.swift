@@ -34,7 +34,7 @@ struct TreesBenefit: View{
                   }
           VStack{
           }.frame(width: 50, height: 10, alignment: .center)
-              .background(Color.white)
+              .background(Color.indigo)
               .cornerRadius(10.0)
               .opacity(alpha)
               .scaleEffect(x: alpha, y: 1.0, anchor: UnitPoint.center)
@@ -43,6 +43,11 @@ struct TreesBenefit: View{
                       alpha = 0.4
                   }
               }
+            
+            Text("Trees are a solution")
+                .foregroundColor(.green)
+                .font(.system(size: 35))
+                .titleStyle()
         }
     }
 }

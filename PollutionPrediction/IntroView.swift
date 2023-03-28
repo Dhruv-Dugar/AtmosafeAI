@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  IntroView.swift
 //  PollutionPrediction
 //
 //  Created by Dhurv Dugar on 25/02/23.

@@ -1,5 +1,5 @@
 //
-//  ThankYouView.swift
+//  TreesBenefit.swift
 //  PollutionPrediction
 //
 //  Created by Dhurv Dugar on 23/03/23.
@@ -13,7 +13,7 @@ struct TreesBenefit: View{
     
     @State var transY: CGFloat = 0
     var foreverAnimation =
-            Animation.linear.speed(0.3)
+    Animation.linear.speed(0.3)
                 .repeatForever(autoreverses: true)
     
     @State var alpha: CGFloat = 1.0

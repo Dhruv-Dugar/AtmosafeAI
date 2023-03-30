@@ -12,7 +12,10 @@ import SceneKit
 
 struct TreeRealityView : View {
   var body: some View {
-    let scene = SceneView(scene: SCNScene(named: "Maple_tree.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
+    let scene = SceneView(scene: SCNScene(named: "Low_Poly_Trees.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
+      
+      
+    
     return scene
   }
 }

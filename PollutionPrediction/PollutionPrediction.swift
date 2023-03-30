@@ -56,8 +56,8 @@ struct PollutionPrediction: View{
 	
 	
 	
-    var body: some View{
-        NavigationView{
+	var body: some View{
+		NavigationView{
 			ScrollView{
 				VStack{
 					Text("Enter Pollution Details") // TODO: NEED TO CHANGE THIS TEXT TO SOMETHING BETTER
@@ -134,7 +134,11 @@ struct PollutionPrediction: View{
 						
 						
 					
+<<<<<<< HEAD
+					NavigationLink(destination: TreeRealityView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+=======
 					NavigationLink(destination: WhatCanWeDoView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+>>>>>>> origin/main
 						Image(systemName: "arrow.right.circle.fill")
 							.resizable()
 							.aspectRatio(contentMode: .fit)
@@ -147,16 +151,16 @@ struct PollutionPrediction: View{
 				
 				
 			}
-        }.navigationBarHidden(true)
-            .navigationViewStyle(.stack)
-    }
-    
+		}.navigationBarHidden(true)
+			.navigationViewStyle(.stack)
+	}
+	
 
-    
+	
 }
 
 struct PollutionPrediction_Preview: PreviewProvider{
-    static var previews: some View{
-        PollutionPrediction()
-    }
+	static var previews: some View{
+		PollutionPrediction()
+	}
 }

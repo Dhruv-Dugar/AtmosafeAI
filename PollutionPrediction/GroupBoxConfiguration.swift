@@ -1,5 +1,5 @@
 //
-//  GraphConfiguration.swift
+//  GroupBoxConfiguration.swift
 //  PollutionPrediction
 //
 //  Created by Dhurv Dugar on 20/03/23.

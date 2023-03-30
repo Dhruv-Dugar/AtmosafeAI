@@ -1,5 +1,5 @@
 //
-//  CityChooser.swift
+//  LogoView.swift
 //  PollutionPrediction
 //
 //  Created by Dhurv Dugar on 27/02/23.

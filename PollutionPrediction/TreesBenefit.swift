@@ -43,11 +43,34 @@ struct TreesBenefit: View{
                       alpha = 0.4
                   }
               }
-            
+            (
             Text("Trees are a solution")
                 .foregroundColor(.green)
-                .font(.system(size: 35))
+            +
+            Text("\nTrees have been scientifically found to reduce pollution.")
+            +
+            Text(" And planting trees at a large scale is a viable solution for reducing the impact.")
+            
+            
+            )
+                .multilineTextAlignment(.center)
+                .lineLimit(5)
+                .padding()
                 .titleStyle()
+            
+            // make a button which clicking which a new view pops up, and that has the AR scene with the provided usdz file
+            
+            
+            
+//            struct GameScene : View {
+//            var body: some View {
+//              let scene = SceneView(scene: SCNScene(named: "BTL-S8_K-wing_assault_starfighter.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
+//              return scene
+//            }
+//          }
+            
+            
+            
         }
     }
 }

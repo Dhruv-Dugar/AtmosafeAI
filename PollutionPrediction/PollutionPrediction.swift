@@ -134,7 +134,11 @@ struct PollutionPrediction: View{
 						
 						
 					
+<<<<<<< HEAD
 					NavigationLink(destination: TreeRealityView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+=======
+					NavigationLink(destination: WhatCanWeDoView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+>>>>>>> origin/main
 						Image(systemName: "arrow.right.circle.fill")
 							.resizable()
 							.aspectRatio(contentMode: .fit)

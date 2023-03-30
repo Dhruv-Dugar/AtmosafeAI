@@ -57,15 +57,9 @@ struct TreesBenefit: View{
                 .lineLimit(5)
                 .padding()
                 .titleStyle()
+
             
-            // make a button which clicking which a new view pops up, and that has the AR scene with the provided usdz file
-            
-            
-            
-//            struct GameScene : View {
-//            var body: some View {
-//              let scene = SceneView(scene: SCNScene(named: "BTL-S8_K-wing_assault_starfighter.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
-//              return scene
+        
 //            }
 //          }
             

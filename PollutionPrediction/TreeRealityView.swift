@@ -15,6 +15,7 @@ struct TreeRealityView : View {
     let scene = SceneView(scene: SCNScene(named: "Low_Poly_Trees.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
       
       
+      
     
     return scene
   }

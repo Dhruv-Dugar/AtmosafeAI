@@ -15,9 +15,9 @@
 		ED44299729C755B20062E283 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299629C755B20062E283 /* CSVParser.swift */; };
 		ED44299929C858760062E283 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = ED44299829C858760062E283 /* data.csv */; };
 		ED44299B29C85AEE0062E283 /* GroupBoxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */; };
+		ED5E006929D608ED00A5E630 /* Low_Poly_Trees_new.usdz in Resources */ = {isa = PBXBuildFile; fileRef = ED5E006829D608ED00A5E630 /* Low_Poly_Trees_new.usdz */; };
 		ED67ECAF29C9DBFA0010A027 /* chartConcentrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67ECAE29C9DBFA0010A027 /* chartConcentrationView.swift */; };
 		ED9F6B3129D55C9700D21C0F /* TreeRealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F6B3029D55C9700D21C0F /* TreeRealityView.swift */; };
-		ED9F6B3529D5CA0C00D21C0F /* Low_Poly_Trees.usdz in Resources */ = {isa = PBXBuildFile; fileRef = ED9F6B3429D5CA0C00D21C0F /* Low_Poly_Trees.usdz */; };
 		EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */; };
 		EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4B29AA613A00A89ECC /* IntroView.swift */; };
 		EDB09D4E29AA613A00A89ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB09D4D29AA613A00A89ECC /* Assets.xcassets */; };
@@ -36,9 +36,9 @@
 		ED44299629C755B20062E283 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
 		ED44299829C858760062E283 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBoxConfiguration.swift; sourceTree = "<group>"; };
+		ED5E006829D608ED00A5E630 /* Low_Poly_Trees_new.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Low_Poly_Trees_new.usdz; sourceTree = "<group>"; };
 		ED67ECAE29C9DBFA0010A027 /* chartConcentrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartConcentrationView.swift; sourceTree = "<group>"; };
 		ED9F6B3029D55C9700D21C0F /* TreeRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeRealityView.swift; sourceTree = "<group>"; };
-		ED9F6B3429D5CA0C00D21C0F /* Low_Poly_Trees.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Low_Poly_Trees.usdz; sourceTree = "<group>"; };
 		EDB09D4629AA613A00A89ECC /* PollutionPrediction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PollutionPrediction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionPredictionApp.swift; sourceTree = "<group>"; };
 		EDB09D4B29AA613A00A89ECC /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */,
-				ED9F6B3429D5CA0C00D21C0F /* Low_Poly_Trees.usdz */,
+				ED5E006829D608ED00A5E630 /* Low_Poly_Trees_new.usdz */,
 				ED44299829C858760062E283 /* data.csv */,
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
 				ED67ECAE29C9DBFA0010A027 /* chartConcentrationView.swift */,
@@ -172,7 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB09D5129AA613A00A89ECC /* Preview Assets.xcassets in Resources */,
-				ED9F6B3529D5CA0C00D21C0F /* Low_Poly_Trees.usdz in Resources */,
+				ED5E006929D608ED00A5E630 /* Low_Poly_Trees_new.usdz in Resources */,
 				EDB09D4E29AA613A00A89ECC /* Assets.xcassets in Resources */,
 				ED44299929C858760062E283 /* data.csv in Resources */,
 			);

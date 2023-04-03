@@ -10,6 +10,8 @@ import SwiftUI
 
 struct IntroView: View {
     
+    @State private var isShowing = false
+    
     var body: some View {
     
         NavigationView{
@@ -76,9 +78,15 @@ struct IntroView: View {
                     .padding()
         
             }
+            
         }
         .navigationBarHidden(true)
         .navigationViewStyle(.stack)
+        .onAppear{
+            withAnimation(.easeIn(duration: 1)) {
+                isShowing = true
+            }
+        }
         
         
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED010A6629D7270F00E0B909 /* CustomButtonStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED010A6529D7270F00E0B909 /* CustomButtonStyling.swift */; };
 		ED054A6629CC66A000F1BB7B /* TreesBenefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED054A6529CC66A000F1BB7B /* TreesBenefit.swift */; };
 		ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED201F3429ABA5F900AD1427 /* ExplainationView.swift */; };
 		ED2D808C29C28C880003C1CF /* Delhi Pollution Model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED010A6529D7270F00E0B909 /* CustomButtonStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyling.swift; sourceTree = "<group>"; };
 		ED054A6529CC66A000F1BB7B /* TreesBenefit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesBenefit.swift; sourceTree = "<group>"; };
 		ED201F3429ABA5F900AD1427 /* ExplainationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainationView.swift; sourceTree = "<group>"; };
 		ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Delhi Pollution Model.mlmodel"; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */,
 				ED5E006829D608ED00A5E630 /* Low_Poly_Trees_new.usdz */,
 				ED44299829C858760062E283 /* data.csv */,
+				ED010A6529D7270F00E0B909 /* CustomButtonStyling.swift */,
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
 				ED67ECAE29C9DBFA0010A027 /* chartConcentrationView.swift */,
 				ED2D808D29C295A40003C1CF /* Extensions.swift */,
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDDDC13D29ACAE4D009A2EE5 /* PollutionPrediction.swift in Sources */,
+				ED010A6629D7270F00E0B909 /* CustomButtonStyling.swift in Sources */,
 				ED9F6B3129D55C9700D21C0F /* TreeRealityView.swift in Sources */,
 				EDF14B9C29ABED23007FC8F9 /* LogoView.swift in Sources */,
 				ED44299729C755B20062E283 /* CSVParser.swift in Sources */,

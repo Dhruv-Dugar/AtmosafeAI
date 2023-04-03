@@ -13,7 +13,7 @@ struct TreesBenefit: View{
     
     @State var transY: CGFloat = 0
     var foreverAnimation =
-    Animation.linear.speed(0.3)
+    Animation.easeIn.speed(0.1)
                 .repeatForever(autoreverses: true)
     
     @State var alpha: CGFloat = 1.0
@@ -22,51 +22,37 @@ struct TreesBenefit: View{
     
     var body: some View{
         VStack {
-          Image(systemName: "tree")
+            
+            Spacer()
+            
+            Image("tree")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 300)
-                .offset(x: 0, y: transY)
-                  .onAppear {
-                      withAnimation(foreverAnimation) {
-                          transY = -25
-                      }
-                  }
-          VStack{
-          }.frame(width: 50, height: 10, alignment: .center)
-              .background(Color.indigo)
-              .cornerRadius(10.0)
-              .opacity(alpha)
-              .scaleEffect(x: alpha, y: 1.0, anchor: UnitPoint.center)
-              .onAppear {
-                  withAnimation(foreverAnimation) {
-                      alpha = 0.4
-                  }
-              }
-            (
-            Text("Trees are a solution")
                 .foregroundColor(.green)
-            +
-            Text("\nTrees have been scientifically found to reduce pollution.")
-            +
-            Text(" And planting trees at a large scale is a viable solution for reducing the impact.")
+                .aspectRatio(contentMode: .fit)
             
             
+            Spacer()
+            (
+                Text("Trees in cities reduce pollution by absorbing harmful gases, purifying the air and providing shade. Planting more trees in urban areas can improve air quality and create a healthier environment for people.")
             )
-                .multilineTextAlignment(.center)
-                .lineLimit(5)
-                .padding()
+            .multilineTextAlignment(.center)
+            .lineLimit(5)
+            .padding()
+            .titleStyle()
+            
+            Spacer()
+            
+            Text("Green cities, clean air - plant a tree, show you care!")
+                .font(.system(size: 30, weight: .bold))
+                .foregroundColor(.green)
                 .titleStyle()
-
             
+            Spacer()
         
-//            }
-//          }
-            
-            
-            
         }
+        
     }
+    
 }
 
 

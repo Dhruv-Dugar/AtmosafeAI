@@ -30,6 +30,7 @@
 		EDF2EEC929DB1BC4001ED474 /* SO2ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2EEC829DB1BC4001ED474 /* SO2ChartView.swift */; };
 		EDF2EECB29DB1BEE001ED474 /* O3ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2EECA29DB1BEE001ED474 /* O3ChartView.swift */; };
 		EDF2EECD29DB1C0B001ED474 /* PM10ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2EECC29DB1C0B001ED474 /* PM10ChartView.swift */; };
+		EDF2EECF29DB1D00001ED474 /* DoubleTruncation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF2EECE29DB1D00001ED474 /* DoubleTruncation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		EDF2EEC829DB1BC4001ED474 /* SO2ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SO2ChartView.swift; sourceTree = "<group>"; };
 		EDF2EECA29DB1BEE001ED474 /* O3ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = O3ChartView.swift; sourceTree = "<group>"; };
 		EDF2EECC29DB1C0B001ED474 /* PM10ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PM10ChartView.swift; sourceTree = "<group>"; };
+		EDF2EECE29DB1D00001ED474 /* DoubleTruncation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTruncation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +96,14 @@
 				ED44299829C858760062E283 /* data.csv */,
 				ED010A6529D7270F00E0B909 /* CustomButtonStyling.swift */,
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
+				ED44299629C755B20062E283 /* CSVParser.swift */,
 				ED67ECAE29C9DBFA0010A027 /* COChartView.swift */,
 				EDF2EECC29DB1C0B001ED474 /* PM10ChartView.swift */,
 				EDF2EECA29DB1BEE001ED474 /* O3ChartView.swift */,
 				EDF2EEC629DB1B90001ED474 /* NO2ChartView.swift */,
 				EDF2EEC829DB1BC4001ED474 /* SO2ChartView.swift */,
 				ED2D808D29C295A40003C1CF /* Extensions.swift */,
+				EDF2EECE29DB1D00001ED474 /* DoubleTruncation.swift */,
 				ED2ED58D29C98AAB00798B14 /* TitleStyle.swift */,
 				ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */,
 				EDD5E99629C3156100BC1BE6 /* SubSuperScript.swift */,
@@ -109,7 +113,6 @@
 				EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */,
 				ED054A6529CC66A000F1BB7B /* TreesBenefit.swift */,
 				ED9F6B3029D55C9700D21C0F /* TreeRealityView.swift */,
-				ED44299629C755B20062E283 /* CSVParser.swift */,
 				EDB09D4D29AA613A00A89ECC /* Assets.xcassets */,
 				EDB09D4F29AA613A00A89ECC /* Preview Content */,
 			);
@@ -215,6 +218,7 @@
 				EDD5E99729C3156100BC1BE6 /* SubSuperScript.swift in Sources */,
 				EDF2EECD29DB1C0B001ED474 /* PM10ChartView.swift in Sources */,
 				EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */,
+				EDF2EECF29DB1D00001ED474 /* DoubleTruncation.swift in Sources */,
 				ED054A6629CC66A000F1BB7B /* TreesBenefit.swift in Sources */,
 				ED2D808E29C295A40003C1CF /* Extensions.swift in Sources */,
 				ED44299B29C85AEE0062E283 /* GroupBoxConfiguration.swift in Sources */,

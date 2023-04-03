@@ -11,14 +11,7 @@ import SwiftUI
 
 struct TreesBenefit: View{
     
-    @State var transY: CGFloat = 0
-    var foreverAnimation =
-    Animation.easeIn.speed(0.1)
-                .repeatForever(autoreverses: true)
-    
-    @State var alpha: CGFloat = 1.0
-    
-    
+    @State private var isShowing = false
     
     var body: some View{
         VStack {
@@ -35,7 +28,9 @@ struct TreesBenefit: View{
             (
                 Text("Trees in cities reduce pollution by absorbing harmful gases, purifying the air and providing shade. Planting more trees in urban areas can improve air quality and create a healthier environment for people.")
             )
+            .foregroundColor(.orange)
             .multilineTextAlignment(.center)
+            
             .lineLimit(5)
             .padding()
             .titleStyle()
@@ -43,12 +38,18 @@ struct TreesBenefit: View{
             Spacer()
             
             Text("Green cities, clean air - plant a tree, show you care!")
-                .font(.system(size: 30, weight: .bold))
-                .foregroundColor(.green)
+                .font(.system(size: 37, weight: .semibold, design: .monospaced))
+                .foregroundColor(.teal)
                 .titleStyle()
             
             Spacer()
         
+        }
+        .opacity(isShowing ? 1 : 0)
+        .onAppear{
+            withAnimation(.easeIn(duration: 1)) {
+                isShowing = true
+            }
         }
         
     }

@@ -76,9 +76,7 @@ struct IntroView: View {
                     .padding()
         
             }
-        }.onAppear(perform: {
-            
-        })
+        }
         .navigationBarHidden(true)
         .navigationViewStyle(.stack)
         

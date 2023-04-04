@@ -17,26 +17,8 @@ struct ExplainationView: View{
         NavigationView{
             VStack{
     //            Spacer()
-                HStack{
-                    Spacer()
-                    Image(systemName: "ipad")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 75)
-                    Spacer()
-                    Image(systemName: "ipad.homebutton")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 75)
-                    Spacer()
-                }
-                .padding(.top, 35)
-                .padding(.bottom, 30)
-                .padding()
+                
 
-                Text("PollutionPredictor has been optimised to work for all iPad models.")
-                    .titleStyle()
-                                
                 Spacer()
                 
                 
@@ -70,7 +52,7 @@ struct ExplainationView: View{
                     Text("PollutionPredictor additionally uses the international pollution standards to calculate the ")
                     +
                     Text("Air Quality Index")
-                        .foregroundColor(.indigo)
+                        .foregroundColor(.orange)
                         .fontWeight(.semibold)
                     +
                     Text(" from the given data, and provides a simple overview over the present conditions.")
@@ -81,11 +63,51 @@ struct ExplainationView: View{
                 
                 Spacer()
                 
+                HStack{
+                    Spacer()
+                    VStack{
+                        Image(systemName: "aqi.low")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.purple)
+                            .frame(width: 75)
+                        Text("Low AQI")
+                            .titleStyle()
+                    }
+                    Spacer()
+                    VStack{
+                        Image(systemName: "aqi.medium")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.purple)
+                            .frame(width: 75)
+                        Text("Medium AQI")
+                            .titleStyle()
+                    }
+                    Spacer()
+                    VStack{
+                        Image(systemName: "aqi.high")
+                            .renderingMode(.original)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.purple)
+                            .frame(width: 75)
+                        Text("High AQI")
+                            .titleStyle()
+                    }
+                    Spacer()
+                }
+                .padding(.top, 35)
+                .padding(.bottom, 30)
+                .padding()
+                
+                Spacer()
+                
                 NavigationLink(destination: LogoView().toolbar(.hidden).navigationViewStyle(.stack), label: {
                     Image(systemName: "arrow.right.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 50)
+                        .frame(width: 80)
                 })
                 
                 Spacer()

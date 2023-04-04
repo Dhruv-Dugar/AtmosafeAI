@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 
-struct ExplainationView: View{
+struct ExplanationView: View{
     
     @State private var isShowing = false
     
@@ -132,6 +132,6 @@ struct ExplainationView: View{
 
 struct ExplainationView_previews: PreviewProvider {
     static var previews: some View {
-        ExplainationView()
+        ExplanationView()
     }
 }

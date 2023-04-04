@@ -57,7 +57,7 @@ struct IntroView: View {
                         Spacer()
                     }
                     
-                    NavigationLink(destination: ExplainationView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                    NavigationLink(destination: ExplanationView().toolbar(.hidden).navigationViewStyle(.stack), label: {
                         Image(systemName: "arrow.right.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)

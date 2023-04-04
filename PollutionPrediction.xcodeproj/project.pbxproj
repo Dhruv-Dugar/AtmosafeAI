@@ -72,6 +72,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED2534F329DC56BE004EA351 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDB09D4B29AA613A00A89ECC /* IntroView.swift */,
+				ED201F3429ABA5F900AD1427 /* ExplainationView.swift */,
+				EDF14B9B29ABED23007FC8F9 /* LogoView.swift */,
+				EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */,
+				ED054A6529CC66A000F1BB7B /* TreesBenefit.swift */,
+				ED9F6B3029D55C9700D21C0F /* TreeRealityView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		ED2534F429DC56DC004EA351 /* ChartsView */ = {
+			isa = PBXGroup;
+			children = (
+				ED67ECAE29C9DBFA0010A027 /* COChartView.swift */,
+				EDF2EECC29DB1C0B001ED474 /* PM10ChartView.swift */,
+				EDF2EECA29DB1BEE001ED474 /* O3ChartView.swift */,
+				EDF2EEC629DB1B90001ED474 /* NO2ChartView.swift */,
+				EDF2EEC829DB1BC4001ED474 /* SO2ChartView.swift */,
+			);
+			path = ChartsView;
+			sourceTree = "<group>";
+		};
 		EDB09D3D29AA613A00A89ECC = {
 			isa = PBXGroup;
 			children = (
@@ -94,25 +119,16 @@
 				ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */,
 				ED5E006829D608ED00A5E630 /* Low_Poly_Trees_new.usdz */,
 				ED44299829C858760062E283 /* data.csv */,
-				EDB09D4B29AA613A00A89ECC /* IntroView.swift */,
-				ED201F3429ABA5F900AD1427 /* ExplainationView.swift */,
-				ED010A6529D7270F00E0B909 /* CustomButtonStyling.swift */,
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
+				ED2534F429DC56DC004EA351 /* ChartsView */,
+				ED2534F329DC56BE004EA351 /* Views */,
+				ED010A6529D7270F00E0B909 /* CustomButtonStyling.swift */,
 				ED44299629C755B20062E283 /* CSVParser.swift */,
-				ED67ECAE29C9DBFA0010A027 /* COChartView.swift */,
-				EDF2EECC29DB1C0B001ED474 /* PM10ChartView.swift */,
-				EDF2EECA29DB1BEE001ED474 /* O3ChartView.swift */,
-				EDF2EEC629DB1B90001ED474 /* NO2ChartView.swift */,
-				EDF2EEC829DB1BC4001ED474 /* SO2ChartView.swift */,
 				ED2D808D29C295A40003C1CF /* Extensions.swift */,
 				EDF2EECE29DB1D00001ED474 /* DoubleTruncation.swift */,
 				ED2ED58D29C98AAB00798B14 /* TitleStyle.swift */,
 				ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */,
 				EDD5E99629C3156100BC1BE6 /* SubSuperScript.swift */,
-				EDF14B9B29ABED23007FC8F9 /* LogoView.swift */,
-				EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */,
-				ED054A6529CC66A000F1BB7B /* TreesBenefit.swift */,
-				ED9F6B3029D55C9700D21C0F /* TreeRealityView.swift */,
 				EDB09D4D29AA613A00A89ECC /* Assets.xcassets */,
 				EDB09D4F29AA613A00A89ECC /* Preview Content */,
 			);

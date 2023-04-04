@@ -49,7 +49,9 @@ struct PollutionPrediction: View{
 		return 59.37
 	}
 	
-	
+	var AQI: Double?{
+		return 0
+	}
 	
 	
 	
@@ -67,7 +69,7 @@ struct PollutionPrediction: View{
 						chartCarbonMonoxideView()
 						VStack(alignment: .leading){
 							Text("Concentration of CO")
-							TextField("", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
+							TextField("ppm", value: $concentrationCO, format: .number).keyboardType(.decimalPad)
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .co)
 						}
@@ -78,7 +80,7 @@ struct PollutionPrediction: View{
 						VStack(alignment: .leading){
 	//						Text("Concentration of NO2")
 							SubSuperScriptText(inputString: "Concentration of NO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6)
-							TextField("", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
+							TextField("ppm", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .no2)
 						}
@@ -89,7 +91,7 @@ struct PollutionPrediction: View{
 						VStack(alignment: .leading){
 	//						Text("Concentration of CO")
 							SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
-							TextField("", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
+							TextField("ppm", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .so2)
 						}
@@ -100,7 +102,7 @@ struct PollutionPrediction: View{
 						VStack(alignment: .leading){
 	//						Text("Concentration of CO")
 							SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
-							TextField("", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
+							TextField("ppm", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .o3)
 						}
@@ -110,7 +112,7 @@ struct PollutionPrediction: View{
 						chartPM10View()
 						VStack(alignment: .leading){
 							Text("Concentration of PM10")
-							TextField("", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
+							TextField("μg/m\u{00B3}", value: $concentrationPM10, format: .number).keyboardType(.decimalPad)
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .pm10)
 						}
@@ -121,7 +123,13 @@ struct PollutionPrediction: View{
 							.font(.system(size: 20))
 					
 					
-						Text(predictedPM25!.formatted())
+						(
+							Text(predictedPM25!.formatted())
+							+
+							Text(" μg/m\u{00B3}")
+						
+							
+						)
 							.font(.title.weight(.semibold))
 							.foregroundColor(predictedPM25! > 150 ? .red : .mint)
 					

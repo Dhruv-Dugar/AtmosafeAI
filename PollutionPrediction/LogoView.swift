@@ -30,7 +30,15 @@ struct LogoView: View{
                         .aspectRatio(contentMode: .fit)
                 })
             }
-        }.navigationBarHidden(true)
+        }
+        .opacity(isShowingDetails ? 1 : 0)
+        .onAppear{
+            withAnimation(.easeIn(duration: 1)) {
+                self.isShowingDetails = true
+            }
+        }
+        
+        .navigationBarHidden(true)
             .navigationViewStyle(.stack)
     }
 }

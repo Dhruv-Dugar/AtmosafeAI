@@ -115,6 +115,7 @@ struct ExplanationView: View{
                 
             }
         }
+        .padding(.horizontal, 30)
         .opacity(isShowing ? 1 : 0)
         .onAppear{
             withAnimation(.easeIn(duration: 1)) {

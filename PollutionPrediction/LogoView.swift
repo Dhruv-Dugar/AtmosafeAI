@@ -24,9 +24,9 @@ struct LogoView: View{
             VStack {
                 
                 NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
-                    Image("jaipur")
+                    Image("delhi")
                         .resizable()
-                        .frame(width: 350, height: 350)
+                    .frame(width: 500, height: 500)
                         .aspectRatio(contentMode: .fit)
                 })
             }

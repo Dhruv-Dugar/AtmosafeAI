@@ -61,22 +61,20 @@ struct IntroView: View {
                         Image(systemName: "arrow.right.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50)
+                            .frame(width: 80)
                             .foregroundColor(.blue)
                     })
                     
                     Spacer()
                     
-                    Text("Please note that this playground is designed to be run on an iPad with camera ")
-                        .font(.system(size: 15))
-                        .multilineTextAlignment(.center)
-                        .padding([.horizontal, .top])
                     
-                    Text("Reference: Air Pollution and adverse health effects. (2023) https://www.who.int/news-room/spotlight/how-air-pollution-is-destroying-our-health")
-                        .font(.system(size: 15))
+                    Text("Reference: Air Pollution and adverse health effects. [2023] \n https://www.who.int/news-room/spotlight/how-air-pollution-is-destroying-our-health")
+                        .font(.system(size: 18))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.secondary)
                         .padding()
+                    
+                    Spacer()
             
                 }
                 

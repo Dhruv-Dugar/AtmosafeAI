@@ -11,6 +11,8 @@ import Foundation
 
 struct ExplainationView: View{
     
+    @State private var isShowing = false
+    
     var body: some View{
         NavigationView{
             VStack{
@@ -39,7 +41,7 @@ struct ExplainationView: View{
                 
                 
                 SubSuperScriptText(inputString: "Pollution measurement is done in 6 key parameters, PM 2.5, PM 10, CO, NO_{2}, SO_{2} and O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
-                    .font(.system(size: 22))
+                    .font(.system(size: 27))
                     .titleStyle()
                 
                 (
@@ -56,12 +58,16 @@ struct ExplainationView: View{
                     
                     Text(" are the most harmful, and being the most difficult to measure and control.")
                 )
-                .font(.system(size: 22))
+                .font(.system(size: 27))
                 .titleStyle()
                 
                 
-                Text("PollutionPredictor tries to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the conditions!").font(.system(size: 22))
+                Text("PollutionPredictor attemps to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the prevailing present conditions!").font(.system(size: 27))
                     .titleStyle()
+                
+                Text("PollutionPredictor additionally uses the international pollution standards to calculate the Air Quality Index from the given data, and provides a simple overview over the present conditions.")
+                    .font(.system(size: 27))
+                        .titleStyle()
                 
                 Spacer()
                 
@@ -76,9 +82,13 @@ struct ExplainationView: View{
                 
                 
             }
-        }.onAppear(perform: {
-            
-        })
+        }
+        .opacity(isShowing ? 1 : 0)
+        .onAppear{
+            withAnimation(.easeIn(duration: 1)) {
+                self.isShowing = true
+            }
+        }
         .navigationBarHidden(true)
         .navigationViewStyle(.stack)
     }

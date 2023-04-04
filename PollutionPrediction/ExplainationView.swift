@@ -53,6 +53,7 @@ struct ExplainationView: View{
                     
                     Text("PM 2.5 (fine particles)")
                         .foregroundColor(.red)
+                        .fontWeight(.semibold)
                     
                     +
                     
@@ -65,7 +66,16 @@ struct ExplainationView: View{
                 Text("PollutionPredictor attemps to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the prevailing present conditions!").font(.system(size: 27))
                     .titleStyle()
                 
-                Text("PollutionPredictor additionally uses the international pollution standards to calculate the Air Quality Index from the given data, and provides a simple overview over the present conditions.")
+                (
+                    Text("PollutionPredictor additionally uses the international pollution standards to calculate the ")
+                    +
+                    Text("Air Quality Index")
+                        .foregroundColor(.indigo)
+                        .fontWeight(.semibold)
+                    +
+                    Text(" from the given data, and provides a simple overview over the present conditions.")
+                    
+                )
                     .font(.system(size: 27))
                         .titleStyle()
                 

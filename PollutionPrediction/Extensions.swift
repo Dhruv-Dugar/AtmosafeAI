@@ -15,7 +15,6 @@ extension Image{
         self
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 350)
     }
 }
 
@@ -41,24 +40,3 @@ struct OutlinedTextFieldStyle: TextFieldStyle {
     }
 }
 
-extension Double {
-    func truncate(places : Int)-> Double {
-        return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
-    }
-}
-
-
-struct ImageOverlay: View{
-    var body: some View{
-        ZStack{
-            Text("Testing...")
-                .font(.callout)
-                .padding(6)
-                .foregroundColor(.white)
-        }
-        .background(Color.gray)
-        .opacity(0.7)
-        .cornerRadius(10.0)
-        .padding(6)
-    }
-}

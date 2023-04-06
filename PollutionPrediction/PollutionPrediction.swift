@@ -26,13 +26,13 @@ struct PollutionPrediction: View{
 	@State private var concentrationO3: Double?
 	@State private var concentrationPM10: Double?
 	
-	@State private var graph1Visible: Bool = false
-	@State private var graph2Visible: Bool = false
-	@State private var graph3Visible: Bool = false
-	@State private var graph4Visible: Bool = false
-	@State private var graph5Visible: Bool = false
-	@State private var viewVisible: Bool = false
-	@State private var isShowingTitle: Bool = false
+//	@State private var graph1Visible: Bool = false
+//	@State private var graph2Visible: Bool = false
+//	@State private var graph3Visible: Bool = false
+//	@State private var graph4Visible: Bool = false
+//	@State private var graph5Visible: Bool = false
+//	@State private var viewVisible: Bool = false
+//	@State private var isShowingTitle: Bool = false
 	
 	
 	
@@ -67,12 +67,12 @@ struct PollutionPrediction: View{
 				VStack{
 					Text("Enter Pollution Details") // TODO: NEED TO CHANGE THIS TEXT TO SOMETHING BETTER
 						.titleStyle()
-						.opacity(isShowingTitle ? 1 : 0)
-						.onAppear{
-							withAnimation(.easeOut(duration: 1)){
-								isShowingTitle = true
-							}
-						}
+//						.opacity(isShowingTitle ? 1 : 0)
+//						.onAppear{
+//							withAnimation(.easeOut(duration: 1)){
+//								isShowingTitle = true
+//							}
+//						}
 					
 					HStack{
 						chartCarbonMonoxideView()
@@ -83,12 +83,12 @@ struct PollutionPrediction: View{
 								.focused($isActive, equals: .co)
 						}
 					}
-					.opacity(graph1Visible ? 1 : 0)
-					.onAppear{
-						withAnimation(.easeIn(duration: 1.2)){
-							graph1Visible = true
-						}
-					}
+//					.opacity(graph1Visible ? 1 : 0)
+//					.onAppear{
+//						withAnimation(.easeIn(duration: 1.2)){
+//							graph1Visible = true
+//						}
+//					}
 					
 					HStack{
 						chartNitrogenDioxideView()
@@ -99,13 +99,14 @@ struct PollutionPrediction: View{
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .no2)
 						}
-					}.opacity(graph2Visible ? 1 : 0)
-						.onAppear{
-						 withAnimation(.easeIn(duration: 1.3)){
-							 graph2Visible = true
-						 }
-					 }
-					
+					}
+//					.opacity(graph2Visible ? 1 : 0)
+//						.onAppear{
+//						 withAnimation(.easeIn(duration: 1.3)){
+//							 graph2Visible = true
+//						 }
+//					 }
+//
 					HStack{
 						chartSulfurDioxideView()
 						VStack(alignment: .leading){
@@ -116,12 +117,12 @@ struct PollutionPrediction: View{
 								.focused($isActive, equals: .so2)
 						}
 					}
-					.opacity(graph3Visible ? 1 : 0)
-					.onAppear{
-						withAnimation(.easeIn(duration: 1.4)){
-							graph3Visible = true
-						}
-					}
+//					.opacity(graph3Visible ? 1 : 0)
+//					.onAppear{
+//						withAnimation(.easeIn(duration: 1.4)){
+//							graph3Visible = true
+//						}
+//					}
 					
 					HStack{
 						chartOzoneView()
@@ -133,12 +134,12 @@ struct PollutionPrediction: View{
 								.focused($isActive, equals: .o3)
 						}
 					}
-					.opacity(graph4Visible ? 1 : 0)
-					.onAppear{
-						withAnimation(.easeIn(duration: 1.4)){
-							graph4Visible = true
-						}
-					}
+//					.opacity(graph4Visible ? 1 : 0)
+//					.onAppear{
+//						withAnimation(.easeIn(duration: 1.4)){
+//							graph4Visible = true
+//						}
+//					}
 					
 					HStack{
 						chartPM10View()
@@ -148,12 +149,13 @@ struct PollutionPrediction: View{
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .pm10)
 						}
-					}.opacity(graph5Visible ? 1 : 0)
-						.onAppear{
-						 withAnimation(.easeIn(duration: 1.5)){
-							 graph5Visible = true
-						 }
-					 }
+					}
+//					.opacity(graph5Visible ? 1 : 0)
+//						.onAppear{
+//						 withAnimation(.easeIn(duration: 1.5)){
+//							 graph5Visible = true
+//						 }
+//					 }
 					
 					
 					VStack{
@@ -189,12 +191,12 @@ struct PollutionPrediction: View{
 						})
 					
 					}.padding()
-						.opacity(viewVisible ? 1 : 0)
-						.onAppear{
-							withAnimation(.easeIn(duration: 1.8)){
-								viewVisible = true
-							}
-						}
+//						.opacity(viewVisible ? 1 : 0)
+//						.onAppear{
+//							withAnimation(.easeIn(duration: 1.8)){
+//								viewVisible = true
+//							}
+//						}
 									
 						
 						

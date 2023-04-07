@@ -55,7 +55,6 @@ struct PollutionPrediction: View{
 		} catch{
 			print("Fatal Error")
 		}
-		// default value as 59.37 as model predicts that when everything is 0
 		return 59.37
 	}
 	

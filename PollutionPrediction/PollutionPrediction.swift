@@ -55,7 +55,6 @@ struct PollutionPrediction: View{
 		} catch{
 			print("Fatal Error")
 		}
-		// default value as 59.37 as model predicts that when everything is 0
 		return 59.37
 	}
 	
@@ -99,13 +98,14 @@ struct PollutionPrediction: View{
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .no2)
 						}
-					}.opacity(graph2Visible ? 1 : 0)
+					}
+					.opacity(graph2Visible ? 1 : 0)
 						.onAppear{
 						 withAnimation(.easeIn(duration: 1.3)){
 							 graph2Visible = true
 						 }
 					 }
-					
+//
 					HStack{
 						chartSulfurDioxideView()
 						VStack(alignment: .leading){
@@ -148,7 +148,8 @@ struct PollutionPrediction: View{
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .pm10)
 						}
-					}.opacity(graph5Visible ? 1 : 0)
+					}
+					.opacity(graph5Visible ? 1 : 0)
 						.onAppear{
 						 withAnimation(.easeIn(duration: 1.5)){
 							 graph5Visible = true

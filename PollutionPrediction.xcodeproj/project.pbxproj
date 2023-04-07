@@ -16,7 +16,6 @@
 		ED44299729C755B20062E283 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299629C755B20062E283 /* CSVParser.swift */; };
 		ED44299929C858760062E283 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = ED44299829C858760062E283 /* data.csv */; };
 		ED44299B29C85AEE0062E283 /* GroupBoxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */; };
-		ED5E006929D608ED00A5E630 /* Low_Poly_Trees_new.usdz in Resources */ = {isa = PBXBuildFile; fileRef = ED5E006829D608ED00A5E630 /* Low_Poly_Trees_new.usdz */; };
 		ED67ECAF29C9DBFA0010A027 /* COChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67ECAE29C9DBFA0010A027 /* COChartView.swift */; };
 		ED7D605829DF120B00F9C92F /* Forest_House_lowpoly.usdz in Resources */ = {isa = PBXBuildFile; fileRef = ED7D605629DF120A00F9C92F /* Forest_House_lowpoly.usdz */; };
 		ED7D605929DF120B00F9C92F /* Forest_House.usdz in Resources */ = {isa = PBXBuildFile; fileRef = ED7D605729DF120B00F9C92F /* Forest_House.usdz */; };
@@ -45,7 +44,6 @@
 		ED44299629C755B20062E283 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
 		ED44299829C858760062E283 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBoxConfiguration.swift; sourceTree = "<group>"; };
-		ED5E006829D608ED00A5E630 /* Low_Poly_Trees_new.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Low_Poly_Trees_new.usdz; sourceTree = "<group>"; };
 		ED67ECAE29C9DBFA0010A027 /* COChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COChartView.swift; sourceTree = "<group>"; };
 		ED7D605629DF120A00F9C92F /* Forest_House_lowpoly.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Forest_House_lowpoly.usdz; sourceTree = "<group>"; };
 		ED7D605729DF120B00F9C92F /* Forest_House.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Forest_House.usdz; sourceTree = "<group>"; };
@@ -95,9 +93,8 @@
 		EDB09D4829AA613A00A89ECC /* PollutionPrediction */ = {
 			isa = PBXGroup;
 			children = (
-				ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */,
-				ED5E006829D608ED00A5E630 /* Low_Poly_Trees_new.usdz */,
 				ED7D605629DF120A00F9C92F /* Forest_House_lowpoly.usdz */,
+				ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */,
 				ED7D605729DF120B00F9C92F /* Forest_House.usdz */,
 				ED44299829C858760062E283 /* data.csv */,
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
@@ -198,7 +195,6 @@
 				ED7D605829DF120B00F9C92F /* Forest_House_lowpoly.usdz in Resources */,
 				ED7D605929DF120B00F9C92F /* Forest_House.usdz in Resources */,
 				EDB09D5129AA613A00A89ECC /* Preview Assets.xcassets in Resources */,
-				ED5E006929D608ED00A5E630 /* Low_Poly_Trees_new.usdz in Resources */,
 				EDB09D4E29AA613A00A89ECC /* Assets.xcassets in Resources */,
 				ED44299929C858760062E283 /* data.csv in Resources */,
 			);
@@ -382,7 +378,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -417,7 +413,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

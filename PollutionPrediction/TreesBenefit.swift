@@ -43,6 +43,12 @@ struct TreesBenefit: View{
                 .titleStyle()
             
             Spacer()
+            
+            Button{
+                // open TreeRealityView in a opened view
+            } label: {
+                Text("Click here and see the clean and green cities, for a better tomororw!")
+            }
         
         }
         .opacity(isShowing ? 1 : 0)

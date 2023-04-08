@@ -124,7 +124,7 @@ struct Home : View {
                         .opacity(isNextPageButtonShowing ? 1 : 0)
                         .onAppear{
                             withAnimation(.easeInOut(duration: 1)){
-                                self.isNextPageButtonShowing.toggle()
+                                self.isNextPageButtonShowing = true
                             }
                         }
                     }
@@ -132,15 +132,15 @@ struct Home : View {
                     
                 })
                 .padding()
-                .opacity(isShowingPage ? 1 : 0)
+                
+                
+                Spacer(minLength: 0)
+            }.opacity(isShowingPage ? 1 : 0)
                 .onAppear{
                     withAnimation(.easeInOut(duration: 1)){
                         isShowingPage = true
                     }
                 }
-                
-                Spacer(minLength: 0)
-            }
             
             
         }.navigationBarHidden(true)

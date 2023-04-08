@@ -22,6 +22,9 @@ struct Home : View {
     ]
 
     @State var index = 0
+    
+    @State private var isNextPageButtonShowing: Bool = false
+    @State private var isShowingPage: Bool = false
 
     var body: some View{
         
@@ -59,7 +62,7 @@ struct Home : View {
                             
                         }, label: {
                             
-                            Image(systemName: "chevron.left")
+                            Image(systemName: "arrow.left.circle.fill")
                                 .font(.system(size: 35, weight: .bold))
                                 .opacity(index == 0 ? 0.3 : 1)
                         })
@@ -79,7 +82,7 @@ struct Home : View {
                             
                         }, label: {
                             
-                            Image(systemName: "chevron.right")
+                            Image(systemName: "arrow.right.circle.fill")
                                 .font(.system(size: 35, weight: .bold))
                             // disabling button when no other data ....
                                 .opacity(index == models.count - 1 ? 0.3 : 1)
@@ -118,10 +121,10 @@ struct Home : View {
                                     .foregroundColor(.blue)
                             })
                         }
-                        
+                        .opacity(isNextPageButtonShowing ? 1 : 0)
                         .onAppear{
                             withAnimation(.easeInOut(duration: 1)){
-                                //
+                                self.isNextPageButtonShowing.toggle()
                             }
                         }
                     }
@@ -129,6 +132,12 @@ struct Home : View {
                     
                 })
                 .padding()
+                .opacity(isShowingPage ? 1 : 0)
+                .onAppear{
+                    withAnimation(.easeInOut(duration: 1)){
+                        isShowingPage = true
+                    }
+                }
                 
                 Spacer(minLength: 0)
             }

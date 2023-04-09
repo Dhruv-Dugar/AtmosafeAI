@@ -15,9 +15,11 @@ struct Home : View {
     
     @State var models = [
         
-        Model(id: 0, name: "Earth", modelName: "Forest_House_lowpoly.usdz", details: "Earth is the third planet from the Sun and the only astronomical object known to harbor life. According to radiometric dating estimation and other evidence, Earth formed over 4.5 billion years ago. Earth's gravity interacts with other objects in space, especially the Sun and the Moon, which is Earth's only natural satellite. Earth orbits around the Sun in 365.256 solar days."),
+        Model(id: 0, name: "Polluting Factories", modelName: "Pollution_Plant.usdz", details: "Factories and cars are significant contributors to the rise of PM 2.5 levels and emissions of harmful gases like CO, NOx, and SOx. The combustion of fossil fuels in these sources releases these pollutants into the air, leading to respiratory problems and other health issues. Reducing emissions from factories and vehicles is essential for improving air quality and protecting public health."),
         
-        Model(id: 1, name: "Earth", modelName: "Forest_House.usdz", details: "Earth is the third planet from the Sun and the only astronomical object known to harbor life. According to radiometric dating estimation and other evidence, Earth formed over 4.5 billion years ago. Earth's gravity interacts with other objects in space, especially the Sun and the Moon, which is Earth's only natural satellite. Earth orbits around the Sun in 365.256 solar days."),
+        Model(id: 1, name: "Greener Communities", modelName: "Forest_House_lowpoly.usdz", details: "Green communities can help reduce pollution levels and improve air quality by increasing the number of trees and plants. These green spaces absorb pollutants such as PM 2.5, leading to healthier living environments. Creating more green spaces is a simple yet effective way to make a positive impact on the environment and our health."),
+        
+        
 
     ]
 
@@ -63,6 +65,7 @@ struct Home : View {
                         }, label: {
                             
                             Image(systemName: "arrow.left.circle.fill")
+                                .foregroundColor(.orange)
                                 .font(.system(size: 35, weight: .bold))
                                 .opacity(index == 0 ? 0.3 : 1)
                         })
@@ -83,6 +86,7 @@ struct Home : View {
                         }, label: {
                             
                             Image(systemName: "arrow.right.circle.fill")
+                                .foregroundColor(.orange)
                                 .font(.system(size: 35, weight: .bold))
                             // disabling button when no other data ....
                                 .opacity(index == models.count - 1 ? 0.3 : 1)
@@ -91,6 +95,7 @@ struct Home : View {
                     }
                     
                     Text(models[index].name)
+                        .foregroundColor(.primary)
                         .font(.system(size: 45, weight: .bold))
                 }
                 .foregroundColor(.black)
@@ -106,6 +111,10 @@ struct Home : View {
                         .fontWeight(.bold)
                     
                     Text(models[index].details)
+                        .font(.system(size: 22))
+                        .font(.caption)
+                        .multilineTextAlignment(.center)
+                        
                     
                     
                     Spacer()

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import SceneKit
 
-// Home View...
+
 
 struct Home : View {
     
@@ -34,21 +34,10 @@ struct Home : View {
             
             VStack{
                 
-                // Going to use SceneKit Scene View....
-                
-                // default is first object ie: Earth...
-                
-                // Scene View Has a default Camera View...
-                // if you nedd custom means add there...
-                
                 SceneView(scene: SCNScene(named: models[index].modelName), options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                // for user action...
-                // setting custom frame...
                     .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 2)
                 
                 ZStack{
-                    
-                    // Forward and backward buttons...
                     
                     HStack{
                         
@@ -102,7 +91,6 @@ struct Home : View {
                 .padding(.horizontal)
                 .padding(.vertical,30)
                 
-                // Details....
                 
                 VStack(spacing: 15, content: {
                     
@@ -122,7 +110,7 @@ struct Home : View {
                     if index == 1
                     {
                         VStack(alignment: .listRowSeparatorLeading){
-                            NavigationLink(destination: ExplanationView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                            NavigationLink(destination: LogoView().toolbar(.hidden).navigationViewStyle(.stack), label: {
                                 Image(systemName: "arrow.right.circle.fill")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)

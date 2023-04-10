@@ -41,7 +41,7 @@ struct IntroView: View {
         //
         //                Spacer()
                         (
-                            Text("PollutionPredictor aims to use the capabilities of")
+                            Text("Atmosafe aims to use the capabilities of")
                             +
                             Text(" Machine Learning")
                                 .foregroundColor(.cyan)

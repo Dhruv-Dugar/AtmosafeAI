@@ -39,27 +39,14 @@ struct ExplanationView: View{
                     
                     +
                     
-                    Text(" are the most harmful, and being the most difficult to measure and control.")
+                    Text(" are the most pesky, and being the most difficult to measure and control.")
                 )
                 .font(.system(size: 27))
                 .titleStyle()
                 
                 
-                Text("PollutionPredictor attemps to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the prevailing present conditions!").font(.system(size: 27))
+                Text("Atmosafe attemps to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the prevailing present conditions!").font(.system(size: 27))
                     .titleStyle()
-                
-                (
-                    Text("PollutionPredictor additionally uses the international pollution standards to calculate the ")
-                    +
-                    Text("Air Quality Index")
-                        .foregroundColor(.orange)
-                        .fontWeight(.semibold)
-                    +
-                    Text(" from the given data, and provides a simple overview over the present conditions.")
-                    
-                )
-                    .font(.system(size: 27))
-                        .titleStyle()
                 
                 Spacer()
                 

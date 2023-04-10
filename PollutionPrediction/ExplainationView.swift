@@ -26,7 +26,7 @@ struct ExplanationView: View{
 //                    .font(.system(size: 27))
 //                    .titleStyle()
                 
-                Text("Pollution measurement is done in 6 key parameters, PM 2.5, PM 10, CO, NO\u{2082}, SO\u{2082} and O\u{2083}")
+                Text("Pollution measurement is done in 6 key parameters, PM 2.5, PM 10, CO, NO\u{2082}, SO\u{2082} and O\u{2083} namely.")
                     .font(.system(size: 27))
                     .titleStyle()
                 
@@ -49,7 +49,7 @@ struct ExplanationView: View{
                 .titleStyle()
                 
                 
-                Text("Atmosafe attemps to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the prevailing present conditions!").font(.system(size: 27))
+                Text("AtmosafeAI attemps to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the prevailing present conditions!").font(.system(size: 27))
                     .titleStyle()
                 
                 Spacer()

@@ -7,12 +7,12 @@
 
 import Foundation
 import SwiftUI
-import SceneKit
 import ConfettiSwiftUI
 
 struct ThankYouView: View{
     @State private var counter = 0
     @State private var isShowing: Bool = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View{
         VStack{
@@ -22,34 +22,39 @@ struct ThankYouView: View{
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
-            Text("Atmosafe's's ML Model was built in just a few days with a CoreML Tabular Regressor, something which has just a few parameters like SO\u{2082}, NO\u{2082}, O\u{2083} and PM10.")
+            Text("AtmosafeAI's ML Model was built in just a few days with a CoreML Tabular Regressor, something which has just a few parameters like SO\u{2082}, NO\u{2082}, O\u{2083} and PM10.")
                 .multilineTextAlignment(.center)
-                .font(.system(size: 20))
+                .font(.system(size: 24))
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
-            Text("Right now, Atmosafe acts as an intermediary step with manual input to the Pollution Data.")
+            Text("Right now, AtmosafeAI acts as an intermediary step with manual input to the Pollution Data.")
                 .multilineTextAlignment(.center)
-                .font(.system(size: 20))
+                .font(.system(size: 24))
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
             Text("But not for long")
                 .foregroundColor(.red)
                 .multilineTextAlignment(.center)
-                .font(.system(size: 20, weight: .semibold))
+                .font(.system(size: 26, weight: .semibold))
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
             Text("After the submission, I plan to integrate API access to the world's pollution data and notify users in real time whether they should wear a mask or not, helping save lives and extend lifespans to spend on a safer Earth")
                 .multilineTextAlignment(.center)
-                .font(.system(size: 20))
+                .font(.system(size: 24))
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
-            SceneView(scene: SCNScene(named: "Pollution_Plant.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 3)
-                .confettiCannon(counter: $counter, num: 200, rainHeight: 300, radius: 500)
+//            SceneView(scene: SCNScene(named: "Pollution_Plant.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
+//                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 3)
+            
+            Image(colorScheme == .light ? "thankyou" : "thankyou_inverted")
+                .frame(width: UIScreen.main.bounds.width*0.8)
+                .padding(.top, 40)
+                .titleStyle()
+                .confettiCannon(counter: $counter, num: 300, rainHeight: 600)
             
             Spacer()
             
@@ -71,12 +76,18 @@ struct ThankYouView: View{
         }
         .opacity(isShowing ? 1 : 0)
         .onAppear{
-            withAnimation(.easeInOut(duration: 1)){
+            withAnimation(.easeIn(duration: 0.5)){
                 isShowing = true
-                counter = 1
+                updateCounter()
             }
         }
         .padding()
+    }
+    
+    func updateCounter(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
+            counter = 1
+        }
     }
     
 }

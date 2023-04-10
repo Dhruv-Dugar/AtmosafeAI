@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED010A6629D7270F00E0B909 /* CustomButtonStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED010A6529D7270F00E0B909 /* CustomButtonStyling.swift */; };
 		ED054A6629CC66A000F1BB7B /* TreesBenefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED054A6529CC66A000F1BB7B /* TreesBenefit.swift */; };
 		ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED201F3429ABA5F900AD1427 /* ExplainationView.swift */; };
 		ED2D808C29C28C880003C1CF /* Delhi Pollution Model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */; };
@@ -36,7 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ED010A6529D7270F00E0B909 /* CustomButtonStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyling.swift; sourceTree = "<group>"; };
 		ED054A6529CC66A000F1BB7B /* TreesBenefit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesBenefit.swift; sourceTree = "<group>"; };
 		ED201F3429ABA5F900AD1427 /* ExplainationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainationView.swift; sourceTree = "<group>"; };
 		ED2D808B29C28C880003C1CF /* Delhi Pollution Model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Delhi Pollution Model.mlmodel"; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */,
 				ED054A6529CC66A000F1BB7B /* TreesBenefit.swift */,
 				ED6033E029E28EF500D2485A /* ThankYouView.swift */,
-				ED010A6529D7270F00E0B909 /* CustomButtonStyling.swift */,
 				ED44299629C755B20062E283 /* CSVParser.swift */,
 				ED2D808D29C295A40003C1CF /* Extensions.swift */,
 				EDF2EECE29DB1D00001ED474 /* DoubleTruncation.swift */,
@@ -214,7 +211,6 @@
 				EDDDC13D29ACAE4D009A2EE5 /* PollutionPrediction.swift in Sources */,
 				EDF2EEC929DB1BC4001ED474 /* SO2ChartView.swift in Sources */,
 				ED6033E129E28EF500D2485A /* ThankYouView.swift in Sources */,
-				ED010A6629D7270F00E0B909 /* CustomButtonStyling.swift in Sources */,
 				ED9F6B3129D55C9700D21C0F /* SceneKitModelsView.swift in Sources */,
 				EDF14B9C29ABED23007FC8F9 /* LogoView.swift in Sources */,
 				ED44299729C755B20062E283 /* CSVParser.swift in Sources */,

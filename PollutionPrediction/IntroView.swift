@@ -16,7 +16,7 @@ struct IntroView: View {
     
         VStack{
             NavigationView{
-                VStack{
+                VStack(alignment: .center){
                     Section{
                         Image("logo")
                             .resizable()
@@ -41,7 +41,7 @@ struct IntroView: View {
         //
         //                Spacer()
                         (
-                            Text("Atmosafe aims to use the capabilities of")
+                            Text("AtmosafeAI aims to use the capabilities of")
                             +
                             Text(" Machine Learning")
                                 .foregroundColor(.cyan)

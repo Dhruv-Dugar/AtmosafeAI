@@ -8,9 +8,11 @@
 import Foundation
 import SwiftUI
 import SceneKit
-
+import ConfettiSwiftUI
 
 struct ThankYouView: View{
+    @State private var counter = 0
+    @State private var isShowing: Bool = false
     
     var body: some View{
         VStack{
@@ -47,19 +49,34 @@ struct ThankYouView: View{
             
             SceneView(scene: SCNScene(named: "Pollution_Plant.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
                 .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 3)
+                .confettiCannon(counter: $counter, num: 200, rainHeight: 300, radius: 500)
             
             Spacer()
+            
+            
+            
             
             Text("~Dhruv Dugar")
                 .font(.system(size: 20))
                 .font(.callout)
                 .foregroundColor(.secondary)
                 .padding(.top, 20)
+               
                 
+            
+            
 //            Spacer()
             
             
         }
+        .opacity(isShowing ? 1 : 0)
+        .onAppear{
+            withAnimation(.easeInOut(duration: 1)){
+                isShowing = true
+                counter = 1
+            }
+        }
+        .padding()
     }
     
 }

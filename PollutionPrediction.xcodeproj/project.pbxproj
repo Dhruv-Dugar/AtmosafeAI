@@ -20,6 +20,7 @@
 		ED6033E129E28EF500D2485A /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6033E029E28EF500D2485A /* ThankYouView.swift */; };
 		ED67ECAF29C9DBFA0010A027 /* COChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67ECAE29C9DBFA0010A027 /* COChartView.swift */; };
 		ED7D605829DF120B00F9C92F /* Forest_House_lowpoly.usdz in Resources */ = {isa = PBXBuildFile; fileRef = ED7D605629DF120A00F9C92F /* Forest_House_lowpoly.usdz */; };
+		ED826E7F29E4665E0084D6FE /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = ED826E7E29E4665E0084D6FE /* ConfettiSwiftUI */; };
 		ED9F6B3129D55C9700D21C0F /* SceneKitModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F6B3029D55C9700D21C0F /* SceneKitModelsView.swift */; };
 		EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */; };
 		EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4B29AA613A00A89ECC /* IntroView.swift */; };
@@ -50,7 +51,7 @@
 		ED67ECAE29C9DBFA0010A027 /* COChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COChartView.swift; sourceTree = "<group>"; };
 		ED7D605629DF120A00F9C92F /* Forest_House_lowpoly.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Forest_House_lowpoly.usdz; sourceTree = "<group>"; };
 		ED9F6B3029D55C9700D21C0F /* SceneKitModelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitModelsView.swift; sourceTree = "<group>"; };
-		EDB09D4629AA613A00A89ECC /* PollutionPrediction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PollutionPrediction.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB09D4629AA613A00A89ECC /* Atmosafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atmosafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionPredictionApp.swift; sourceTree = "<group>"; };
 		EDB09D4B29AA613A00A89ECC /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		EDB09D4D29AA613A00A89ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED826E7F29E4665E0084D6FE /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +89,7 @@
 		EDB09D4729AA613A00A89ECC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDB09D4629AA613A00A89ECC /* PollutionPrediction.app */,
+				EDB09D4629AA613A00A89ECC /* Atmosafe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,9 +138,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EDB09D4529AA613A00A89ECC /* PollutionPrediction */ = {
+		EDB09D4529AA613A00A89ECC /* Atmosafe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDB09D5429AA613A00A89ECC /* Build configuration list for PBXNativeTarget "PollutionPrediction" */;
+			buildConfigurationList = EDB09D5429AA613A00A89ECC /* Build configuration list for PBXNativeTarget "Atmosafe" */;
 			buildPhases = (
 				EDB09D4229AA613A00A89ECC /* Sources */,
 				EDB09D4329AA613A00A89ECC /* Frameworks */,
@@ -148,11 +150,12 @@
 			);
 			dependencies = (
 			);
-			name = PollutionPrediction;
+			name = Atmosafe;
 			packageProductDependencies = (
+				ED826E7E29E4665E0084D6FE /* ConfettiSwiftUI */,
 			);
 			productName = PollutionPrediction;
-			productReference = EDB09D4629AA613A00A89ECC /* PollutionPrediction.app */;
+			productReference = EDB09D4629AA613A00A89ECC /* Atmosafe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -180,12 +183,13 @@
 			);
 			mainGroup = EDB09D3D29AA613A00A89ECC;
 			packageReferences = (
+				ED826E7D29E4665E0084D6FE /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = EDB09D4729AA613A00A89ECC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDB09D4529AA613A00A89ECC /* PollutionPrediction */,
+				EDB09D4529AA613A00A89ECC /* Atmosafe */,
 			);
 		};
 /* End PBXProject section */
@@ -356,13 +360,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PollutionPrediction/Preview Content\"";
 				DEVELOPMENT_TEAM = Q5A93M73DC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Pollution Prediction";
+				INFOPLIST_KEY_CFBundleDisplayName = Atmosafe;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -375,7 +380,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dhruvdugar.PollutionPrediction;
+				PRODUCT_BUNDLE_IDENTIFIER = dhruvdugar.atmosafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -391,13 +396,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PollutionPrediction/Preview Content\"";
 				DEVELOPMENT_TEAM = Q5A93M73DC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Pollution Prediction";
+				INFOPLIST_KEY_CFBundleDisplayName = Atmosafe;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -410,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dhruvdugar.PollutionPrediction;
+				PRODUCT_BUNDLE_IDENTIFIER = dhruvdugar.atmosafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -433,7 +439,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDB09D5429AA613A00A89ECC /* Build configuration list for PBXNativeTarget "PollutionPrediction" */ = {
+		EDB09D5429AA613A00A89ECC /* Build configuration list for PBXNativeTarget "Atmosafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDB09D5529AA613A00A89ECC /* Debug */,
@@ -443,6 +449,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ED826E7D29E4665E0084D6FE /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ED826E7E29E4665E0084D6FE /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED826E7D29E4665E0084D6FE /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDB09D3E29AA613A00A89ECC /* Project object */;
 }

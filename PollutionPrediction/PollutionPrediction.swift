@@ -87,8 +87,7 @@ struct PollutionPrediction: View{
 					HStack{
 						chartNitrogenDioxideView()
 						VStack(alignment: .leading){
-	//						Text("Concentration of NO2")
-							SubSuperScriptText(inputString: "Concentration of NO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6)
+							Text("Concentration of NO\u{2082}")
 							TextField("ppm", value: $concentrationNO2, format: .number).keyboardType(.decimalPad)
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .no2)
@@ -99,8 +98,8 @@ struct PollutionPrediction: View{
 					HStack{
 						chartSulfurDioxideView()
 						VStack(alignment: .leading){
-	//						Text("Concentration of CO")
-							SubSuperScriptText(inputString: "Concentration of SO_{2}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+							Text("Concentration of SO\u{2082}")
+							
 							TextField("ppm", value: $concentrationSO2, format: .number).keyboardType(.decimalPad)
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .so2)
@@ -111,8 +110,7 @@ struct PollutionPrediction: View{
 					HStack{
 						chartOzoneView()
 						VStack(alignment: .leading){
-	//						Text("Concentration of CO")
-							SubSuperScriptText(inputString: "Concentration of O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+							Text("Concentration of O\u{2083}")
 							TextField("ppm", value: $concentrationO3, format: .number).keyboardType(.decimalPad)
 								.textFieldStyle(OutlinedTextFieldStyle())
 								.focused($isActive, equals: .o3)

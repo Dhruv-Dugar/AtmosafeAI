@@ -48,7 +48,7 @@
 		ED67ECAE29C9DBFA0010A027 /* COChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COChartView.swift; sourceTree = "<group>"; };
 		ED7D605629DF120A00F9C92F /* Forest_House_lowpoly.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Forest_House_lowpoly.usdz; sourceTree = "<group>"; };
 		ED9F6B3029D55C9700D21C0F /* SceneKitModelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitModelsView.swift; sourceTree = "<group>"; };
-		EDB09D4629AA613A00A89ECC /* Atmosafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atmosafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB09D4629AA613A00A89ECC /* AtmosafeAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtmosafeAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionPredictionApp.swift; sourceTree = "<group>"; };
 		EDB09D4B29AA613A00A89ECC /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		EDB09D4D29AA613A00A89ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		EDB09D4729AA613A00A89ECC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDB09D4629AA613A00A89ECC /* Atmosafe.app */,
+				EDB09D4629AA613A00A89ECC /* AtmosafeAI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,9 +132,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EDB09D4529AA613A00A89ECC /* Atmosafe */ = {
+		EDB09D4529AA613A00A89ECC /* AtmosafeAI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDB09D5429AA613A00A89ECC /* Build configuration list for PBXNativeTarget "Atmosafe" */;
+			buildConfigurationList = EDB09D5429AA613A00A89ECC /* Build configuration list for PBXNativeTarget "AtmosafeAI" */;
 			buildPhases = (
 				EDB09D4229AA613A00A89ECC /* Sources */,
 				EDB09D4329AA613A00A89ECC /* Frameworks */,
@@ -144,12 +144,12 @@
 			);
 			dependencies = (
 			);
-			name = Atmosafe;
+			name = AtmosafeAI;
 			packageProductDependencies = (
 				ED826E7E29E4665E0084D6FE /* ConfettiSwiftUI */,
 			);
 			productName = PollutionPrediction;
-			productReference = EDB09D4629AA613A00A89ECC /* Atmosafe.app */;
+			productReference = EDB09D4629AA613A00A89ECC /* AtmosafeAI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +183,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDB09D4529AA613A00A89ECC /* Atmosafe */,
+				EDB09D4529AA613A00A89ECC /* AtmosafeAI */,
 			);
 		};
 /* End PBXProject section */
@@ -359,7 +359,7 @@
 				DEVELOPMENT_TEAM = Q5A93M73DC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Atmosafe;
+				INFOPLIST_KEY_CFBundleDisplayName = AtmosafeAI;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -372,7 +372,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dhruvdugar.atmosafe;
+				PRODUCT_BUNDLE_IDENTIFIER = dhruvdugar.atmosafeai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -395,7 +395,7 @@
 				DEVELOPMENT_TEAM = Q5A93M73DC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Atmosafe;
+				INFOPLIST_KEY_CFBundleDisplayName = AtmosafeAI;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -408,7 +408,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dhruvdugar.atmosafe;
+				PRODUCT_BUNDLE_IDENTIFIER = dhruvdugar.atmosafeai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -431,7 +431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDB09D5429AA613A00A89ECC /* Build configuration list for PBXNativeTarget "Atmosafe" */ = {
+		EDB09D5429AA613A00A89ECC /* Build configuration list for PBXNativeTarget "AtmosafeAI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDB09D5529AA613A00A89ECC /* Debug */,

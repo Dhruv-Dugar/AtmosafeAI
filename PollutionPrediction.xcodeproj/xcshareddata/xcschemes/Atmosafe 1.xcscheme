@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EDB09D4529AA613A00A89ECC"
-               BuildableName = "Atmosafe.app"
-               BlueprintName = "Atmosafe"
+               BuildableName = "AtmosafeAI.app"
+               BlueprintName = "AtmosafeAI"
                ReferencedContainer = "container:PollutionPrediction.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EDB09D4529AA613A00A89ECC"
-            BuildableName = "Atmosafe.app"
-            BlueprintName = "Atmosafe"
+            BuildableName = "AtmosafeAI.app"
+            BlueprintName = "AtmosafeAI"
             ReferencedContainer = "container:PollutionPrediction.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EDB09D4529AA613A00A89ECC"
-            BuildableName = "Atmosafe.app"
-            BlueprintName = "Atmosafe"
+            BuildableName = "AtmosafeAI.app"
+            BlueprintName = "AtmosafeAI"
             ReferencedContainer = "container:PollutionPrediction.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

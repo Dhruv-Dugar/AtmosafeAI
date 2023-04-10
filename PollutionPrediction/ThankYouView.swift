@@ -46,14 +46,17 @@ struct ThankYouView: View{
                 .fixedSize(horizontal: false, vertical: true)
             
             SceneView(scene: SCNScene(named: "Pollution_Plant.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 2)
+                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 3)
+            
+            Spacer()
             
             Text("~Dhruv Dugar")
                 .font(.system(size: 20))
                 .font(.callout)
-                .foregroundColor(.pink)
+                .foregroundColor(.secondary)
+                .padding(.top, 20)
                 
-            
+//            Spacer()
             
             
         }

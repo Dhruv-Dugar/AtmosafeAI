@@ -21,8 +21,12 @@ struct ExplanationView: View{
 
                 Spacer()
                 
+//
+//                SubSuperScriptText(inputString: "Pollution measurement is done in 6 key parameters, PM 2.5, PM 10, CO, NO_{2}, SO_{2} and O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+//                    .font(.system(size: 27))
+//                    .titleStyle()
                 
-                SubSuperScriptText(inputString: "Pollution measurement is done in 6 key parameters, PM 2.5, PM 10, CO, NO_{2}, SO_{2} and O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
+                Text("Pollution measurement is done in 6 key parameters, PM 2.5, PM 10, CO, NO\u{2082}, SO\u{2082} and O\u{2083}")
                     .font(.system(size: 27))
                     .titleStyle()
                 

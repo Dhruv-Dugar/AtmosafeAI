@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import SceneKit
 
 
 struct ThankYouView: View{
@@ -19,13 +20,13 @@ struct ThankYouView: View{
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
-            Text("PollutionPrediction's ML Model was built in just a few days with a CoreML Tabular Regressor, something which has just a few parameters like SO\u{2082}, NO\u{2082}, O\u{2083} and PM10.")
+            Text("Atmosafe's's ML Model was built in just a few days with a CoreML Tabular Regressor, something which has just a few parameters like SO\u{2082}, NO\u{2082}, O\u{2083} and PM10.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
-            Text("Right now, PollutionPrediction acts as an intermediary step with manual input to the Pollution Data.")
+            Text("Right now, Atmosafe acts as an intermediary step with manual input to the Pollution Data.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
                 .padding()
@@ -44,8 +45,14 @@ struct ThankYouView: View{
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
+            SceneView(scene: SCNScene(named: "Pollution_Plant.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 2)
             
-            
+            Text("~Dhruv Dugar")
+                .font(.system(size: 20))
+                .font(.callout)
+                .foregroundColor(.pink)
+                
             
             
             

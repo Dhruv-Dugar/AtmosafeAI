@@ -12,6 +12,7 @@ struct ThankYouView: View{
     @State private var counter = 0
     @State private var isShowing: Bool = false
     @Environment(\.colorScheme) var colorScheme
+    @State private var isConfettiVisible: Bool = false
     
     var body: some View{
         VStack{
@@ -46,11 +47,9 @@ struct ThankYouView: View{
                 .padding()
                 .fixedSize(horizontal: false, vertical: true)
             
-//            SceneView(scene: SCNScene(named: "Pollution_Plant.usdz"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
-//                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 3)
-            
             Image(colorScheme == .light ? "thankyou" : "thankyou_inverted")
-                .frame(width: UIScreen.main.bounds.width*0.7)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                 .padding(.top, 40)
                 .titleStyle()
             
@@ -64,19 +63,22 @@ struct ThankYouView: View{
                 .font(.callout)
                 .foregroundColor(.secondary)
                 .padding(.top, 20)
-               
-                
             
             
-//            Spacer()
+            
+            
+            //            Spacer()
             
             
         }
+        .withConfetti(isVisible: $isConfettiVisible)
         .opacity(isShowing ? 1 : 0)
         .onAppear{
             withAnimation(.easeIn(duration: 0.5)){
                 isShowing = true
                 updateCounter()
+                showConfetti()
+                hideConfetti()
             }
         }
         .padding()
@@ -85,6 +87,18 @@ struct ThankYouView: View{
     func updateCounter(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
             counter = 1
+        }
+    }
+    
+    func showConfetti(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+            isConfettiVisible = true
+        }
+    }
+    
+    func hideConfetti(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7){
+            isConfettiVisible = false
         }
     }
     

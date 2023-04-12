@@ -11,6 +11,9 @@
 		ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED201F3429ABA5F900AD1427 /* ExplainationView.swift */; };
 		ED2D808E29C295A40003C1CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D808D29C295A40003C1CF /* Extensions.swift */; };
 		ED2ED58E29C98AAB00798B14 /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2ED58D29C98AAB00798B14 /* TitleStyle.swift */; };
+		ED40554029E698B2008F818D /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40553F29E698B2008F818D /* ConfettiView.swift */; };
+		ED40554229E698C8008F818D /* PressActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40554129E698C8008F818D /* PressActions.swift */; };
+		ED40554429E698E0008F818D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40554329E698E0008F818D /* ViewExtensions.swift */; };
 		ED44299729C755B20062E283 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299629C755B20062E283 /* CSVParser.swift */; };
 		ED44299929C858760062E283 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = ED44299829C858760062E283 /* data.csv */; };
 		ED44299B29C85AEE0062E283 /* GroupBoxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */; };
@@ -38,6 +41,9 @@
 		ED201F3429ABA5F900AD1427 /* ExplainationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainationView.swift; sourceTree = "<group>"; };
 		ED2D808D29C295A40003C1CF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ED2ED58D29C98AAB00798B14 /* TitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStyle.swift; sourceTree = "<group>"; };
+		ED40553F29E698B2008F818D /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		ED40554129E698C8008F818D /* PressActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressActions.swift; sourceTree = "<group>"; };
+		ED40554329E698E0008F818D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		ED44299629C755B20062E283 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
 		ED44299829C858760062E283 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBoxConfiguration.swift; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 				EDDDC13C29ACAE4D009A2EE5 /* PollutionPrediction.swift */,
 				ED054A6529CC66A000F1BB7B /* TreesBenefit.swift */,
 				ED6033E029E28EF500D2485A /* ThankYouView.swift */,
+				ED40553F29E698B2008F818D /* ConfettiView.swift */,
+				ED40554129E698C8008F818D /* PressActions.swift */,
+				ED40554329E698E0008F818D /* ViewExtensions.swift */,
 				ED44299629C755B20062E283 /* CSVParser.swift */,
 				ED2D808D29C295A40003C1CF /* Extensions.swift */,
 				EDF2EECE29DB1D00001ED474 /* DoubleTruncation.swift */,
@@ -204,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED40554429E698E0008F818D /* ViewExtensions.swift in Sources */,
 				EDDDC13D29ACAE4D009A2EE5 /* PollutionPrediction.swift in Sources */,
 				EDF2EEC929DB1BC4001ED474 /* SO2ChartView.swift in Sources */,
 				ED6033E129E28EF500D2485A /* ThankYouView.swift in Sources */,
@@ -211,7 +221,9 @@
 				EDF14B9C29ABED23007FC8F9 /* LogoView.swift in Sources */,
 				ED44299729C755B20062E283 /* CSVParser.swift in Sources */,
 				EDF2EEC729DB1B90001ED474 /* NO2ChartView.swift in Sources */,
+				ED40554229E698C8008F818D /* PressActions.swift in Sources */,
 				ED201F3529ABA5F900AD1427 /* ExplainationView.swift in Sources */,
+				ED40554029E698B2008F818D /* ConfettiView.swift in Sources */,
 				EDF2EECB29DB1BEE001ED474 /* O3ChartView.swift in Sources */,
 				EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */,
 				ED2ED58E29C98AAB00798B14 /* TitleStyle.swift in Sources */,

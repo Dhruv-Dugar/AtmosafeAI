@@ -14,6 +14,7 @@
 		ED40554029E698B2008F818D /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40553F29E698B2008F818D /* ConfettiView.swift */; };
 		ED40554229E698C8008F818D /* PressActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40554129E698C8008F818D /* PressActions.swift */; };
 		ED40554429E698E0008F818D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40554329E698E0008F818D /* ViewExtensions.swift */; };
+		ED40554A29E69F94008F818D /* Delhi_Pollution_Model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED40554929E69F94008F818D /* Delhi_Pollution_Model.mlmodel */; };
 		ED44299729C755B20062E283 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299629C755B20062E283 /* CSVParser.swift */; };
 		ED44299929C858760062E283 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = ED44299829C858760062E283 /* data.csv */; };
 		ED44299B29C85AEE0062E283 /* GroupBoxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */; };
@@ -21,7 +22,6 @@
 		ED6033E129E28EF500D2485A /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6033E029E28EF500D2485A /* ThankYouView.swift */; };
 		ED67ECAF29C9DBFA0010A027 /* COChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67ECAE29C9DBFA0010A027 /* COChartView.swift */; };
 		ED7D605829DF120B00F9C92F /* Forest_House_lowpoly.usdz in Resources */ = {isa = PBXBuildFile; fileRef = ED7D605629DF120A00F9C92F /* Forest_House_lowpoly.usdz */; };
-		ED8FABD129E5CA7F0013C6E7 /* DelhiPollutionModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED8FABD029E5CA7F0013C6E7 /* DelhiPollutionModel.mlmodel */; };
 		ED9F6B3129D55C9700D21C0F /* SceneKitModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F6B3029D55C9700D21C0F /* SceneKitModelsView.swift */; };
 		EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */; };
 		EDB09D4C29AA613A00A89ECC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D4B29AA613A00A89ECC /* IntroView.swift */; };
@@ -43,6 +43,7 @@
 		ED40553F29E698B2008F818D /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		ED40554129E698C8008F818D /* PressActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressActions.swift; sourceTree = "<group>"; };
 		ED40554329E698E0008F818D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		ED40554929E69F94008F818D /* Delhi_Pollution_Model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Delhi_Pollution_Model.mlmodel; sourceTree = "<group>"; };
 		ED44299629C755B20062E283 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
 		ED44299829C858760062E283 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		ED44299A29C85AEE0062E283 /* GroupBoxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBoxConfiguration.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		ED6033E029E28EF500D2485A /* ThankYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
 		ED67ECAE29C9DBFA0010A027 /* COChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COChartView.swift; sourceTree = "<group>"; };
 		ED7D605629DF120A00F9C92F /* Forest_House_lowpoly.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Forest_House_lowpoly.usdz; sourceTree = "<group>"; };
-		ED8FABD029E5CA7F0013C6E7 /* DelhiPollutionModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DelhiPollutionModel.mlmodel; path = ../../DelhiPollutionModel.mlmodel; sourceTree = "<group>"; };
 		ED9F6B3029D55C9700D21C0F /* SceneKitModelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitModelsView.swift; sourceTree = "<group>"; };
 		EDB09D4629AA613A00A89ECC /* AtmosafeAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtmosafeAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionPredictionApp.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				ED7D605629DF120A00F9C92F /* Forest_House_lowpoly.usdz */,
+				ED40554929E69F94008F818D /* Delhi_Pollution_Model.mlmodel */,
 				ED6033DE29E28BF200D2485A /* Pollution_Plant.usdz */,
-				ED8FABD029E5CA7F0013C6E7 /* DelhiPollutionModel.mlmodel */,
 				ED44299829C858760062E283 /* data.csv */,
 				EDB09D4929AA613A00A89ECC /* PollutionPredictionApp.swift */,
 				ED67ECAE29C9DBFA0010A027 /* COChartView.swift */,
@@ -226,8 +226,8 @@
 				EDF2EECD29DB1C0B001ED474 /* PM10ChartView.swift in Sources */,
 				EDB09D4A29AA613A00A89ECC /* PollutionPredictionApp.swift in Sources */,
 				EDF2EECF29DB1D00001ED474 /* DoubleTruncation.swift in Sources */,
-				ED8FABD129E5CA7F0013C6E7 /* DelhiPollutionModel.mlmodel in Sources */,
 				ED054A6629CC66A000F1BB7B /* TreesBenefit.swift in Sources */,
+				ED40554A29E69F94008F818D /* Delhi_Pollution_Model.mlmodel in Sources */,
 				ED2D808E29C295A40003C1CF /* Extensions.swift in Sources */,
 				ED44299B29C85AEE0062E283 /* GroupBoxConfiguration.swift in Sources */,
 				ED67ECAF29C9DBFA0010A027 /* COChartView.swift in Sources */,

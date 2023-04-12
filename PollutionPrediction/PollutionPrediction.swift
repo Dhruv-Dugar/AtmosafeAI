@@ -45,7 +45,7 @@ struct PollutionPrediction: View{
 	var predictedPM25: Double? {
 		do{
 			let config = MLModelConfiguration()
-			let model = try DelhiPollutionModel(configuration: config)
+			let model = try Delhi_Pollution_Model(configuration: config)
 			
 			let prediction = try model.prediction(NO2: concentrationNO2 ?? 0, CO: concentrationCO ?? 0, SO2: concentrationSO2 ?? 0, O3: concentrationO3 ?? 0, PM10: concentrationPM10 ?? 0)
 			

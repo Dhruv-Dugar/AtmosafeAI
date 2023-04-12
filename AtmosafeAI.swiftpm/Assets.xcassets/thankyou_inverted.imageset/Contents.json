@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "thankyou_inverted.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

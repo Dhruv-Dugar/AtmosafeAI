@@ -94,34 +94,39 @@ struct Home : View {
                 
                 VStack(spacing: 15, content: {
                     
-                    Text("About")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    
-                    Text(models[index].details)
-                        .font(.system(size: 22))
-                        .font(.caption)
-                        .multilineTextAlignment(.center)
-                        
+
                     
                     
-                    Spacer()
-                    
-                    if index == 1
-                    {
-                        VStack(alignment: .listRowSeparatorLeading){
-                            NavigationLink(destination: LogoView().toolbar(.hidden).navigationViewStyle(.stack), label: {
-                                Image(systemName: "arrow.right.circle.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 80)
-                                    .foregroundColor(.blue)
-                            })
-                        }
-                        .opacity(isNextPageButtonShowing ? 1 : 0)
-                        .onAppear{
-                            withAnimation(.easeInOut(duration: 1)){
-                                self.isNextPageButtonShowing = true
+                    GroupBox{
+                        Text("About")
+                            .font(.title2)
+                            .fontWeight(.bold)
+
+                        Text(models[index].details)
+                            .font(.system(size: 22))
+                            .font(.caption)
+                            .multilineTextAlignment(.center)
+
+
+
+                        Spacer()
+
+                        if index == 1
+                        {
+                            VStack(alignment: .listRowSeparatorLeading){
+                                NavigationLink(destination: LogoView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                                    Image(systemName: "arrow.right.circle.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 80)
+                                        .foregroundColor(.blue)
+                                })
+                            }
+                            .opacity(isNextPageButtonShowing ? 1 : 0)
+                            .onAppear{
+                                withAnimation(.easeInOut(duration: 1)){
+                                    self.isNextPageButtonShowing = true
+                                }
                             }
                         }
                     }

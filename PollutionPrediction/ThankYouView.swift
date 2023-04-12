@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import ConfettiSwiftUI
 
 struct ThankYouView: View{
     @State private var counter = 0
@@ -51,10 +50,9 @@ struct ThankYouView: View{
 //                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 3)
             
             Image(colorScheme == .light ? "thankyou" : "thankyou_inverted")
-                .frame(width: UIScreen.main.bounds.width*0.8)
+                .frame(width: UIScreen.main.bounds.width*0.7)
                 .padding(.top, 40)
                 .titleStyle()
-                .confettiCannon(counter: $counter, num: 300, rainHeight: 600)
             
             Spacer()
             

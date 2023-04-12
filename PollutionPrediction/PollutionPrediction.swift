@@ -45,7 +45,7 @@ struct PollutionPrediction: View{
 	var predictedPM25: Double? {
 		do{
 			let config = MLModelConfiguration()
-			let model = try Delhi_Pollution_Model(configuration: config)
+			let model = try DelhiPollutionModel(configuration: config)
 			
 			let prediction = try model.prediction(NO2: concentrationNO2 ?? 0, CO: concentrationCO ?? 0, SO2: concentrationSO2 ?? 0, O3: concentrationO3 ?? 0, PM10: concentrationPM10 ?? 0)
 			
@@ -143,12 +143,12 @@ struct PollutionPrediction: View{
 							
 						)
 							.font(.title.weight(.semibold))
-							.foregroundColor(predictedPM25! > 150 ? .red : .mint)
+							.foregroundColor(predictedPM25! > 125 ? .red : .mint)
 					
 					
 					
 						
-						Text(predictedPM25! > 50 ? predictedPM25! > 100 ? predictedPM25! > 150 ? "\nSeverely high PM 2.5 values, wearing a mask is recommenede for everyone" : "\nPM 2.5 concentration is unhealthy for sensetive groups. Wear a mask in the case of having respiratory issues" : "\nPM 2.5 concentration is moderate. Wear a mask if you have respiratory conditions" : "\nExpected PM 2.5 concentration is good. No need to wear a mask")
+						Text(predictedPM25! > 50 ? predictedPM25! > 100 ? predictedPM25! > 150 ? "\nSeverely high PM 2.5 values, wearing a mask is recommenede for everyone" : "\nPM 2.5 concentration is unhealthy. Wear a mask in the case of having respiratory issues." : "\nPM 2.5 concentration is moderate. Wear a mask if you have respiratory conditions or belong in sensetive groups." : "\nExpected PM 2.5 concentration is good. No need to wear a mask")
 								.multilineTextAlignment(.center)
 								.font(.system(size: 20))
 								.fixedSize(horizontal: false, vertical: true)

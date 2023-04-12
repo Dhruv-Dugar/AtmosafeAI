@@ -20,22 +20,22 @@ struct Home : View {
         Model(id: 1, name: "Greener Communities", modelName: "Forest_House_lowpoly.usdz", details: "Green communities can help reduce pollution levels and improve air quality by increasing the number of trees and plants. These green spaces absorb pollutants such as PM 2.5, leading to healthier living environments. Creating more green spaces is a simple yet effective way to make a positive impact on the environment and our health."),
         
         
-
+        
     ]
-
+    
     @State var index = 0
     
     @State private var isNextPageButtonShowing: Bool = false
     @State private var isShowingPage: Bool = false
-
+    
     var body: some View{
         
         NavigationView{
             
-            VStack{
+            LazyVStack{
                 
                 SceneView(scene: SCNScene(named: models[index].modelName), options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                    .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 2)
+                    .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.6)
                 
                 ZStack{
                     
@@ -94,27 +94,25 @@ struct Home : View {
                 
                 VStack(spacing: 15, content: {
                     
-
-                    
-                    
                     GroupBox{
                         Text("About")
                             .font(.title2)
                             .fontWeight(.bold)
-
-                        Text(models[index].details)
-                            .font(.system(size: 22))
-                            .font(.caption)
-                            .multilineTextAlignment(.center)
-
-
-
+                        
+                        GroupBox{
+                            Text(models[index].details)
+                                .font(.system(size: 22))
+                                .multilineTextAlignment(.center)
+                        }
+                        
+                        
+                        
                         Spacer()
-
+                        
                         if index == 1
                         {
                             VStack(alignment: .listRowSeparatorLeading){
-                                NavigationLink(destination: LogoView().toolbar(.hidden).navigationViewStyle(.stack), label: {
+                                NavigationLink(destination: PollutionPrediction().toolbar(.hidden).navigationViewStyle(.stack), label: {
                                     Image(systemName: "arrow.right.circle.fill")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -132,6 +130,7 @@ struct Home : View {
                     }
                     
                     
+                    
                 })
                 .padding()
                 
@@ -143,8 +142,7 @@ struct Home : View {
                         isShowingPage = true
                     }
                 }
-            
-            
+
         }.navigationBarHidden(true)
             .navigationViewStyle(.stack)
     }

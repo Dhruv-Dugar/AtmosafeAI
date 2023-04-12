@@ -16,15 +16,9 @@ struct ExplanationView: View{
     var body: some View{
         NavigationView{
             VStack{
-    //            Spacer()
-                
 
                 Spacer()
-                
-//
-//                SubSuperScriptText(inputString: "Pollution measurement is done in 6 key parameters, PM 2.5, PM 10, CO, NO_{2}, SO_{2} and O_{3}", bodyFont: .callout, subScriptFont: .caption, baseLine: 6.0)
-//                    .font(.system(size: 27))
-//                    .titleStyle()
+
                 
                 Text("Pollution measurement is done in 6 key parameters, PM 2.5, PM 10, CO, NO\u{2082}, SO\u{2082} and O\u{2083} namely.")
                     .font(.system(size: 27))
@@ -48,9 +42,22 @@ struct ExplanationView: View{
                 .font(.system(size: 27))
                 .titleStyle()
                 
-                
-                Text("AtmosafeAI attemps to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the prevailing present conditions!").font(.system(size: 27))
+                Text("AtmosafeAI uses a custom ML model built with CoreML to predict the PM 2.5 levels in the city of Delhi, the data on which the model has been trained to work.")
                     .titleStyle()
+                
+                
+                
+                VStack{
+                    
+                    Text("With the same, an attempt is made to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the prevailing present conditions to keep you safe!")
+                        .font(.system(size: 27))
+                        .titleStyle()
+                    
+                    Image("delhi")
+                        .resizableImage()
+                        .frame(width: 200, height: 200, alignment: .center)
+                        .aspectRatio(contentMode: .fit)
+                }
                 
                 Spacer()
                 
@@ -116,14 +123,12 @@ struct ExplanationView: View{
         .navigationBarHidden(true)
         .navigationViewStyle(.stack)
     }
-
+    
 }
 
-
-
-
-struct ExplainationView_previews: PreviewProvider {
+struct ExplanationView_Previews: PreviewProvider {
     static var previews: some View {
         ExplanationView()
     }
 }
+

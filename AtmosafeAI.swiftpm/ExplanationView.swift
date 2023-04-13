@@ -43,14 +43,14 @@ struct ExplanationView: View{
                     .font(.system(size: 27))
                     .titleStyle()
                     
-                    Text("AtmosafeAI uses a custom ML model built with CoreML to predict the PM 2.5 levels in the city of Delhi, the data on which the model has been trained to work.")
+                    Text("AtmosafeAI uses a custom ML model built with CoreML to predict the PM 2.5 levels, and the AQI in the city of Delhi, the data on which the model has been trained to work.")
                         .titleStyle()
                     
                     
                     
                     VStack{
                         
-                        Text("With the same, an attempt is made to predict the PM 2.5 values, and recommend if you should wear a mask while heading outside or not, based on the prevailing present conditions to keep you safe!")
+                        Text("With the same, an attempt is made to predict the PM 2.5 values and the AQI, and recommends if you should wear a mask while heading outside or not, based on the prevailing present conditions to keep you safe!")
                             .font(.system(size: 27))
                             .titleStyle()
                         

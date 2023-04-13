@@ -28,7 +28,38 @@ struct PollutionPrediction: View{
 
     @State private var isShowingPage: Bool = false
     @State private var isShowingNextButton: Bool = false
+//    Ip = index of pollutant p
+//    Cp = truncated concentration of pollutant p
+//    BPHi = concentration breakpoint i.e. greater than or equal to Cp
+//    BPLo = concentration breakpoint i.e. less than or equal to Cp
+//    IHi = AQI value corresponding to BPHi
+//    ILo = AQI value corresponding to BPLo
     
+    
+    var predictedAQI: Double? {
+        
+        
+        if predictedPM25! < 30 {
+            let aqiPM25 = (50-0)/(30-0)*(30-predictedPM25!)
+            return aqiPM25
+        } else if predictedPM25! < 60 {
+            let aqiPM25 = (100-51)/(60-31)*(60-predictedPM25!) + 31
+            return aqiPM25
+        } else if predictedPM25! < 90 {
+            let aqiPM25 = (200-101)/(90-61)*(90-predictedPM25!) + 61
+            return aqiPM25
+        } else if predictedPM25! < 120 {
+            let aqiPM25 = (300-201)/(120-91)*(120-predictedPM25!) + 91
+            return aqiPM25
+        } else if predictedPM25! < 250 {
+            let aqiPM25 = (400-301)/(250-121)*(250-predictedPM25!) + 121
+            return aqiPM25
+        }
+        
+        return nil
+        
+        
+    }
     
     let data = loadCSV(from: "data")
     
@@ -50,12 +81,6 @@ struct PollutionPrediction: View{
             print("Fatal Error")
         }
         return 89.08
-    }
-    
-    var predictedAQI: Double?
-    
-    func calculateAQI(){
-            
     }
     
     
@@ -137,16 +162,29 @@ struct PollutionPrediction: View{
                         
                         (
                             Text(predictedPM25!.formatted())
+                            
                             +
                             Text(" μg/m\u{00B3}")
                             
                             
                         )
-                        .font(.title.weight(.semibold))
                         .foregroundColor(predictedPM25! > 125 ? .red : .mint)
+                        .font(.title.weight(.semibold))
                         
                         
+                        Spacer()
                         
+                        
+                        (
+                            Text("\nPredicted AQI levels are ")
+                             
+                            +
+                            
+                            Text("\(predictedAQI!.truncate(places: 2).formatted())")
+                                .foregroundColor(predictedAQI! > 100 ? .red : .mint)
+                                .fontWeight(.semibold)
+                        )
+                            .titleStyle()
                         
                         Text(predictedPM25! > 50 ? predictedPM25! > 100 ? predictedPM25! > 150 ? "\nSeverely high PM 2.5 values, wearing a mask is recommenede for everyone" : "\nPM 2.5 concentration is unhealthy. Wear a mask in the case of having respiratory issues." : "\nPM 2.5 concentration is moderate. Wear a mask if you have respiratory conditions or belong in sensetive groups." : "\nExpected PM 2.5 concentration is good. No need to wear a mask")
                             .multilineTextAlignment(.center)

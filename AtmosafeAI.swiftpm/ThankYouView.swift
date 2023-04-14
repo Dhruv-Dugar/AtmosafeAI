@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ThankYouView: View{
-    @State private var counter = 0
+    
     @State private var isShowing: Bool = false
     @Environment(\.colorScheme) var colorScheme
     @State private var isConfettiVisible: Bool = false
@@ -76,7 +76,6 @@ struct ThankYouView: View{
         .onAppear{
             withAnimation(.easeIn(duration: 0.5)){
                 isShowing = true
-                updateCounter()
                 showConfetti()
                 hideConfetti()
             }
@@ -84,20 +83,15 @@ struct ThankYouView: View{
         .padding()
     }
     
-    func updateCounter(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
-            counter = 1
-        }
-    }
     
     func showConfetti(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             isConfettiVisible = true
         }
     }
     
     func hideConfetti(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
             isConfettiVisible = false
         }
     }

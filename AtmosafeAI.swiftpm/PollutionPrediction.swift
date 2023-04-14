@@ -168,7 +168,7 @@ struct PollutionPrediction: View{
                             
                             
                         )
-                        .foregroundColor(predictedPM25! > 125 ? .red : .mint)
+                        .foregroundColor(predictedPM25! > 60 ? .red : .mint)
                         .font(.title.weight(.semibold))
                         
                         
